@@ -1,0 +1,17 @@
+body{
+  background-color: cornsilk;
+}
+
+.kekka div{
+  float: left;
+}
+.iro{
+  font-size: 50px;
+}
+
+.suuji{
+  font-size: 50px;
+}
+.returntop{
+  clear: left;
+}
