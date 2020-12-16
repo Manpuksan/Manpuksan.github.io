@@ -2,9 +2,6 @@ body{
   background-color: cornsilk;
 }
 
-.kekka div{
-  float: left;
-}
 .iro{
   font-size: 50px;
 }
@@ -12,6 +9,8 @@ body{
 .suuji{
   font-size: 50px;
 }
-.returntop{
-  clear: left;
+
+
+.spin{
+  clear: both;
 }
