@@ -1,0 +1,15 @@
+body{
+  background-image: url(../img/nekohaikeigr.png) ;
+  background-color: rgba(rgb(225, 204, 204), rgb(36, 206, 36), rgb(200, 200, 226), 0.8);
+}
+
+.nekophoto{
+  width: 400px;
+}
+
+.nekophoto p{
+  color: rgb(27, 24, 52);
+  background-color: white;
+  text-align: center;
+  margin-top: 0;
+}
