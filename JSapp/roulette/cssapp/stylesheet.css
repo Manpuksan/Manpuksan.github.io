@@ -1,16 +1,204 @@
 body{
-  background-color: cornsilk;
+  background-color: green;
 }
-
-.iro{
+.spin{
+  width: 150px;
+  height: 80px;
   font-size: 50px;
 }
-
+.iro{clear: both;
+  font-size: 50px;
+  width: 200px;
+}
 .suuji{
   font-size: 50px;
+  width: 100px;
 }
-
-
-.spin{
+header{
+  height: 100px;
+}
+header div{
+  float: left;
+}
+.bar{
+  height: 16px;
+  width: 1300px;
+  background-color: white;
+  margin: 0%;
+  position: absolute;
+  top: -10px;
+}
+.betbox{
+  position: relative;
+}
+.betbox div{
+  float: left;
+}
+.dealer{
+  height: 286px;
+  border: white;
+  border-width: 16px;
+  border-style: solid;
+  margin: 0px;
+}
+.dealer .bet{
+  font-size: 55px;
+  width: 80px;
+  height: 120px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 50%;
+  background-color: green;
+  text-align: center;
+  margin: 10px;
+}
+.betnumber div{
   clear: both;
+}
+.betnumber{
+  position: absolute;
+  top: 10px;
+  left: 125px;
+  pointer-events: none;
+}
+.betnumber .bet{
+  color: white;
+  border-radius: 50%;
+  font-size: 55px;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+  text-align: center;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.r{
+  background-color: red;
+}
+.b{
+  background-color: black;
+}
+.straight3 .bet{
+  float: left;
+}
+.straight2 .bet{
+  float: left;
+}
+.straight1 .bet{
+  float: left;
+}
+.betlinev{
+  position: absolute;
+  left: 175px;
+  top: 10px;
+  pointer-events: none;
+}
+.betlinev div{
+  clear: both;
+}
+.betlinev .bet{
+  background-color: white;
+  width: 16px;
+  height: 100px;
+  margin: 0px 42px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.splitv3 .bet{
+  float: left;
+}
+.splitv2 .bet{
+  float: left;
+}
+.splitv1 .bet{
+  float: left;
+}
+.betlineh{
+  position: absolute;
+  top: 60px;
+  left: 125px;
+  pointer-events: none;
+}
+.betlineh .bet{
+  background-color: white;
+  width: 100px;
+  height: 16px;
+  margin: 42px 0px;
+  float: left;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.betlinec .bet{
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 35px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.betlinec{
+  position: absolute;
+  left: 175px;
+  top: 60px;
+  pointer-events: none;
+}
+.co2{
+  float: left;
+}
+.co1{
+  float: left;
+}
+.li{
+  float: left;
+}
+.column{
+  height: 286px;
+  border: white;
+  border-width: 16px;
+  border-style: solid;
+  margin: 0px;
+  position: absolute;
+  left: 1320px;
+}
+.column .bet{
+  width: 100px;
+  height: 90px;
+  cursor: pointer;
+  margin: 0px;
+}
+.barc1{
+  width: 100px;
+  height: 16px;
+  background-color: white;
+  margin: 0px;
+  position: absolute;
+  top: 88px;
+}
+.barc2{
+  width: 100px;
+  height: 16px;
+  background-color: white;
+  margin: 0px;
+  position: absolute;
+  top: 188px;
+}
+.betoutlineu{
+  position: absolute;
+  top: 320px;
+}
+.betoutlineu .bet{
+  background-color: white;
+  border-radius: 50%;
+  font-size: 55px;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+  text-align: center;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.betoutlineu p{
+  color: aliceblue;
+  text-align: center;
 }
