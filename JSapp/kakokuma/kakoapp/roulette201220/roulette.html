@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang='ja'>
+  <head>
+    <meta charset='utf-8'>
+    <title>ルーレット</title>
+    <link rel='icon'href='imgapp/tychanicon.ico'>
+    <meta name='description' content='ルーレットです。'>
+    <link rel='stylesheet' href="cssapp/stylesheet.css">
+    
+  </head>
+
+  <body>
+    <header>
+      <div class="buttonbox">
+        <button type="button" class="spin" id="spin">SPIN</button>
+        <button type="button" class="result" id="result">結果を見る</button>
+        <button class="newgame" id="newgame">次のゲームへ</button>
+        <button type="reset" class="reset" id="reset">掛金を<br>リセット</button>
+      </div>
+      <div class="statesbox">
+        <div class="sisyutubox">
+          <p class="textbox">掛金</p>
+          <p class="sisyutu sts" id="sisyutu"></p>
+        </div>
+        <div class="syuunyuubox">
+          <p class="textbox">払い戻し</p>
+          <p class="syuunyuu sts" id="syuunyuu"></p>
+        </div>
+        <div class="syuusibox">
+          <p class="textbox">結果</p>
+          <p class="syuusi sts" id="syuusi"></p>
+        </div>
+        <div class="syojikinbox">
+          <p class="textbox">所持金</p>
+          <p class="syojikin sts" id="syojikin"></p>
+        </div>
+      </div>
+      <div class="kekkabox">
+        <div class="irobox">
+          <p class="textbox"></p>
+          <p class="iro" id="iro">　</p>
+        </div>
+        <div class="suujibox">
+          <p class="testbox"></p>
+          <p class="suuji" id="suuji">　</p>
+        </div>
+        <img class="imgR" width="360px" src="imgapp/roulette2.png" alt="ルーレットの画像">
+        <img class="imgT" width="200px" src="imgapp/tychan7.png" alt="tyちゃんの画像">
+        <div class="fukidasibox" id="fukidasibox">
+          <img class="imgF" src="imgapp/fukidasiy.png" alt="吹き出しの画像">
+          <p class="fukidasi" id="fukidasi"></p>
+        </div>
+      </div>
+      <div class="returntop">
+        <a href="https://manpuksan.github.io/"><img width="60px" src="imgapp/tychanicon.ico" alt="">トップページ</a></div>
+      
+    </header>
+    <div class="clear"></div>
+    <div class="betbox">
+      <div class="dealer">
+        <p class="bet de">00</p>
+        <p class="bet de">0</p>
+      </div>
+      <div class="betnumber">
+        <div class="bar"></div>
+        <div class="straight3">
+          <p class="bet  r">3</p>
+          <p class="bet  b">6</p>
+          <p class="bet  r">9</p>
+          <p class="bet  r">12</p>
+          <p class="bet  b">15</p>
+          <p class="bet  r">18</p>
+          <p class="bet  r">21</p>
+          <p class="bet  b">24</p>
+          <p class="bet  r">27</p>
+          <p class="bet  r">30</p>
+          <p class="bet  b">33</p>
+          <p class="bet  r">36</p>
+        </div>
+        <div class="straight2">
+          <p class="bet  b">2</p>
+          <p class="bet  r">5</p>
+          <p class="bet  b">8</p>
+          <p class="bet  b">11</p>
+          <p class="bet  r">14</p>
+          <p class="bet  b">17</p>
+          <p class="bet  b">20</p>
+          <p class="bet  r">23</p>
+          <p class="bet  b">26</p>
+          <p class="bet  b">29</p>
+          <p class="bet  r">32</p>
+          <p class="bet  b">35</p>
+        </div>
+        <div class="straight1">
+          <p class="bet  r">1</p>
+          <p class="bet  b">4</p>
+          <p class="bet  r">7</p>
+          <p class="bet  b">10</p>
+          <p class="bet  b">13</p>
+          <p class="bet  r">16</p>
+          <p class="bet  r">19</p>
+          <p class="bet  b">22</p>
+          <p class="bet  r">25</p>
+          <p class="bet  b">28</p>
+          <p class="bet  b">31</p>
+          <p class="bet  r">34</p>
+        </div>
+      </div>
+      <div class="betlinev">
+        <div class="splitv3">
+          <p class="bet sp3"></p>
+          <p class="bet sp3"></p>
+          <p class="bet sp3"></p>
+          <p class="bet sp3"></p>
+          <p class="bet sp3"></p>
+          <p class="bet sp3"></p>
+          <p class="bet sp3"></p>
+          <p class="bet sp3"></p>
+          <p class="bet sp3"></p>
+          <p class="bet sp3"></p>
+          <p class="bet sp3"></p>
+        </div>
+        <div class="splitv2">
+          <p class="bet sp2"></p>
+          <p class="bet sp2"></p>
+          <p class="bet sp2"></p>
+          <p class="bet sp2"></p>
+          <p class="bet sp2"></p>
+          <p class="bet sp2"></p>
+          <p class="bet sp2"></p>
+          <p class="bet sp2"></p>
+          <p class="bet sp2"></p>
+          <p class="bet sp2"></p>
+          <p class="bet sp2"></p>
+        </div>
+        <div class="splitv1">
+          <p class="bet sp1"></p>
+          <p class="bet sp1"></p>
+          <p class="bet sp1"></p>
+          <p class="bet sp1"></p>
+          <p class="bet sp1"></p>
+          <p class="bet sp1"></p>
+          <p class="bet sp1"></p>
+          <p class="bet sp1"></p>
+          <p class="bet sp1"></p>
+          <p class="bet sp1"></p>
+          <p class="bet sp1"></p>
+        </div>
+      </div>
+      <div class="betlineh">
+        <div class="splith2">
+          <p class="bet sph2"></p>
+          <p class="bet sph2"></p>
+          <p class="bet sph2"></p>
+          <p class="bet sph2"></p>
+          <p class="bet sph2"></p>
+          <p class="bet sph2"></p>
+          <p class="bet sph2"></p>
+          <p class="bet sph2"></p>
+          <p class="bet sph2"></p>
+          <p class="bet sph2"></p>
+          <p class="bet sph2"></p>
+          <p class="bet sph2"></p>
+        </div>
+        <div class="splith1">
+          <p class="bet sph1"></p>
+          <p class="bet sph1"></p>
+          <p class="bet sph1"></p>
+          <p class="bet sph1"></p>
+          <p class="bet sph1"></p>
+          <p class="bet sph1"></p>
+          <p class="bet sph1"></p>
+          <p class="bet sph1"></p>
+          <p class="bet sph1"></p>
+          <p class="bet sph1"></p>
+          <p class="bet sph1"></p>
+          <p class="bet sph1"></p>
+        </div>
+        <div class="street">
+          <p class="bet st"></p>
+          <p class="bet st"></p>
+          <p class="bet st"></p>
+          <p class="bet st"></p>
+          <p class="bet st"></p>
+          <p class="bet st"></p>
+          <p class="bet st"></p>
+          <p class="bet st"></p>
+          <p class="bet st"></p>
+          <p class="bet st"></p>
+          <p class="bet st"></p>
+          <p class="bet st"></p>
+        </div>
+      </div>
+      <div class="betlinec">
+        <div class="corner2">
+          <p class="bet co2"></p>
+          <p class="bet co2"></p>
+          <p class="bet co2"></p>
+          <p class="bet co2"></p>
+          <p class="bet co2"></p>
+          <p class="bet co2"></p>
+          <p class="bet co2"></p>
+          <p class="bet co2"></p>
+          <p class="bet co2"></p>
+          <p class="bet co2"></p>
+          <p class="bet co2"></p>
+        </div>
+        <div class="corner1">
+          <p class="bet co1"></p>
+          <p class="bet co1"></p>
+          <p class="bet co1"></p>
+          <p class="bet co1"></p>
+          <p class="bet co1"></p>
+          <p class="bet co1"></p>
+          <p class="bet co1"></p>
+          <p class="bet co1"></p>
+          <p class="bet co1"></p>
+          <p class="bet co1"></p>
+          <p class="bet co1"></p>
+        </div>
+        <div class="line">
+          <p class="bet li"></p>
+          <p class="bet li"></p>
+          <p class="bet li"></p>
+          <p class="bet li"></p>
+          <p class="bet li"></p>
+          <p class="bet li"></p>
+          <p class="bet li"></p>
+          <p class="bet li"></p>
+          <p class="bet li"></p>
+          <p class="bet li"></p>
+          <p class="bet li"></p>
+        </div>
+      </div>
+      <div class="betoutline">
+        <div class="column">
+          <p class="bet cl3"></p>
+          <div class="barc1"></div>
+          <p class="bet cl2"></p>
+          <div class="barc2"></div>
+          <p class="bet cl1"></p>
+        </div>
+      </div>
+      <div class="betoutlineu">
+        <div class="dozen">
+          <p class="bet do1">１～１２</p>
+          <p class="bet do2">１３～２４</p>
+          <p class="bet do3">２５～３６</p>
+        </div>
+      </div>
+        <div class="outlin">
+          <div class="hilow">
+            <p class="bet hl1">１～１８</p>
+            <p class="bet hl2">１９～３６</p>
+          </div>
+          <div class="evenodd">
+            <p class="bet eo1">偶数</p>
+            <p class="bet eo2">奇数</p>
+          </div>
+          <div class="redblack">
+            <p class="bet red">赤</p>
+            <p class="bet black">黒</p>
+          </div>
+        </div>
+
+      
+
+    </div> 
+
+
+    
+
+    <script src="rouletteapp.js"></script> 
+    
+  </body>
+   
+  
+
+
+  <footer>
+
+  </footer>
+</html>
