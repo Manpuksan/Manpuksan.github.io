@@ -11,13 +11,51 @@
 
   <body>
     <header>
-      <div class="kekka">
-        <div class="iro" id="iro">　</div>
-        <div class="suuji" id="suuji">　</div>
+      <div class="buttonbox">
         <button type="button" class="spin" id="spin">SPIN</button>
+        <button type="button" class="result" id="result">結果を見る</button>
+        <button class="newgame" id="newgame">次のゲームへ</button>
+        <button type="reset" class="reset" id="reset">掛金を<br>リセット</button>
       </div>
-      <div class="result"></div>
+      <div class="statesbox">
+        <div class="sisyutubox">
+          <p class="textbox">掛金</p>
+          <p class="sisyutu sts" id="sisyutu"></p>
+        </div>
+        <div class="syuunyuubox">
+          <p class="textbox">払い戻し</p>
+          <p class="syuunyuu sts" id="syuunyuu"></p>
+        </div>
+        <div class="syuusibox">
+          <p class="textbox">結果</p>
+          <p class="syuusi sts" id="syuusi"></p>
+        </div>
+        <div class="syojikinbox">
+          <p class="textbox">所持金</p>
+          <p class="syojikin sts" id="syojikin"></p>
+        </div>
+      </div>
+      <div class="kekkabox">
+        <div class="irobox">
+          <p class="textbox"></p>
+          <p class="iro" id="iro">　</p>
+        </div>
+        <div class="suujibox">
+          <p class="testbox"></p>
+          <p class="suuji" id="suuji">　</p>
+        </div>
+        <img class="imgR" width="360px" src="imgapp/roulette2.png" alt="ルーレットの画像">
+        <img class="imgT" width="200px" src="imgapp/tychan7.png" alt="tyちゃんの画像">
+        <div class="fukidasibox" id="fukidasibox">
+          <img class="imgF" src="imgapp/fukidasiy.png" alt="吹き出しの画像">
+          <p class="fukidasi" id="fukidasi"></p>
+        </div>
+      </div>
+      <div class="returntop">
+        <a href="https://manpuksan.github.io/"><img width="60px" src="imgapp/tychanicon.ico" alt="">トップページ</a></div>
+      
     </header>
+    <div class="clear"></div>
     <div class="betbox">
       <div class="dealer">
         <p class="bet de">00</p>
@@ -205,27 +243,25 @@
       </div>
       <div class="betoutlineu">
         <div class="dozen">
-          <p>ダズン</p>
-          <p class="bet do1"></p>
-          <p class="bet do2"></p>
-          <p class="bet do3"></p>
-        </div>
-        <div class="hilow">
-          <p>ハイ＆ロー</p>
-          <p class="bet hl"></p>
-          <p class="bet hl"></p>
-        </div>
-        <div class="evenodd">
-          <p>偶数奇数</p>
-          <p class="bet eo"></p>
-          <p class="bet eo"></p>
-        </div>
-        <div class="redblack">
-          <p>赤黒</p>
-          <p class="bet red"></p>
-          <p class="bet black"></p>
+          <p class="bet do1">１～１２</p>
+          <p class="bet do2">１３～２４</p>
+          <p class="bet do3">２５～３６</p>
         </div>
       </div>
+        <div class="outlin">
+          <div class="hilow">
+            <p class="bet hl1">１～１８</p>
+            <p class="bet hl2">１９～３６</p>
+          </div>
+          <div class="evenodd">
+            <p class="bet eo1">偶数</p>
+            <p class="bet eo2">奇数</p>
+          </div>
+          <div class="redblack">
+            <p class="bet red">赤</p>
+            <p class="bet black">黒</p>
+          </div>
+        </div>
 
       
 
@@ -235,7 +271,7 @@
     
 
     <script src="rouletteapp.js"></script> 
-    <div class="returntop"><a href="https://manpuksan.github.io/">トップページへ</a></div>
+    
   </body>
    
   
