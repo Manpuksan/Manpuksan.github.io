@@ -20,6 +20,7 @@ const newgame = ()=>{
   document.getElementById('newgame').style.visibility='hidden';
   document.getElementById('spin').style.visibility ="visible";
   document.getElementById("syuusi").style.color = "azure";
+  document.getElementById('fukidasibox').style.visibility ='hidden';
 }
 const kakekinreset = ()=>{
   for(kr=0;kr<bet.length;kr++){
@@ -77,7 +78,12 @@ let hiyakasi =[
     '掛金が０ですよ？',
     '？・・・賭けないんですか？',
     'まずは掛金を入力してください'];
-
+let hasan =[
+  'お金が足りないですよ',
+  'そんなにお金持ってないでしょ',
+  '所持金が足りません',
+  '無理無理無理無理無理'
+]
 // あたりの紐づけ
 const betAtari=[];
   betAtari.push({atari:[37],ataritxt:'00',kakekin:0,bairitu:36,win:0})
@@ -196,19 +202,24 @@ betAtari.push({atari:blar,ataritxt:'黒',kakekin:0,bairitu:2,win:0});
 const betOkane =(n)=>{
   betAtari[n].kakekin=parseInt(prompt(betAtari[n].bairitu+'倍　'+betAtari[n].ataritxt+'がでたらあたり'+'\n※キャンセルを押すと掛金が0に戻ります',betAtari[n].kakekin));
   
-  if(isNaN(betAtari[n].kakekin)){betAtari[n].kakekin=0};
+  if(isNaN(betAtari[n].kakekin)){
+    betAtari[n].kakekin=0;};
   sisyutu=0;
   kakekinsum();
-  let w = Math.floor(Math.random()*tyikasama.length);
-  document.getElementById('fukidasibox').style.visibility ='visible';
-  document.getElementById('fukidasi').textContent=tymesage[w];
+    let w = Math.floor(Math.random()*tyikasama.length);
+    document.getElementById('fukidasibox').style.visibility ='visible';
+    document.getElementById('fukidasi').textContent=tymesage[w];
 }
   for(let betNo=0;betNo<bet.length;betNo++){
     bet[betNo].addEventListener('click',()=>{parseInt(betOkane(betNo))})
   }
 // ルーレットを回す関数
 const spin =()=>{
-  if(sisyutu===0){
+  if(syojikin<sisyutu){
+    let w = Math.floor(Math.random()*hasan.length);
+    document.getElementById('fukidasibox').style.visibility ='visible';
+    document.getElementById('fukidasi').textContent = hasan[w];
+  }else if(sisyutu===0){
     let w = Math.floor(Math.random()*hiyakasi.length);
     document.getElementById('fukidasibox').style.visibility ='visible';
     document.getElementById('fukidasi').textContent = hiyakasi[w];
@@ -259,16 +270,18 @@ const spin =()=>{
         }else{
           betAtari[hn].kakekin=0;}
       }
-      let syuusi =syuunyuu-sisyutu;
+      syuusi =syuunyuu-sisyutu;
       syojikin=syojikin+syuusi;
       if(syuusi<0){
         document.getElementById("syuusi").style.color = "red";
+        document.getElementById('syuusi').textContent=syuusi;
       }else if(syuusi>0){
         document.getElementById("syuusi").style.color = "green";
+        document.getElementById('syuusi').textContent='+'+syuusi;
       }else{
-        document.getElementById("syuusi").style.color = "azure";
+        document.getElementById("syuusi").style.color = "midnightblue";
+        document.getElementById('syuusi').textContent=syuusi;
       }
-      document.getElementById('syuusi').textContent='+'+syuusi;
       document.getElementById('syuunyuu').textContent=syuunyuu;
       document.getElementById('syojikin').textContent=syojikin;
       document.getElementById('result').style.visibility='hidden';
