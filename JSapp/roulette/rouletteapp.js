@@ -429,7 +429,7 @@ const spin =()=>{
       document.getElementById('sound').style.visibility='visible';
       if(syuusi<0 && Math.random()*5>2){
         changeimgA();
-        document.getElementById('fukidasi').textContent = rouletteiro()+roulettesuuji()+'デス';
+        document.getElementById('fukidasi').textContent = rouletteiro()+roulettesuuji()+'デシタヨ';
       // }else if(syuusi<0 && Math.random()*5>2){
       //   changeimgD();
       //   let w = Math.floor(Math.random()*hiyakasi.length);
