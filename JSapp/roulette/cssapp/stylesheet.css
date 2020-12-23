@@ -451,3 +451,12 @@ header div{
   width: 186px;
   border-right: white 16px solid;
 }
+.bet{
+  position: relative;
+}
+.bet img{
+  position: absolute;
+  top: auto;
+  left: 50%;
+  width: 40px;
+}
