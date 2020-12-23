@@ -1,12 +1,14 @@
-let syojikin = 10000;
+let syojikin = 100;
 let sisyutu = 0;
 let syuunyuu = 0;
 let syuusi = syuunyuu-sisyutu;
+let t=0;
 let bet = document.getElementsByClassName('bet')
 document.getElementById('syojikin').textContent=syojikin;
 document.getElementById('result').style.visibility ="hidden";
 document.getElementById('newgame').style.visibility ="hidden";
 document.getElementById('fukidasibox').style.visibility ='hidden';
+document.getElementById('sound').style.visibility='hidden';
 const kakekinsum =()=>{
   for(k=0;k<bet.length;k++){
   sisyutu=sisyutu+betAtari[k].kakekin;
@@ -19,9 +21,124 @@ const newgame = ()=>{
   document.getElementById('syuunyuu').textContent=syuunyuu;
   document.getElementById('newgame').style.visibility='hidden';
   document.getElementById('spin').style.visibility ="visible";
+  document.getElementById('reset').style.visibility ="visible";
   document.getElementById("syuusi").style.color = "azure";
   document.getElementById('fukidasibox').style.visibility ='hidden';
 }
+let imgA =[
+  'imgapp/ikasama1.png',
+  'imgapp/ikasama1.png',
+  'imgapp/ikasama1.png',
+  'imgapp/ikasama2.png',
+  'imgapp/ikasama2.png',
+  'imgapp/ikasama3.png',
+  'imgapp/ikasama3.png',
+  'imgapp/ikasama4.png',
+  'imgapp/ikasama1.png'];
+let soundA =[
+  'imgapp/sound1.png',
+  'imgapp/sound1.png',
+  'imgapp/sound1.png',
+  'imgapp/sound2.png',
+  'imgapp/sound2.png',
+  'imgapp/sound4.png',
+  'imgapp/sound4.png',
+  'imgapp/sound3.png',
+  'imgapp/sound3.png'];
+let soundB =[
+  'imgapp/sound1.png',
+  'imgapp/sound1.png',
+  'imgapp/sound1.png',
+  'imgapp/sound2.png',
+  'imgapp/sound2.png',
+  'imgapp/sound2.png',
+  'imgapp/sound2.png',
+  'imgapp/sound3.png',
+  'imgapp/sound3.png'];
+let soundC =[
+  'imgapp/sound1.png',
+  'imgapp/sound1.png',
+  'imgapp/sound1.png',
+  'imgapp/sound2.png',
+  'imgapp/sound2.png',
+  'imgapp/sound5.png',
+  'imgapp/sound5.png',
+  'imgapp/sound3.png',
+  'imgapp/sound3.png'];
+let soundD =[
+  'imgapp/sound1.png',
+  'imgapp/sound1.png',
+  'imgapp/sound1.png',
+  'imgapp/sound2.png',
+  'imgapp/sound2.png',
+  'imgapp/sound4.png',
+  'imgapp/sound4.png',
+  'imgapp/sound3.png',
+  'imgapp/sound3.png'];
+// 画像の変更関数
+const timeA = ()=>{
+  if(t>8){
+    clearInterval(timerA);
+    document.getElementById('sound').style.visibility='hidden';
+    t=0;
+    document.getElementById('sound').src=soundA[t];
+    document.getElementById('fukidasibox').style.visibility ='visible';
+    document.getElementById('result').style.visibility='visible';
+  }else{
+    document.getElementById('imgR').src=imgA[t];
+    document.getElementById('sound').src=soundA[t];
+    t++;
+  }
+} 
+const timeB =()=>{
+  if(t>8){
+    clearInterval(timerB);
+    document.getElementById('sound').style.visibility='hidden';
+    t=0;
+    document.getElementById('sound').src=soundA[t];
+    document.getElementById('fukidasibox').style.visibility ='visible';
+    document.getElementById('result').style.visibility='visible';
+  }else{
+    document.getElementById('sound').src=soundB[t];
+    t++;
+  }
+};
+const timeC = ()=>{
+  if(t>8){
+    clearInterval(timerC);
+    document.getElementById('sound').style.visibility='hidden';
+    t=0;
+    document.getElementById('sound').src=soundC[t];
+    document.getElementById('fukidasibox').style.visibility ='visible';
+    document.getElementById('result').style.visibility='visible';
+  }else{
+    document.getElementById('imgR').src=imgA[t];
+    document.getElementById('sound').src=soundC[t];
+    t++;
+  }
+};
+const timeD = ()=>{
+  if(t>8){
+    clearInterval(timerD);
+    document.getElementById('sound').style.visibility='hidden';
+    t=0;
+    document.getElementById('sound').src=soundD[t];
+    document.getElementById('fukidasibox').style.visibility ='visible';
+    document.getElementById('result').style.visibility='visible';
+  }else{
+    document.getElementById('imgR').src=imgA[t];
+    document.getElementById('sound').src=soundD[t];
+    t++;
+  }
+};
+const changeimgA =()=>{
+  timerA=setInterval(timeA,400);}
+const changeimgB =()=>{
+  timerB=setInterval(timeB,400);}
+const changeimgC =()=>{
+  timerC=setInterval(timeC,400);}
+const changeimgD =()=>{
+  timerD=setInterval(timeD,400);}
 const kakekinreset = ()=>{
   for(kr=0;kr<bet.length;kr++){
     betAtari[kr].kakekin=0;
@@ -51,15 +168,14 @@ let omedetou =[
   'すごいっ',
   '次は負けませんよ',
   '冴えてますね',
-  '冴えてますね'];
+  'congratulation！'];
 // 引き分け
 let hikiwake =[
   'むむっ',
   '気が合いますね',
   'さあもうひと勝負です',
   '引き分けです',
-  'こんなこともあるんですね'
-]
+  'こんなこともあるんですね'];
   // いかさま後の言葉
 let tyikasama =[
     'バレなきゃあイカサマじゃあねえんだぜ',
@@ -68,10 +184,10 @@ let tyikasama =[
     'どんまい',
     '惜しかったですね～',
     'さ、次行きましょ',
-    '・・・・・・・・・・・',
+    '・・・・・・・・・ナニカ？',
     '次は当たりますよ',
     'あらら残念',
-    'ｶﾞﾝﾊﾞｯﾃｵｳｴﾝｼﾃﾙﾖ',
+    'ガンバッテネオウエンシテルヨ',
     '不思議なこともあるものですね'];
   // 冷やかしへの反応
 let hiyakasi =[
@@ -82,8 +198,18 @@ let hasan =[
   'お金が足りないですよ',
   'そんなにお金持ってないでしょ',
   '所持金が足りません',
-  '無理無理無理無理無理'
-]
+  '無理無理無理無理無理'];
+let jougen=[
+  '賭けられるのは10枚までですよ',
+  '掛けすぎですよ',
+  'コインは10枚までしか掛けられませんよ'];
+let funsitu =[
+  'ボールはなくなりましたが私の勝ちです',
+  'ボールどこ行ったんでしょう',
+  'ボールなくなりましたね・・・',
+  '私の勝ちですよ　ちゃんと見ましたから',
+  'はい、ボールがきえました',
+  'ボールが見えませんが私の勝ちです'];
 // あたりの紐づけ
 const betAtari=[];
   betAtari.push({atari:[37],ataritxt:'00',kakekin:0,bairitu:36,win:0})
@@ -202,19 +328,34 @@ betAtari.push({atari:blar,ataritxt:'黒',kakekin:0,bairitu:2,win:0});
 const betOkane =(n)=>{
   betAtari[n].kakekin=parseInt(prompt(betAtari[n].bairitu+'倍　'+betAtari[n].ataritxt+'がでたらあたり'+'\n※キャンセルを押すと掛金が0に戻ります',betAtari[n].kakekin));
   
-  if(isNaN(betAtari[n].kakekin)){
-    betAtari[n].kakekin=0;};
+  if(isNaN(betAtari[n].kakekin) || betAtari[n].kakekin<0){
+    betAtari[n].kakekin=0;
+    sisyutu=0;
+    kakekinsum();};
   sisyutu=0;
   kakekinsum();
+  if(betAtari[n].kakekin===0){let w = Math.floor(Math.random()*hiyakasi.length);
+    document.getElementById('fukidasibox').style.visibility ='visible';
+    document.getElementById('fukidasi').textContent=hiyakasi[w];
+  }else if(betAtari[n].kakekin>10){
+    let w = Math.floor(Math.random()*jougen.length);
+    document.getElementById('fukidasibox').style.visibility ='visible';
+    document.getElementById('fukidasi').textContent=jougen[w];
+    betAtari[n].kakekin=0;
+    sisyutu=0;
+    kakekinsum();
+  }else{
     let w = Math.floor(Math.random()*tyikasama.length);
     document.getElementById('fukidasibox').style.visibility ='visible';
     document.getElementById('fukidasi').textContent=tymesage[w];
+  }
 }
   for(let betNo=0;betNo<bet.length;betNo++){
     bet[betNo].addEventListener('click',()=>{parseInt(betOkane(betNo))})
   }
 // ルーレットを回す関数
 const spin =()=>{
+  document.getElementById('fukidasibox').style.visibility ='hidden';
   if(syojikin<sisyutu){
     let w = Math.floor(Math.random()*hasan.length);
     document.getElementById('fukidasibox').style.visibility ='visible';
@@ -224,6 +365,7 @@ const spin =()=>{
     document.getElementById('fukidasibox').style.visibility ='visible';
     document.getElementById('fukidasi').textContent = hiyakasi[w];
   }else{
+    document.getElementById('fukidasibox').style.visibility ='hidden';
     const roulette = Math.floor(Math.random()*38);
     const roulettesuuji = ()=>{
       if(roulette===0){
@@ -237,6 +379,7 @@ const spin =()=>{
     const rouletteiro = ()=>{
       if(roulette===0 || roulette===37){
         document.getElementById('fukidasi').style.color='green';
+        return('　')
       }else if(roulette % 2 ===1 && roulette <=9){
         document.getElementById('fukidasi').style.color='red';
         return('赤の');
@@ -253,18 +396,8 @@ const spin =()=>{
         document.getElementById('fukidasi').style.color='midnightblue';
         return('黒の');}
       }
-      document.getElementById('fukidasi').textContent = rouletteiro()+roulettesuuji()+'です';
-      document.getElementById('fukidasibox').style.visibility ='visible';
-      document.getElementById('spin').style.visibility ="hidden";
-      document.getElementById('result').style.visibility='visible';
-      document.getElementById('suuji').textContent=roulettesuuji();
-    }
-  }
-
-  // あたりを判定
-  const result=()=>{
       for(let hn=0;hn<152;hn++){
-      if(betAtari[hn].atari.indexOf(parseInt(document.getElementById('suuji').textContent)) !== -1){
+      if(betAtari[hn].atari.indexOf(parseInt(roulettesuuji())) !== -1){
           syuunyuu=syuunyuu+(betAtari[hn].bairitu*betAtari[hn].kakekin);
           betAtari[hn].kakekin=0;
         }else{
@@ -272,6 +405,28 @@ const spin =()=>{
       }
       syuusi =syuunyuu-sisyutu;
       syojikin=syojikin+syuusi;
+      document.getElementById('sound').style.visibility='visible';
+      if(syuusi<0 && Math.random()*5>1){
+        changeimgA();
+        document.getElementById('fukidasi').textContent = rouletteiro()+roulettesuuji()+'デス';
+      // }else if(syuusi<0 && Math.random()*5>2){
+      //   changeimgD();
+      //   let w = Math.floor(Math.random()*hiyakasi.length);
+      //   document.getElementById('fukidasi').textContent =funsitu[w]
+      }else if(syuusi>0 && Math.random()*2>1){
+        changeimgC();
+        document.getElementById('fukidasi').textContent = rouletteiro()+roulettesuuji()+'です (ﾁｯ)';
+      }else{
+        changeimgB();
+        document.getElementById('fukidasi').textContent = rouletteiro()+roulettesuuji()+'です';
+      }
+      document.getElementById('spin').style.visibility ="hidden";
+      document.getElementById('reset').style.visibility ="hidden";
+    }
+  }
+
+  // あたりを判定
+  const result=()=>{
       if(syuusi<0){
         document.getElementById("syuusi").style.color = "red";
         document.getElementById('syuusi').textContent=syuusi;
