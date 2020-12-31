@@ -11,6 +11,37 @@
 
   <body>
     <header>
+      <div class="headerB"></div>
+      <div class="bossbetbox" id='bossbetbox'>
+        <div class="f-left"></div>
+        <div class="bossbuttonbox" id="bossbuttonbox">
+          <button id="bossspin" class="bossspin0" type="button">勝負</button>
+          <div id="bossspinG" class="bossspinG"></div>
+        </div>
+        <div class="bossbetzone">
+          <div class="bossdozenli">
+            <button name='bossdozen bbet' class="bossdozen bbet">１～１２</button>
+            <div name="bdguard" class="bdguard0 bbg"></div>
+            <button name='bossdozen bbet' class="bossdozen bbet">１３～２４</button>
+            <div name="bdguard" class="bdguard1 bbg"></div>
+            <button name='bossdozen bbet' class="bossdozen bbet">２５～３６</button>
+            <div name="bdguard" class="bdguard2 bbg"></div>
+          </div>
+          <div class="clear"></div>
+          <div class="bossevodli">
+            <button name='bossevod bbet' class="bossevod bbet">偶数</button>
+            <div name="beoguard" class="beoguard0 bbg"></div>
+            <button name='bossevod bbet' class="bossevod bbet">奇数</button>
+            <div name="beoguard" class="beoguard1 bbg"></div>
+          </div>
+          <div class="bossrbli">
+            <button name='bossrb bbet' class="bossrb bbet">赤</button>
+            <div name="brbguard" class="brbguard0 bbg"></div>
+            <button name='bossrb bbet' class="bossrb bbet">黒</button>
+            <div name="brbguard" class="brbguard1 bbg"></div>
+          </div>
+        </div>
+      </div>
       <div class="buttonbox">
         <button type="button" class="spin" id="spin">SPIN</button>
         <button type="button" class="result" id="result">結果を見る</button>
@@ -18,23 +49,47 @@
         <button type="reset" class="reset" id="reset">掛金を<br>リセット</button>
       </div>
       <div class="statesbox">
-        <div class="sisyutubox">
-          <p class="textbox">掛金</p>
-          <p class="sisyutu sts" id="sisyutu"></p>
+        <div id="hpbox" class="hpbox">
+          <div class="tygauge">
+            <div class="tyhp">
+              <img class="tyicon" width="120px" src="imgapp/tychan7.png" alt="">
+              <img src="imgapp/ikari-mark.png" id="ikari" class="ikari" width="20px" alt="">
+            </div>
+            <div class="tygl">
+              <div name="hpg" class="hpgb"></div>
+              <div name="hpg" class="hpgb"></div>
+              <div name="hpg" class="hpgb"></div>
+              <div name="hpg" class="hpgb"></div>
+            </div>
+          </div>
+          <div class="mygauge">
+            <img src="imgapp/coinneko.png" name='myg' class="myg0" alt="コインの画像">
+            <img src="imgapp/coinneko.png" name='myg' class="myg0" alt="コインの画像">
+            <img src="imgapp/coinneko.png" name='myg' class="myg0" alt="コインの画像">
+            <img src="imgapp/coinneko.png" name='myg' class="myg0" alt="コインの画像">
+            <img src="imgapp/coinneko.png" name='myg' class="myg0" alt="コインの画像">
+            <img src="imgapp/coinneko.png" name='myg' class="myg0" alt="コインの画像">
+          </div>
         </div>
-        <div class="syuunyuubox">
-          <p class="textbox">払い戻し</p>
-          <p class="syuunyuu sts" id="syuunyuu"></p>
-        </div>
-        <div class="syuusibox">
-          <p class="textbox">結果</p>
-          <p class="syuusi sts" id="syuusi"></p>
-        </div>
-        <div class="syojikinbox">
-          <img src="imgapp/coinneko.png" alt="コインの画像">
-          <p class="textbox">所持金</p>
-          <p class="syojikin sts" id="syojikin"></p>
-          <p class="mai">枚</p>
+        <div class="suutibox" id="suutibox">
+          <div class="sisyutubox stbox">
+            <p class="textbox">掛金</p>
+            <p class="sisyutu sts" id="sisyutu"></p>
+          </div>
+          <div class="syuunyuubox stbox">
+            <p class="textbox">払い戻し</p>
+            <p class="syuunyuu sts" id="syuunyuu"></p>
+          </div>
+          <div class="syuusibox stbox">
+            <p class="textbox">結果</p>
+            <p class="syuusi sts" id="syuusi"></p>
+          </div>
+          <div class="syojikinbox stbox">
+            <img src="imgapp/coinneko.png" class="nekocoin" alt="コインの画像">
+            <p class="textbox">コイン</p>
+            <p class="syojikin sts" id="syojikin"></p>
+            <p class="mai">枚</p>
+          </div>
         </div>
       </div>
       <div class="kekkabox">
@@ -44,13 +99,23 @@
         <div class="suujibox">
           <p class="suuji" id="suuji">　</p>
         </div>
-        <img class="imgR" width="500px" id="imgR" src="imgapp/ikasama1.png" alt="ルーレットの画像">
-        <img src="imgapp/sound1.png" class="sound" id="sound" alt="ルーレットの音の画像">
+        <img class="imgR" width="500px" id="imgR" src="imgapp/ikasama0.png" alt="ルーレットの画像">
+        <img src="imgapp/sound0.png" class="sound" id="sound" alt="ルーレットの音の画像">
+        <div id="atama" class="atama"></div>
+        <div id='atamaG' class="atamaG"></div>
+        <img src="imgapp/pikopiko_hummer.png" id="piko" class="piko" alt="">
         <div class="fukidasibox" id="fukidasibox">
           <img class="imgF" src="imgapp/fukidasiy.png" alt="吹き出しの画像">
           <p class="fukidasi" id="fukidasi"></p>
         </div>
+        <div id="mahoujinbox" class="mahoujinbox">
+          <img src="imgapp/mahoujin.png" id="mhj" class="mhj" alt="魔法陣の画像">
+          <div id="mahoujinC" class="mahoujinC"></div>
+        </div>
+        <img src="imgapp/ikari-mark.png" id="ikariL" class="ikariD" width="30px" alt="">
+        <img src="imgapp/enblack.png" id="mahou" class="mahou" alt="">
       </div>
+      <img src="imgapp/qen.png" class="blackoutQ" id="blackoutQ" alt="">
       <div class="returntop">
         <a href="https://manpuksan.github.io/"><img width="60px" src="imgapp/tychanicon.ico" alt="">トップページ</a></div>
       
@@ -263,9 +328,22 @@
           </div>
         </div>
 
-      
-
-    </div> 
+    <div class="betguard"></div>  
+  </div> 
+  <div class="blackout" id="blackout"></div>
+  <div id="opening" class="opening">
+    <img src="imgapp/title.png" id="title" class="title openingp" alt="">
+    <div id="open" class="open openingp">はじめる</div>
+    <div id="manual" class="manual openingp">遊び方</div>
+    <img src="imgapp/roulette2+tychan.png" id="titleimg" class="titleimg openingp" alt="">
+    <div class="returntop">
+      <a href="https://manpuksan.github.io/"><img width="60px" src="imgapp/tychanicon.ico" alt="">トップページ</a></div>
+    <img src="" id="ending" class="ending" alt="">
+    <div class="manualtext" id="manualtext">
+      <img src="imgapp/manual.png" class="manualimg" alt="マニュアルの画像です">
+      <div id="returntitle" class="returntitle">戻る</div>
+    </div>
+  </div>
 
 
     
