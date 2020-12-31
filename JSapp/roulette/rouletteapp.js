@@ -636,29 +636,45 @@ const spinr=()=>{
       for(let hn=0;hn<152;hn++){
       if(betAtari[hn].atari.indexOf(parseInt(roulettesuuji())) !== -1){
           syuunyuu=syuunyuu+(betAtari[hn].bairitu*betAtari[hn].kakekin);
-          betAtari[hn].kakekin=0;
-          betAtari[hn].win=1;
-        }else{
-          betAtari[hn].kakekin=0;}
-      }
+      }}
       syuusi =syuunyuu-sisyutu;
-      syojikin=syojikin+syuusi;
+      // syojikin=syojikin+syuusi;
       $sound.style.visibility='visible';
-      if(syuunyuu===0 && Math.random()*5>4){
+      if(syuunyuu===0 && Math.random()*5>3){
         spinr()
-      }else if(syuusi<0 && Math.random()*5>1){
+      }else if(syuusi<=0 && Math.random()*5>1){
         changeimgB();
         $fukidasi.textContent = rouletteiro()+roulettesuuji()+'デシタヨ';
-      // }else if(syuusi<0 && Math.random()*5>2){
-      //   changeimgD();
-      //   let w = Math.floor(Math.random()*hiyakasi.length);
-      //   $fukidasi.textContent =funsitu[w]
+        syojikin=syojikin+syuusi;
+        for(let hn=0;hn<152;hn++){
+          if(betAtari[hn].atari.indexOf(parseInt(roulettesuuji())) !== -1){
+              betAtari[hn].kakekin=0;
+              betAtari[hn].win=1;
+            }else{
+              betAtari[hn].kakekin=0;}
+            }
       }else if(syuusi>0 && Math.random()*5>1){
         changeimgC();
         $fukidasi.textContent = rouletteiro()+roulettesuuji()+'です (ﾁｯ)';
+        syojikin=syojikin+syuusi;
+        for(let hn=0;hn<152;hn++){
+          if(betAtari[hn].atari.indexOf(parseInt(roulettesuuji())) !== -1){
+              betAtari[hn].kakekin=0;
+              betAtari[hn].win=1;
+            }else{
+              betAtari[hn].kakekin=0;}
+            }
       }else{
         changeimgA();
         $fukidasi.textContent = rouletteiro()+roulettesuuji()+'です';
+        syojikin=syojikin+syuusi;
+        for(let hn=0;hn<152;hn++){
+          if(betAtari[hn].atari.indexOf(parseInt(roulettesuuji())) !== -1){
+              betAtari[hn].kakekin=0;
+              betAtari[hn].win=1;
+            }else{
+              betAtari[hn].kakekin=0;}
+            }
       }
       $spin.style.visibility ="hidden";
       $reset.style.visibility ="hidden";
