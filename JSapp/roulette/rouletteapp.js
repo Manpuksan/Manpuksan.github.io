@@ -982,7 +982,7 @@ let Ebom=[
     timestope.play();
   },
   ()=>{
-    vup();
+    bossmusic.volume=0.5;
     $boQ.className='blackoutQts0'
     $blackout.className='blackoutts0'
   },
