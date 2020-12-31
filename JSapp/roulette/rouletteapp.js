@@ -4,6 +4,7 @@ let syuunyuu = 0;
 let syuusi = syuunyuu-sisyutu;
 let t=0;
 let stressp = 0;
+let gc =0;
 let life =0;
 let lifeT=3;
 let n=-0;
@@ -142,6 +143,7 @@ const betCReset =(n)=>{
 };
 // ニューゲーム
 const newgame = ()=>{
+  gc++
   if(syojikin<=0){
     ending();
   }else{
@@ -154,7 +156,7 @@ const newgame = ()=>{
     $fukidasibox.style.visibility ='hidden';
     booff();
     for(let n=0;n<152;n++){betCReset(n);};
-    if(stressp>8 || syojikin>250){bossmode();
+    if(stressp>8 || syojikin>250 || gc>8){bossmode();
     }else{
       $spin.style.visibility ="visible";
       $reset.style.visibility ="visible";
