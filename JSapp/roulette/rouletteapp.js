@@ -997,12 +997,13 @@ let Ebom=[
     if(life===-1){
       ending();
       clearInterval(Sbom);bh=0;bom=0
+    }else{
+      $fukidasi.style.color='midnightblue';
+      $fukidasi.textContent='さあ次の勝負です'
+      $tyimg.src=imgset[0]
+      $boQ.style.visibility='visible'
+      bossreset();
     }
-    $fukidasi.style.color='midnightblue';
-    $fukidasi.textContent='さあ次の勝負です'
-    $tyimg.src=imgset[0]
-    $boQ.style.visibility='visible'
-    bossreset();
   }
 ]
 ELbom=[];
