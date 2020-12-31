@@ -115,10 +115,10 @@ document.getElementById('returntitle').addEventListener('click',closemanual);
 
 // 音量をだんだん小さく
 const Fvdown=()=>{if(vdt<4){bossmusic.volume=bossmusic.volume-0.1;vdt++}else{clearInterval(Svdown);vdt=0}};
-const vdown=()=>{Svdown=setInterval(Fvdown,250)}
+const vdown=()=>{Svdown=setInterval(Fvdown,200)}
 // 音量をだんだん大きく
 const Fvup=()=>{if(vut<4){bossmusic.volume=bossmusic.volume+0.1;vut++}else{clearInterval(Svup)}};
-const vup=()=>{Svup=setInterval(Fvup,250)}
+const vup=()=>{Svup=setInterval(Fvup,200)}
 // 掛金をリセット
 const kakekinsum =()=>{
   for(k=0;k<$bet.length;k++){
