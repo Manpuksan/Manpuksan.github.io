@@ -95,9 +95,9 @@ document.getElementsByName('beoguard')[1].style.visibility='hidden';
 document.getElementsByName('brbguard')[0].style.visibility='hidden';
 document.getElementsByName('brbguard')[1].style.visibility='hidden';
 // 編集用のオブジェクト隠し
-$tyimg.src='imgapp/ikasama2.png'
-document.getElementById('suutibox').style.visibility='hidden'
-document.getElementsByClassName('betbox')[0].style.visibility='hidden'
+// $tyimg.src='imgapp/ikasama2.png'
+// document.getElementById('suutibox').style.visibility='hidden'
+// document.getElementsByClassName('betbox')[0].style.visibility='hidden'
 
 // オープニングボタン
 const startgame=()=>{$opening.className='opening0';
@@ -224,7 +224,7 @@ const bossscreen =()=>{
   document.getElementsByClassName('headerB')[0].style.backgroundColor='black'
   document.getElementById('blackout').style.visibility='hidden'
 }
-bossscreen()
+// bossscreen()
 let imgset =[
   'imgapp/ikasama0.png',
   'imgapp/ikasama1.png',
