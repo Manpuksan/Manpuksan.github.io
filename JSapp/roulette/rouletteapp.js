@@ -73,6 +73,8 @@ const end1 = new Audio('seapp/ending1.mp3');
 const end2 = new Audio('seapp/ending2.mp3');
 const end3 = new Audio('seapp/ending3.mp3');
 const endingse = new Audio('seapp/endingse.mp3')
+const chargeli = new Audio('seapp/ビーム砲チャージ.mp3');
+const lightning =new Audio('seapp/爆発2.mp3');
 
 document.getElementById('syojikin').textContent=syojikin;
 $result.style.visibility ="hidden";
@@ -143,6 +145,7 @@ const betCReset =(n)=>{
 };
 // ニューゲーム
 const newgame = ()=>{
+  kuroji.play();
   gc++
   if(syojikin<=0){
     ending();
@@ -237,7 +240,7 @@ let soundset =[
 let mahouset =[
   ['imgapp/mahoujin.png','imgapp/enblack.png','imgapp/qen.png'],
   ['imgapp/mahoujinred.png','imgapp/enred.png','imgapp/qenred.png'],
-  ['imgapp/mahoujinblue.png','imgapp/enblue.png','imgapp/qenblue.png'],
+  ['imgapp/mahoujinorange.png','imgapp/enorange.png','imgapp/qenorange.png'],
   ['imgapp/mahoujingrey.png','imgapp/engrey.png','imgapp/qengrey.png']
 ];
 
@@ -706,19 +709,16 @@ const spin =()=>{
       $newgame.style.visibility='visible';
       $fukidasibox.style.visibility='visible';
       $fukidasi.style.color='midnightblue';
-      
+      betse.play();
       if(syuusi<0){
         let w = Math.floor(Math.random()*tyikasama.length);
         $fukidasi.textContent=tyikasama[w];
-        akaji.play();
       }else if(syuusi>0){
         let w = Math.floor(Math.random()*omedetou.length);
         $fukidasi.textContent=omedetou[w];
-        kuroji.play();
       }else{
         let w = Math.floor(Math.random()*hikiwake.length);
         $fukidasi.textContent=hikiwake[w];
-        akaji.play();
       }
     for(hn=0;hn<152;hn++){
       if(betAtari[hn].win===1 && betAtari[hn].betp===1){
@@ -963,9 +963,14 @@ let Ebom=[
     nyoki.play()
   },
   ()=>{
-    mahoucolor(3);
-    $mahou.className='mahou0';
-    chargese.play();},
+    if(Math.random()*2>1){
+      mahoucolor(3);
+      $mahou.className='mahou0';
+      chargese.play();
+    }else{
+      bossmiss2();
+    }
+  },
   ()=>{
     $mahou.className='mahou1';
     $mahou.className='mahou'},
@@ -1050,6 +1055,94 @@ const Fbom =()=>{
   }else{bom++}
 }
 const bossmiss =()=>{Sbom=setInterval(Fbom,250)};
+// はずれの演出その２
+const Ebom2=[
+  ()=>{
+    mahoucolor(2);
+    $mahou.className='mahou0';
+    chargese.play();
+    clearInterval(Sbom);bom=0;bh=0
+  },
+  ()=>{
+    $mahou.className='mahou1';
+    $mahou.className='mahou'
+  },
+  ()=>{
+    $mahoujin.style.visibility='visible';
+    $mahoujinC.className='mahoujinC0';
+    mahoujinse.play()
+  },
+  ()=>{
+    for(let ore=0;ore<4;ore++){
+      document.getElementsByName('blackout4')[ore].className='blackoutQoA'
+    }
+  },
+  ()=>{
+    $mahoujinC.className='mahoujinC'
+      lightning.play();
+      document.getElementsByName('blackout4')[0].className='blackoutQoC0';
+      document.getElementsByName('blackout4')[1].className='blackoutQoC1';
+      document.getElementsByName('blackout4')[2].className='blackoutQoC2';
+      document.getElementsByName('blackout4')[3].className='blackoutQoC3';
+  },
+  ()=>{
+    document.getElementsByName('blackout4')[0].className='blackoutQoD0'
+    document.getElementsByName('blackout4')[0].src='imgapp/qen.png'
+    document.getElementsByName('blackout4')[1].className='blackoutQoD1'
+    document.getElementsByName('blackout4')[2].className='blackoutQoD1'
+    document.getElementsByName('blackout4')[3].className='blackoutQoD1'
+  },
+  ()=>{
+    $fukidasibox.style.visibility='visible'
+    $fukidasi.textContent='ボールがなくなっちゃいましたね'
+    myhphenka(life);
+    lifedown.play();
+    life=life-1;
+  },
+  ()=>{
+    if(life===-1){
+      clearInterval(Sbom2);bh=0;bom=0;bom2=0;
+      ending();
+    }else{
+      $fukidasi.style.color='midnightblue';
+      $fukidasi.textContent='さあ次の勝負です'
+      $tyimg.src=imgset[0]
+      $boQ.className='blackoutQ'
+      $boQ.style.visibility='visible'
+      bossreset();
+    }
+  },
+  ()=>{
+      chargeli.play();
+      document.getElementsByName('blackout4')[0].className='blackoutQoB0';
+      document.getElementsByName('blackout4')[1].className='blackoutQoB1';
+      document.getElementsByName('blackout4')[2].className='blackoutQoB2';
+      document.getElementsByName('blackout4')[3].className='blackoutQoB3';
+  }
+];
+let ELbom2=[];
+const Mbom2 =(m,f)=>{ELbom2[m]=Ebom2[f]};
+Mbom2(0,0);
+Mbom2(2,1);
+Mbom2(4,1);
+Mbom2(6,1);
+Mbom2(7,2);
+Mbom2(9,3);
+Mbom2(10,8)
+Mbom2(26,4);
+Mbom2(30,5);
+Mbom2(36,6);
+Mbom2(44,7);
+let bom2=0;
+const Fbom2=()=>{
+  if(bom2>ELbom2.length){clearInterval(Sbom2);bom2=0
+  }else if(ELbom2[bom2]!==undefined){
+    ELbom2[bom2]();bom2++
+  }else{
+    bom2++
+  }
+}
+const bossmiss2=()=>{Sbom2=setInterval(Fbom2,250)}
 // あたりの演出
 let Ebh =[
   ()=>{
