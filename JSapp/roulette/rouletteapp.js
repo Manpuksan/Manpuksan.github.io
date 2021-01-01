@@ -1109,6 +1109,9 @@ const Ebom2=[
       $tyimg.src=imgset[0]
       $boQ.className='blackoutQ'
       $boQ.style.visibility='visible'
+      document.getElementsByName('blackout4')[1].src='imgapp/qenorange.png';
+      document.getElementsByName('blackout4')[2].src='imgapp/qenorange.png';
+      document.getElementsByName('blackout4')[3].src='imgapp/qenorange.png';
       bossreset();
     }
   },
@@ -1120,6 +1123,10 @@ const Ebom2=[
     document.getElementsByName('blackout4')[3].className='blackoutQoB3';
   },
   ()=>{
+    document.getElementsByName('blackout4')[1].src='imgapp/qenred.png';
+    document.getElementsByName('blackout4')[2].src='imgapp/qenred.png';
+    document.getElementsByName('blackout4')[3].src='imgapp/qenred.png';
+
     document.getElementsByName('blackout4')[1].className='blackoutQoE1';
     document.getElementsByName('blackout4')[2].className='blackoutQoE2';
     document.getElementsByName('blackout4')[3].className='blackoutQoE3';

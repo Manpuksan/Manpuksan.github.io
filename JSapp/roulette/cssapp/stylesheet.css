@@ -1254,7 +1254,7 @@ header div{
   z-index: 30;
 }
 .opening0{
-  width: 1520px;
+  width: 100%;
   height: 900px;
   background-color: blanchedalmond;
   position: relative;
@@ -1265,7 +1265,7 @@ header div{
   transition: 2s;
 }
 .openingend{
-  width: 1520px;
+  width: 100%;
   height: 900px;
   background-color: black;
   position: relative;
@@ -1275,7 +1275,7 @@ header div{
   z-index: 30;
 }
 .openingend0{
-  width: 1520px;
+  width: 100%;
   height: 900px;
   background-color: black;
   position: relative;
