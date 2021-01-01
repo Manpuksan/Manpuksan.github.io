@@ -88,6 +88,93 @@ header div{
   width: 0px;
   transition: 1s;
 }
+.blackoutQoA{
+  position: absolute;
+  top: -975px;
+  left: 80px;
+  z-index: 20;
+  width: 2000px;
+  opacity: 0;
+}
+.blackoutQoB0{
+  position: absolute;
+  top: 0px;
+  left: 1055px;
+  z-index: 20;
+  width: 50px;
+  transition: 4s;
+}
+.blackoutQoB1{
+  position: absolute;
+  top: 0px;
+  left: 1055px;
+  z-index: 20;
+  width: 50px;
+  transition: 3s;
+}
+.blackoutQoB2{
+  position: absolute;
+  top: 0px;
+  left: 1055px;
+  z-index: 20;
+  width: 50px;
+  transition: 2s;
+}
+.blackoutQoB3{
+  position: absolute;
+  top: 0px;
+  left: 1055px;
+  z-index: 20;
+  width: 50px;
+  transition: 1s;
+}
+.blackoutQoC0{
+  position: absolute;
+  top: 160px;
+  left: 790px;
+  z-index: 20;
+  width: 50px;
+  transition: 0.3s;
+}
+.blackoutQoC1{
+  position: absolute;
+  top: 160px;
+  left: 790px;
+  z-index: 20;
+  width: 50px;
+  transition: 0.2s;
+}
+.blackoutQoC2{
+  position: absolute;
+  top: 160px;
+  left: 790px;
+  z-index: 20;
+  width: 50px;
+  transition: 0.1s;
+}
+.blackoutQoC3{
+  position: absolute;
+  top: 160px;
+  left: 790px;
+  z-index: 20;
+  width: 50px;
+}
+.blackoutQoD0{
+  position: absolute;
+  top: 160px;
+  left: 790px;
+  z-index: 20;
+  width: 50px;
+}
+.blackoutQoD1{
+  position: absolute;
+  top: 160px;
+  left: 790px;
+  z-index: 20;
+  width: 50px;
+  opacity: 0;
+  transition: 1s;
+}
 .blackout{
   position: absolute;
   top: 0px;
