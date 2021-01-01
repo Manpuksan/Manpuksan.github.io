@@ -95,9 +95,9 @@ document.getElementsByName('beoguard')[1].style.visibility='hidden';
 document.getElementsByName('brbguard')[0].style.visibility='hidden';
 document.getElementsByName('brbguard')[1].style.visibility='hidden';
 // 編集用のオブジェクト隠し
-// $tyimg.src='imgapp/ikasama2.png'
-// document.getElementById('suutibox').style.visibility='hidden'
-// document.getElementsByClassName('betbox')[0].style.visibility='hidden'
+$tyimg.src='imgapp/ikasama2.png'
+document.getElementById('suutibox').style.visibility='hidden'
+document.getElementsByClassName('betbox')[0].style.visibility='hidden'
 
 // オープニングボタン
 const startgame=()=>{$opening.className='opening0';
@@ -224,7 +224,7 @@ const bossscreen =()=>{
   document.getElementsByClassName('headerB')[0].style.backgroundColor='black'
   document.getElementById('blackout').style.visibility='hidden'
 }
-// bossscreen()
+bossscreen()
 let imgset =[
   'imgapp/ikasama0.png',
   'imgapp/ikasama1.png',
@@ -1113,11 +1113,16 @@ const Ebom2=[
     }
   },
   ()=>{
-      chargeli.play();
-      document.getElementsByName('blackout4')[0].className='blackoutQoB0';
-      document.getElementsByName('blackout4')[1].className='blackoutQoB1';
-      document.getElementsByName('blackout4')[2].className='blackoutQoB2';
-      document.getElementsByName('blackout4')[3].className='blackoutQoB3';
+    chargeli.play();
+    document.getElementsByName('blackout4')[0].className='blackoutQoB0';
+    document.getElementsByName('blackout4')[1].className='blackoutQoB1';
+    document.getElementsByName('blackout4')[2].className='blackoutQoB2';
+    document.getElementsByName('blackout4')[3].className='blackoutQoB3';
+  },
+  ()=>{
+    document.getElementsByName('blackout4')[1].className='blackoutQoE1';
+    document.getElementsByName('blackout4')[2].className='blackoutQoE2';
+    document.getElementsByName('blackout4')[3].className='blackoutQoE3';
   }
 ];
 let ELbom2=[];
@@ -1130,6 +1135,7 @@ Mbom2(7,2);
 Mbom2(9,3);
 Mbom2(10,8)
 Mbom2(26,4);
+Mbom2(27,9)
 Mbom2(30,5);
 Mbom2(36,6);
 Mbom2(44,7);
