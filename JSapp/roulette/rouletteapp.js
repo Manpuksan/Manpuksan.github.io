@@ -844,7 +844,7 @@ let Ebo =[
   ()=>{$fukidasibox.style.visibility='visible';},
   ()=>{hpcharge()},
   ()=>{console.log('3');},
-  ()=>{myhptrans();booff();}
+  ()=>{myhptrans();booff();$blackout.className='blackout';}
 ];
 let ELblackout =[];
 const Mbo =(m,f)=>{ELblackout[m]=f};
@@ -879,6 +879,7 @@ const bossreset =()=>{
   $boQ.className='blackoutQ';
   $boQ.style.visibility='visible'
   $mahoujinC.className='mahoujinC';
+  $blackout.className='blackout';
   $blackout.style.visibility='hidden'
   for(let bc=0;bc<$bbet.length;bc++){
     bossAtari[bc].kakekin=0;
@@ -960,7 +961,8 @@ let Ebom=[
     $fukidasibox.style.visibility='hidden';
     $sound.style.visibility='hidden';
     $tyimg.src=imgset[1];
-    nyoki.play()
+    nyoki.play();
+    $mahou.className='mahou';
   },
   ()=>{
     if(Math.random()*2>1){
