@@ -53,17 +53,38 @@ header{
   text-decoration: none;
 }
 main{
-  margin-top: 80px;
+  margin: 8px 8px 8px 8px;
 }
 body {
   width: auto;
   height: auto;
+  margin: 0px;
   background-image: url(../img/nekohaikeigr.png);
 }
-h3{
-  padding-top: 20px;
-  margin:0px 10px;
-  background-color: ivory;
+.returntoppage{
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 10px;
+  background-color:rgba(255, 0, 0, 0.8);
+  width: 80px;
+  height: 80px;
+  z-index: 100;
+}
+.returntoppage a{
+  line-height: 80px;
+  font-size: 20px;
+  color: aliceblue;
+  font-weight: bold;
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+.overview{
+  margin:80px 0px 0px;
+  padding-left: 20px;
+  background-color: rgba(107, 253, 112, 1);
+  color: midnightblue;
 }
 .container{
   width: 360px;
@@ -114,8 +135,47 @@ h3{
 .kiroku .hiduke{
   background-color:pink;
   position: absolute;
-  width: 120px;
+  width: 100px;
   text-align: center;
   top: -5px;
   left: -5px;
+}
+.kiroku h2{
+  background-color: rgba(145, 144, 144, 0.5);
+  color: midnightblue;
+}
+.kiroku p{
+  margin-top: 5px;
+  background-color: rgb(255, 255, 255, 0.6);
+  color: midnightblue;}
+.items{
+  float: left;
+  width: 720px;
+  position: relative;
+  margin:30px 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(15, 15, 15, 0.2);}
+.items h2{
+  width: 580px;
+  float: right;
+  margin:6px 8px;
+  color: midnightblue;
+}
+.itemsheader{
+  width: 720px;
+  height: 120px;
+  background-color: rgba(145, 144, 144, 0.5);
+}
+.itemsimg{
+  margin: 0px;
+  width: 120px;
+  height: 120px;
+  float: left;
+  background-color: white;
+}
+.items p{
+  margin-top: 5px;
+  background-color: rgb(255, 255, 255, 0.6);
+  color: midnightblue;
 }
