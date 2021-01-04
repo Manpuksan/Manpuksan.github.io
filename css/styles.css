@@ -1,20 +1,78 @@
 header{
-  background-color: rgba(107, 253, 112, 0.7);
+  background-color: rgba(107, 253, 112, 1);
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
 }
-
+.returntop{
+  float: left;
+  margin-left: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background-color: beige;
+}
+.returntop img{
+  display: block;
+}
+.returntop a{
+  font-size: 1px;
+  line-height: 60px;
+  display: block;
+  padding: 0px;
+  border-radius: 50%;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+}
+.pagetitle{
+  float: left;
+  font-size: 30px;
+  margin: 15px 0px;
+  width: 350px;
+  text-align: center;
+  background-color: beige;
+  color: darkslategrey;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.headerlist{
+  margin-top: 39px;
+}
+.headerlist li{
+  list-style: none;
+  float: right;
+  margin-right: 10px;
+  background-color: beige;
+  border-radius: 10px;
+}
+.headerlist li a{
+  text-decoration: none;
+}
+main{
+  margin-top: 80px;
+}
 body {
   width: auto;
   height: auto;
   background-image: url(../img/nekohaikeigr.png);
 }
+h3{
+  padding-top: 20px;
+  margin:0px 10px;
+  background-color: ivory;
+}
 .container{
-  width: 350px;
+  width: 360px;
   height: 370px;
   float: left;
   position: relative;
   background-color: rgba(15, 15, 15, 0.2);
   border-radius: 10px;
-  margin-left: 10px;
+  margin:10px 0px 0px 10px;
 }
 
 .cotainer-text{
@@ -41,4 +99,23 @@ body {
 .container img{
   position: absolute;
   bottom: 0%;
+}
+.kiroku{
+  width: 720px;
+  position: relative;
+  margin:30px 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(15, 15, 15, 0.2);
+}
+.kiroku img{
+  width: 720px;
+}
+.kiroku .hiduke{
+  background-color:pink;
+  position: absolute;
+  width: 120px;
+  text-align: center;
+  top: -5px;
+  left: -5px;
 }

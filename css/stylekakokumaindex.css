@@ -20,11 +20,8 @@ body {
 
 .cotainer-text{
   height: auto;
-  width: 350px;
-  /* background-color: rgba(243, 255, 14, 0.598) ; */
-  /* border: yellowgreen; */
+  width: 500px;
   border-radius: 10px;
-  text-align: center;
   background-color: rgba(15, 15, 15, 0.2);
   border-color: black;
   padding-top: 0%;
