@@ -14,7 +14,7 @@ header{
   width: 80px;
   height: 80px;
   border-radius: 20px;
-  background-color: rgb(251,238,201);
+  background-color: rgba(78,59,48, 0.5);
 }
 .returntop img{
   display: block;
@@ -41,7 +41,7 @@ header{
   border-bottom-right-radius: 20px;
 }
 .headerlist{
-  margin-top: 39px;
+  margin-top: 30px;
 }
 .headerlist li{
   height: 40px;
@@ -52,6 +52,7 @@ header{
   margin-right: 10px;
   background-color: rgb(251,238,201);
   border-radius: 10px;
+  border: rgba(78,59,48, 0.5) 5px solid;
 }
 .headerlist li a{
   display: block;
@@ -139,12 +140,16 @@ body {
   width: 720px;
 }
 .kiroku .hiduke{
-  background-color:rgb(250,142,26);
+  background-color:rgba(78,59,48, 1);
+  color: beige;
   position: absolute;
   width: 100px;
   text-align: center;
-  top: -12px;
+  top: -15px;
   left: 0px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
 }
 .kiroku h2{
   background-color: rgb(240,162,46);
@@ -178,6 +183,8 @@ body {
   width: 720px;
   height: 120px;
   background-color: rgb(240,162,46);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .itemsimg{
   margin: 0px;
@@ -185,12 +192,14 @@ body {
   max-height: 120px;
   float: left;
   background-color: white;
+  border-top-left-radius: 10px;
 }
 .itemsimg img{
   max-width: 120px;
   max-height: 120px;
   height: auto;
   width: auto;
+  border-top-left-radius: 10px;
 }
 .items p{
   margin-top: 5px;
