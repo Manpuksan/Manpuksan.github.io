@@ -1,5 +1,10 @@
+.f-left{
+  float: left;
+}
+.clear{
+  clear: both;
+}
 header{
-  /* background-color: rgba(107, 253, 112, 1); */
   background-color: rgb(250,142,26);
   height: 80px;
   width: 100%;
