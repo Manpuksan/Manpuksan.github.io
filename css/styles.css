@@ -58,7 +58,7 @@ header{
   font-weight: bold;
   list-style: none;
   display: block;
-  float: right;
+  float: left;
   margin-right: 10px;
   background-color: rgb(251,238,201);
   border-radius: 10px;
