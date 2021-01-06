@@ -1355,3 +1355,22 @@ header div{
 .tyuui{
   font-size: 20px;
 }
+#returngame{
+  width: 160px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: tomato;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+#returngame a{
+  font-size: 36px;
+  display: block;
+  color: white;
+}
+.return{
+  position: relative;
+  float: right;
+  height: 160px;
+}

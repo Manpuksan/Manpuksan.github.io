@@ -94,6 +94,7 @@ document.getElementsByName('beoguard')[0].style.visibility='hidden';
 document.getElementsByName('beoguard')[1].style.visibility='hidden';
 document.getElementsByName('brbguard')[0].style.visibility='hidden';
 document.getElementsByName('brbguard')[1].style.visibility='hidden';
+document.getElementById('returngame').style.visibility='hidden'
 // 編集用のオブジェクト隠し
 // $tyimg.src='imgapp/ikasama2.png'
 // document.getElementById('suutibox').style.visibility='hidden'
@@ -1268,7 +1269,9 @@ const Fbh=()=>{if(bh>ELbh.length){clearInterval(Sbh);bh=0;bom=0}
   else{bh++}}
 const bosshit =()=>{Sbh=setInterval(Fbh,250)}
 // エンディング
-const endtext = ()=>{if(lifeT===0 && stressp<9){
+const endtext = ()=>{
+  document.getElementById('returngame').style.visibility='visible';
+  if(lifeT===0 && stressp<9){
   document.getElementById('ending').src='imgapp/ending0.png';
   end0.play()
 }else if(life===-1 && stressp<9){
@@ -1288,7 +1291,7 @@ const ending =()=>{
   $opening.className='openingend0'
   endingse.play()
   endingse.addEventListener('ended',endtext);
-  for(let on=0;on<4;on++){
+  for(let on=0;on<5;on++){
     document.getElementsByClassName('openingp')[on].style.visibility='hidden'
   }
 }
