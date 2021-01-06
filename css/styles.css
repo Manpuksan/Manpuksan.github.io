@@ -19,7 +19,6 @@ header{
   width: 80px;
   height: 80px;
   border-radius: 20px;
-  background-color: rgba(78,59,48, 0.5);
 }
 .returntop img{
   display: block;
@@ -37,16 +36,22 @@ header{
 .pagetitle{
   float: left;
   font-size: 30px;
-  margin: 15px 0px;
+  margin: 15px 5px 10px;
+  height: 40px;
   width: 350px;
   text-align: center;
   background-color:rgb(251,238,201);
+  border: rgba(78,59,48, 0.5) 5px solid;
   color: darkslategrey;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 5px black;
+}
+.pagetitle a{
+  text-decoration: none;
+  display: block;
 }
 .headerlist{
-  margin-top: 30px;
+  margin-top: 15px;
 }
 .headerlist li{
   height: 40px;
@@ -58,6 +63,7 @@ header{
   background-color: rgb(251,238,201);
   border-radius: 10px;
   border: rgba(78,59,48, 0.5) 5px solid;
+  box-shadow: 0px 5px black;
 }
 .headerlist li a{
   display: block;
@@ -109,7 +115,7 @@ body {
 }
 
 .cotainer-text{
-  height: 140px;
+  height: auto;
   width: 350px;
   background-color: rgba(243, 255, 14, 0.598) ;
   border: yellowgreen;
