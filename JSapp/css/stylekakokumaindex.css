@@ -1,0 +1,48 @@
+header{
+  background-color: rgba(107, 253, 112, 0.7);
+}
+
+body {
+  width: auto;
+  height: auto;
+  background-image: url(../img/nekohaikeigr.png);
+}
+.container{
+  width: 350px;
+  height: auto;
+  float: left;
+  position: relative;
+  background-color: rgba(15, 15, 15, 0.2);
+  border-color: black;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.cotainer-text{
+  height: auto;
+  width: 500px;
+  border-radius: 10px;
+  background-color: rgba(15, 15, 15, 0.2);
+  border-color: black;
+  padding-top: 0%;
+  /* position: absolute;
+  top: 0%; */
+}
+.container h2{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.container p{
+  margin: 5px;
+}
+
+.returntop{
+  clear: both;
+}
+
+/* .container img{ */
+  /* position: absolute;
+  bottom: 0%; */
+/* } */
