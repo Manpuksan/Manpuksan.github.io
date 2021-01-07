@@ -227,12 +227,13 @@ body {
   border-bottom-right-radius: 10px;
 }
 .error,.making{
+  float: left;
   display: flex;
   flex-direction: column;
   width: 740px;
   background: rgba(78,59,48, 0.5);
   border-radius: 10px;
-  margin: 0%;
+  margin: 0 0 0 5px;
 }
 .error h2,.making h2{
   padding: 0 20px;
