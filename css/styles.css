@@ -38,7 +38,7 @@ header{
   font-size: 30px;
   margin: 15px 5px 10px;
   height: 40px;
-  width: 350px;
+  width: 320px;
   text-align: center;
   background-color:rgb(251,238,201);
   border: rgba(78,59,48, 0.5) 5px solid;
@@ -70,8 +70,13 @@ header{
   text-decoration: none;
   line-height: 40px;
 }
+.headerlist li a:hover{
+  margin: 0;
+  background: rgba(255,91,71,0.5);
+  border-radius: 5px;
+}
 main{
-  margin: 8px 8px 8px 8px;
+  margin: 8px 5px;
 }
 body {
   width: auto;
@@ -105,13 +110,13 @@ body {
   color: midnightblue;
 }
 .container{
-  width: 360px;
+  width: 350px;
   height: 370px;
   float: left;
   position: relative;
   background-color: rgba(15, 15, 15, 0.2);
   border-radius: 10px;
-  margin:10px 0px 0px 10px;
+  margin:10px 0px 0px 5px;
 }
 
 .cotainer-text{
@@ -220,4 +225,45 @@ body {
   padding: 5px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+.error,.making{
+  display: flex;
+  flex-direction: column;
+  width: 740px;
+  background: rgba(78,59,48, 0.5);
+  border-radius: 10px;
+  margin: 0%;
+}
+.error h2,.making h2{
+  padding: 0 20px;
+  align-self: center;
+  margin: 10px 0 0;
+  width: 720px;
+  background-color: rgb(240,162,46);
+  color: midnightblue;
+  box-sizing: border-box;
+  border: rgb(78,59,48) 3px solid;
+  border-bottom: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+table{
+  align-self: center;
+  width: 720px;
+  margin-bottom: 10px;
+  border: rgb(78,59,48) 3px solid;
+  border-collapse: collapse;
+  background-color: rgb(251,238,201);
+  color: midnightblue;
+}
+td,tr,th{
+  border: 2px solid black;
+  padding: 3px 5px;
+}
+td:first-child,th:first-child{
+  text-align: center;
+  width: 80px;
+}
+.error:last-child{
+  margin-bottom: 100px;
 }
