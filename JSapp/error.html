@@ -24,6 +24,133 @@
   </header>
   <h2 class="overview">ゲームを作成中に出てきたエラー集です</h2>
   <main>
+    <!-- この下にコピペ -->
+    <div class="error">
+      <h2>indexOfその１　とりあえずエラーで止まってしまう</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>言語</td>
+            <td>javascript</td>
+          </tr>
+          <tr>
+            <td>コード</td>
+            <td>
+              const オブジェクトA = [<br>
+              　{あたり:a　　　,その他:0},<br>
+              　{あたり:[a,b,c],その他:0},<br>
+              　…];<br><br>
+              <span style="background-color: yellow;">オブジェクトA[0].あたり</span>
+              .indexOf(b);<br>
+            </td>
+          </tr>
+          <tr>
+            <td>目的</td>
+            <td>
+              -1が返ってきたらはずれ、それ以外ならあたり<br>
+              として正誤判定をする
+            </td>
+          </tr>
+          <tr>
+            <td>症状</td>
+            <td>
+              Consoleに<br>
+              Uncaught TypeError: a[0].indexOf is not a function<br>
+              と出て止まる
+            </td>
+          </tr>
+          <tr>
+            <td>考察</td>
+            <td>
+              indexOfは前の<span style="color: red;">「配列や文字列」</span>に引数（かっこの中の数値）が<br>
+              含まれていたら、何番目にあるのか<br>
+              含まれていなければ-1を返すというメソッドです<br>
+              オブジェクトA[0].あたり　はaという<span style="color: red;">「数値」</span>なので<br>
+              そんな関数はない、と突っぱねてきてるんですね<br>
+              健気にもa[0].indexOfという関数がないか探し回ったんでしょう
+            </td>
+          </tr>
+          <tr>
+            <td>対策</td>
+            <td>
+              <span style="background-color: yellow;">[オブジェクトA[0].あたり]</span>
+              .indexOf(b);<br>
+              と[　]をつけて要素が一つだけの配列にする<br>
+              これでエラーなくなります…が<br>
+              このことが更なる不具合を生むことになりました　その２へ続く…
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="error">
+      <h2>indexOfその２　配列に含まれているのに-1が返ってくる</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>言語</td>
+            <td>javascript</td>
+          </tr>
+          <tr>
+            <td>コード</td>
+            <td>
+              const オブジェクトA = [<br>
+              　{あたり:<span style="background-color: yellow;">a</span>　　　,その他:0},<br>
+              　{あたり:[a,b,c],その他:0},<br>
+              　{あたり:[a,c]　,その他:0}<br>
+              ];<br><br>
+              [オブジェクトA[0].あたり].indexOf(b);・・・１<br>
+              [オブジェクトA[1].あたり].indexOf(b);・・・２<br>
+              [オブジェクトA[2].あたり].indexOf(b);・・・３<br>
+              （実際にはforをつかって繰り返しました）
+              
+            </td>
+          </tr>
+          <tr>
+            <td>目的</td>
+            <td>
+              １～３番でそれぞれ正誤判定をする
+            </td>
+          </tr>
+          <tr>
+            <td>症状</td>
+            <td>
+              １番だけしかあたりにならなかった（２番もあたりのはずなのに）
+            </td>
+          </tr>
+          <tr>
+            <td>考察</td>
+            <td>
+              .indexOfの前にある配列の中身をそれぞれ書き出すと<br>
+              １　b　　　　つまり<span style="color: red;">「数値」</span>b<br>
+              ２　[a,b,c]　つまりaとbとcと要素に持つ<span style="color: red;">「配列」</span><br>
+              ３　[a,c]　　つまりaとcを要素に持つ<span style="color: red;">「配列」</span><br>
+              ということになるので２番と３番の配列には<span style="color: red;">「数値」</span>が含まれていないんですね<br><br>
+              私「あたりは引き出しの中だよ　なかにあたりが入ってたら教えてね」<br>
+              PC「引き出しを開けたところ、あたりの入った箱はありましたが、<br>
+              　　あたりそのものは入ってなかったのではずれです」<br>
+              私「・・・・・・・・・」
+            </td>
+          </tr>
+          <tr>
+            <td>対策</td>
+            <td>
+              オブジェクトAのひとつ目のプロパティを<br>
+              {あたり:<span style="background-color:yellow ;">[a]</span>,その他:0}<br>
+              にする　これであたりは全部配列なので後半の文も<br>
+              オブジェクトA[1].あたり.indexOf(b);<br>
+              というように[　]をはずす<br>
+              indexOfの前は配列じゃないとって思いのからのミスです<br>
+              現実と一緒ですね<br>
+              あぁ…この人こういうタイプかー<br>
+              とわかってしまえばどうということはなさそうです　指示は正確に
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
     <div class="error">
       <h2>for文にて　PCから異音出た</h2>
       <table>
@@ -37,7 +164,7 @@
             <td>
               for(let n=0;<span style="background-color: yellow;">n=2</span>;n++){<br>
               　console.log(n);<br>
-              }
+              };
             </td>
           </tr>
           <tr>
