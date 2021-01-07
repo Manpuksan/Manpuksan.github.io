@@ -205,10 +205,17 @@ body {
 .itemsimg{
   margin: 0px;
   max-width: 120px;
+  min-width: 120px;
   max-height: 120px;
+  min-height: 120px;
   float: left;
   background-color: white;
   border-top-left-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.space{
+  flex: 1;
 }
 .itemsimg img{
   max-width: 120px;
@@ -216,10 +223,11 @@ body {
   height: auto;
   width: auto;
   border-top-left-radius: 10px;
+
 }
 .items p{
   margin-top: 5px;
-  background-color: rgba(251,238,201, 0.8);
+  background-color: rgb(251,238,201);
   color: midnightblue;
   margin: 5px 0px;
   padding: 5px;
