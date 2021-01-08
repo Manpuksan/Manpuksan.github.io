@@ -26,6 +26,97 @@
   <main>
     <!-- この下にコピペ -->
     <div class="error">
+      <h2>CSSでクラスを指定できない</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>言語</td>
+            <td>HTML＆CSS</td>
+          </tr>
+          <tr>
+            <td>コード</td>
+            <td>
+              &lt;p class="bet r"&gt;9&lt;/p&gt;<br>
+              &lt;p class="bet<span style="background-color: yellow;"> </span>r"&gt;9&lt;/p&gt;
+            </td>
+          </tr>
+          <tr>
+            <td>目的</td>
+            <td>CSSでbetというクラスを指定する</td>
+          </tr>
+          <tr>
+            <td>症状</td>
+            <td>
+              上のbetは指定できるのに<br>
+              下のbetは指定できない
+            </td>
+          </tr>
+          <tr>
+            <td>考察</td>
+            <td>
+              おわかりいただけるだろうか…<br><br>
+              ルーレットを作成時に賭ける場所の数（152か所）だけ betクラスの要素を作成する必要があり<br>
+              すこーしずつ違う要素があまりに多く、手入力はやってられないと思い、<br>
+              Excel のフィル機能で作成してペーストしたのですが、<br>
+              この見た目には全く同じ２つの要素ですが、クラス名が違うんです<br>
+              なので bet と指定しても下の要素には適用されないんですね<br><br>
+              betクラスを作って…あとで成形しやすいように div をつくって…CSSでルーレットの見た目に整えて…<br>
+              と、いうところでbetクラスがなぜか指定できないという…<br>
+              <br>
+              これはどこが違うかというと、bet と r の間のスペースが違うものと認識されているんです<br>
+              いやわかるわけないでしょ…<br><br>
+              エディタはVisualStudioCodeを使っているのですが、サポート機能の1つに<br>
+              選択範囲と同じ文字列の背景色が変わる<br>
+              という機能がありまして、この機能のおかげで気づきました…<br>
+              専用のエディタはいいですね<br>
+              ちなみに一旦HPに表示されたものをコピペしたものは偽スペースではなくなってるんですよね<br>
+              不思議です　文字コードが関係あるのでしょうか…
+            </td>
+          </tr>
+          <tr>
+            <td>対策</td>
+            <td>
+              偽スペースは偽スペースで同じものとみなされるようなのでctel+Hで真スペースに置換すれば一発でした
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="error">
+      <h2></h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>言語</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>コード</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>目的</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>症状</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>考察</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>対策</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class='clear'></div>
+
+    <div class="error">
       <h2>indexOfその１　とりあえずエラーで止まってしまう</h2>
       <table>
         <tbody>
