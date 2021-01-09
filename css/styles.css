@@ -6,7 +6,6 @@
 }
 header{
   background-color: rgb(250,142,26);
-  height: 80px;
   width: 100%;
   position: fixed;
   top: 0px;
@@ -15,16 +14,16 @@ header{
 }
 .returntop{
   float: left;
-  margin-left: 10px;
-  width: 80px;
-  height: 80px;
+  margin:10px 0px 5px 10px;
+  width: 50px;
+  height: 50px;
   border-radius: 20px;
 }
 .returntop img{
+  width: 50px;
   display: block;
 }
 .returntop a{
-  font-size: 1px;
   line-height: 60px;
   display: block;
   padding: 0px;
@@ -35,10 +34,11 @@ header{
 }
 .pagetitle{
   float: left;
-  font-size: 30px;
-  margin: 15px 5px 10px;
+  font-size: 24px;
+  line-height: 40px;
+  margin: 5px 5px 5px;
   height: 40px;
-  width: 320px;
+  width: 280px;
   text-align: center;
   background-color:rgb(251,238,201);
   border: rgba(78,59,48, 0.5) 5px solid;
@@ -51,32 +51,41 @@ header{
   display: block;
 }
 .headerlist{
-  margin-top: 15px;
+  clear: both;
+  padding: 0;
+  margin-left:65px;
 }
 .headerlist li{
   height: 40px;
+  width: 145px;
+  text-align: center;
+  font-size: 16px;
   font-weight: bold;
   list-style: none;
-  display: block;
   float: left;
-  margin-right: 10px;
+  margin:0 5px 10px 0;
   background-color: rgb(251,238,201);
   border-radius: 10px;
   border: rgba(78,59,48, 0.5) 5px solid;
+  box-sizing: border-box;
   box-shadow: 0px 5px black;
 }
 .headerlist li a{
   display: block;
   text-decoration: none;
-  line-height: 40px;
+  line-height: 30px;
 }
 .headerlist li a:hover{
   margin: 0;
   background: rgba(255,91,71,0.5);
   border-radius: 5px;
 }
+
 main{
   margin: 8px 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: flex-start;
 }
 body {
   width: auto;
@@ -104,14 +113,19 @@ body {
   height: 80px;
 }
 .overview{
-  margin:80px 0px 0px;
-  padding-left: 20px;
+  margin:115px 0px 0px;
+  width: 100%;
   background-color: rgb(251,238,201);
-  color: midnightblue;
 }
+.overview h2{
+  color: midnightblue;
+  font-size: 16px;
+  padding: 0 20px;
+}
+
 .container{
   width: 350px;
-  height: 370px;
+  height: 450px;
   float: left;
   position: relative;
   background-color: rgba(15, 15, 15, 0.2);
@@ -145,15 +159,16 @@ body {
   bottom: 0%;
 }
 .kiroku{
-  width: 720px;
+  width: 100%;
+  max-width: 720px;
   position: relative;
-  margin:30px 10px;
+  margin:20px 0 0px 5px;
   padding: 10px;
   border-radius: 10px;
   background-color: rgba(78,59,48, 0.5);
 }
 .kiroku img{
-  width: 720px;
+  width: 100%;
 }
 .kiroku .hiduke{
   background-color:rgba(78,59,48, 1);
@@ -173,6 +188,7 @@ body {
   border-top-right-radius: 10px;
   color: midnightblue;
   margin: 0px;
+  font-size: 16px;
 }
 .kiroku p{
   margin: 3px 0px;
@@ -180,24 +196,27 @@ body {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: rgba(251,238,201, 0.8);
-  color: midnightblue;}
-.items{
-  float: left;
-  width: 720px;
-  position: relative;
-  margin:30px 5px;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: rgba(78,59,48, 0.5);}
-.items h2{
-  width: 580px;
-  float: right;
-  margin:6px 8px;
   color: midnightblue;
+  font-size: 14px;
+}
+.items{
+  max-width: 720px;
+  position: relative;
+  margin:10px 0 0 5px;
+  padding: 5px;
+  background-color: rgba(78,59,48, 0.5);
+  border-radius: 10px;
+}
+.items h2{
+  width: 100%;
+  padding: 5px;
+  color: midnightblue;
+  font-size: 14px;
 }
 .itemsheader{
-  width: 720px;
+  /* width: 100%; */
   height: 120px;
+  padding: 5px;
   background-color: rgb(240,162,46);
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -226,10 +245,11 @@ body {
 
 }
 .items p{
+  font-size: 14px;
   margin-top: 5px;
   background-color: rgb(251,238,201);
   color: midnightblue;
-  margin: 5px 0px;
+  margin:  0px;
   padding: 5px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -238,16 +258,20 @@ body {
   float: left;
   display: flex;
   flex-direction: column;
-  width: 740px;
+  width: 100%;
+  max-width: 720px;
+  min-width: 360px;
   background: rgba(78,59,48, 0.5);
   border-radius: 10px;
   margin: 0 0 10px 5px;
+  padding: 5px;
 }
 .error h2,.making h2{
-  padding: 0 20px;
+  font-size: 16px;
   align-self: center;
-  margin: 10px 0 0;
-  width: 720px;
+  margin: 0;
+  width: 100%;
+  min-width: 360px;
   background-color: rgb(240,162,46);
   color: midnightblue;
   box-sizing: border-box;
@@ -258,12 +282,14 @@ body {
 }
 table{
   align-self: center;
-  width: 720px;
-  margin-bottom: 10px;
+  width: 100%;
+  /* max-width: 740px; */
+  min-width: 360px;
   border: rgb(78,59,48) 3px solid;
   border-collapse: collapse;
   background-color: rgb(251,238,201);
   color: midnightblue;
+  font-size: 14px;
 }
 td,tr,th{
   border: 2px solid black;
@@ -271,8 +297,27 @@ td,tr,th{
 }
 td:first-child,th:first-child{
   text-align: center;
-  width: 80px;
+  width: 60px;
 }
 .error:last-child{
   margin-bottom: 100px;
+}
+@media (min-width: 600px) {
+  .error h2,.making h2,.items h2,.kiroku h2,.overview h2{
+    font-size: large;
+  }
+  .honbun,table{
+    font-size: unset;
+  }
+}
+@media (min-width:800px) {
+  header{
+    display: flex;
+  }
+  .headerlist{
+    margin-left: 10px;
+  }
+  .overview{
+    margin-top: 82px;
+  }
 }
