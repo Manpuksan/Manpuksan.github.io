@@ -1,0 +1,462 @@
+body{
+  background-color: green;
+}
+.clear{
+  clear: both;
+}
+.f-left{
+  float: left;
+}
+.returntop{
+  float: right;
+}
+.returntop img{
+  float: left;
+}
+.returntop a{
+  font-size: 25px;
+  line-height: 60px;
+  display: block;
+  width: 240px;
+  height: 60px;
+  background-color: wheat;
+  padding: 0px;
+  border-radius: 30px;
+  text-align: center;
+}
+header{
+  height: 240px;
+}
+header div{
+  float: left;
+}
+.buttonbox{
+  position: relative;
+  width: 200px;
+  height: 240px;
+}
+.buttonbox button{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  cursor: pointer;
+}
+.buttonbox .spin{
+  font-size: 50px;
+  color: azure;
+  background-color: tomato;
+}
+.buttonbox .result{
+  font-size: 30px;
+  color: azure;
+  background-color: tomato;
+}
+.buttonbox .newgame{
+  font-size: 30px;
+  color: azure;
+  background-color: tomato;
+}
+.buttonbox .reset{
+  width: 60px;
+  height: 60px;
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  top: 175px;
+  color: midnightblue;
+  background-color: yellow;
+  margin: 0px 10px;
+  padding: 0px;
+  border-radius: 10px;
+  border: cornsilk 3px solid;
+}
+.statesbox{
+  width: 440px;
+  height: 240px;
+}
+.statesbox img{
+  width: 48px;
+  height: 48px;
+  background-color: chocolate;
+}
+.statesbox div{
+  float: left;
+  width: 200px;
+  height: 115px;
+  margin: 2px;
+  border: chocolate;
+  border-style: solid;
+  border-width: 4px;
+  background-color: honeydew;
+  border-radius: 5px;
+}
+.textbox{
+  height: 48px;
+  margin: 0px;
+  color: aliceblue;
+  background-color: chocolate;
+  text-align: center;
+  font-size: 36px;
+}
+.syojikinbox{
+  position: relative;
+}
+.syojikinbox .textbox{
+  position: absolute;
+  top: 0px;
+  left: 48px;
+  width: 156px;
+  text-align: left;
+}
+.sts{
+  height: 60px;
+  margin: 0px;
+  line-height: 60px;
+  text-align: center;
+  text-indent: 20px;
+  color: midnightblue;
+  font-size: 48px;
+  margin: auto;
+}
+.mai{
+  position: absolute;
+  top: 55px;
+  right: 0px;
+  width: 48px;  
+  font-size: 40px;
+  margin: 0px;
+  color: midnightblue;
+}
+.kekkabox{
+  width: 560px;
+  height: 240px;
+  background-color: beige;
+  position: relative;
+  border: 5px solid skyblue;
+  border-radius: 3px;
+  z-index: 0;
+}
+.fukidasibox{
+  position: relative;
+  z-index: 8;
+}
+.kekkabox .imgR{
+  position: absolute;
+  left: 50px;
+  bottom: 0px;
+  z-index: 5;
+}
+.kekkabox .imgF{
+  height: 100px;
+  width: 500px;
+  position: absolute;
+  top: 5px;
+  z-index: 6;
+}
+.fukidasi{
+  width: 500px;
+  height: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: midnightblue;
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 30px;
+  z-index: 10;
+}
+.kekkabox .sound{
+  width: 200px; 
+  position: absolute;
+  top: 20px;
+  z-index: 8;
+}
+.iro{
+  margin: 0%;
+  background-color: beige;
+  color: beige;
+  font-size: 0px;
+}
+.suuji{
+  margin: 0%;
+  background-color: beige;
+  color: beige;
+  font-size: 0px;
+  
+}
+.bar{
+  height: 16px;
+  width: 1300px;
+  background-color: white;
+  margin: 0px;
+  position: absolute;
+  top: -10px;
+}
+.betbox{
+  position: relative;
+  height: 400px;
+}
+.betbox div{
+  float: left;
+}
+.dealer{
+  height: 286px;
+  border: white;
+  border-width: 16px;
+  border-style: solid;
+  margin: 0px;
+}
+.dealer .bet{
+  font-size: 55px;
+  width: 80px;
+  height: 120px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 50%;
+  background-color: green;
+  text-align: center;
+  margin: 10px;
+  cursor: pointer;
+  line-height: 120px;
+}
+.betnumber div{
+  clear: both;
+}
+.betnumber{
+  position: absolute;
+  top: 10px;
+  left: 125px;
+  pointer-events: none;
+}
+.betnumber .bet{
+  color: white;
+  border-radius: 50%;
+  font-size: 55px;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+  text-align: center;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.r{
+  background-color: red;
+}
+.b{
+  background-color: black;
+}
+.straight3 .bet{
+  float: left;
+}
+.straight2 .bet{
+  float: left;
+}
+.straight1 .bet{
+  float: left;
+}
+.betlinev{
+  position: absolute;
+  left: 175px;
+  top: 10px;
+  pointer-events: none;
+}
+.betlinev div{
+  clear: both;
+}
+.betlinev .bet{
+  background-color: white;
+  width: 16px;
+  height: 100px;
+  margin: 0px 42px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.splitv3 .bet{
+  float: left;
+}
+.splitv2 .bet{
+  float: left;
+}
+.splitv1 .bet{
+  float: left;
+}
+.betlineh{
+  position: absolute;
+  top: 60px;
+  left: 125px;
+  pointer-events: none;
+}
+.betlineh .bet{
+  background-color: white;
+  width: 100px;
+  height: 16px;
+  margin: 42px 0px;
+  float: left;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.betlinec .bet{
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 35px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.betlinec{
+  position: absolute;
+  left: 175px;
+  top: 60px;
+  pointer-events: none;
+}
+.co2{
+  float: left;
+}
+.co1{
+  float: left;
+}
+.li{
+  float: left;
+}
+.column{
+  height: 286px;
+  border: white;
+  border-width: 16px;
+  border-style: solid;
+  margin: 0px;
+  position: absolute;
+  left: 1180px;
+  position: relative;
+  width: 80px;
+}
+.column .bet{
+  width: 80px;
+  height: 86px;
+  cursor: pointer;
+  margin: 0px;
+}
+.column .cl3{
+  position: absolute;
+  top: 0px;
+}
+.column .cl2{
+  position: absolute;
+  top: 100px;
+}
+.column .cl1{
+  position: absolute;
+  top: 200px;
+}
+.barc1{
+  width: 80px;
+  height: 16px;
+  background-color: white;
+  margin: 0px;
+  position: absolute;
+  top: 86px;
+}
+.barc2{
+  width: 80px;
+  height: 16px;
+  background-color: white;
+  margin: 0px;
+  position: absolute;
+  top: 186px;
+}
+.betoutlineu{
+  position: absolute;
+  top: 318px;
+  left: 120px;
+  width: 1250px;
+  pointer-events: none;
+}
+.betoutlineu p{
+  font-size: 36px;
+  margin: 0px;
+  line-height: 90px;
+}
+.betoutlineu div{
+  clear: both;
+}
+.betoutlineu .bet{
+  pointer-events: auto;
+  cursor: pointer;
+}
+.betoutlineu p{
+  color: aliceblue;
+  text-align: center;
+}
+.dozen{
+  width: 1220px;
+
+}
+.dozen p{
+  float: left;
+  width: 380px;
+  height: 80px;
+  border-width: 0px 0px 16px 16px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 0px;
+}
+.dozen .do2{
+  width: 384px;
+}
+.dozen .do3{
+  width: 386px;
+  border-right: 16px solid white;
+}
+.outlin{
+  width: 1220px;
+  height: 80px;
+  float: left;
+  position: absolute;
+  top: 412px;
+  left: 120px;
+}
+.outlin div{
+  float: left;
+}
+.outlin p{
+  float: left;
+  font-size: 36px;
+  text-align: center;
+  margin: 0px;
+  line-height: 90px;
+  color: white;
+  height: 80px;
+  border-width: 0px 0px 16px 16px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+.hilow p{
+  width: 184px;
+}
+.hilow .hl2{
+  width: 180px;
+}
+.evenodd p{
+  width: 184px;
+}
+.redblack p{
+  width: 184px;
+}
+.redblack .black{
+  width: 186px;
+  border-right: white 16px solid;
+}
+.bet{
+  position: relative;
+}
+.bet img{
+  position: absolute;
+  top: auto;
+  left: 50%;
+  width: 40px;
+}
