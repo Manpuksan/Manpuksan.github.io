@@ -84,32 +84,55 @@
     </div>
 
     <div class="error">
-      <h2></h2>
+      <h2>ul　に対してfloat: left;にしても動かない</h2>
       <table>
         <tbody>
           <tr>
             <td>言語</td>
-            <td></td>
+            <td>html&CSS</td>
           </tr>
           <tr>
             <td>コード</td>
-            <td></td>
+            <td>
+              &lt;ul&gt;<br>
+                　&lt;li&gt;1&lt;/li&gt;<br>
+                　&lt;li&gt;2&lt;/li&gt;<br>
+              &lt;/ul&gt;<br>
+              CSSにて<br>
+              ul{float:left;}
+            </td>
           </tr>
           <tr>
             <td>目的</td>
-            <td></td>
+            <td>ulの中身を横向きに表示させる</td>
           </tr>
           <tr>
             <td>症状</td>
-            <td></td>
+            <td>
+              なにも変化しない
+            </td>
           </tr>
           <tr>
             <td>考察</td>
-            <td></td>
+            <td>
+              なぜか未だにやらかすミスです<br>
+              多分頭の中ではulの中身を横向きにして…とか考えながらやっいるので<br>
+              ulのほうにつけちゃうんでしょうか<br>
+              変えたいのはulの配置ではなく、liの配置なんですよね
+            </td>
           </tr>
           <tr>
             <td>対策</td>
-            <td></td>
+            <td>
+              li{float:left;}<br>
+              または<br>
+              ul>*{float:left;}　（先日ドットインストールで覚えました!）<br>
+              後者はli以外の要素があってもOKなのが便利ですね<br>
+              その後の調整方法は変わりますが<br>
+              ul{display:flex;}<br>
+              でもいけますね<br>
+              しっかり使い分けられるようにしたいです
+            </td>
           </tr>
         </tbody>
       </table>
