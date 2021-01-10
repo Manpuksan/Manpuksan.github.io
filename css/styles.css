@@ -17,20 +17,17 @@ header{
   margin:10px 0px 5px 10px;
   width: 50px;
   height: 50px;
-  border-radius: 20px;
+  border-radius: 50%;
 }
 .returntop img{
-  width: 50px;
+  width: 100%;
   display: block;
+  border-radius: 50%;
 }
 .returntop a{
-  line-height: 60px;
   display: block;
-  padding: 0px;
   border-radius: 50%;
-  text-align: center;
-  width: 60px;
-  height: 60px;
+  width: 100%;
 }
 .pagetitle{
   float: left;
@@ -306,6 +303,13 @@ td:first-child,th:first-child{
   .error h2,.making h2,.items h2,.kiroku h2,.overview h2{
     font-size: large;
   }
+  .returntop{
+    width: 80px;
+    margin: 15px 0 0 10px;
+  }
+  .headerlist{
+    margin-left: 95px;
+  }
   .honbun,table{
     font-size: unset;
   }
@@ -313,6 +317,9 @@ td:first-child,th:first-child{
 @media (min-width:800px) {
   header{
     display: flex;
+  }
+  .returntop{
+    margin-top: 1px;
   }
   .headerlist{
     margin-left: 10px;
