@@ -33,6 +33,7 @@ header{
 .pagetitle{
   float: left;
   font-size: 24px;
+  font-weight: bold;
   line-height: 40px;
   margin: 5px 5px 5px;
   height: 40px;
@@ -42,7 +43,7 @@ header{
   border: rgba(78,59,48, 0.5) 5px solid;
   color: darkslategrey;
   border-radius: 20px;
-  box-shadow: 0px 5px black;
+  box-shadow: 0px 5px rgba(15, 15, 15, 0.2);
 }
 .pagetitle a{
   text-decoration: none;
@@ -66,7 +67,7 @@ header{
   border-radius: 10px;
   border: rgba(78,59,48, 0.5) 5px solid;
   box-sizing: border-box;
-  box-shadow: 0px 5px black;
+  box-shadow: 0px 5px rgba(15, 15, 15, 0.2);
 }
 .headerlist li a{
   display: block;
@@ -75,7 +76,7 @@ header{
 }
 .headerlist li a:hover{
   margin: 0;
-  background: rgba(255,91,71,0.5);
+  background: rgba(204,255,0,0.5);
   border-radius: 5px;
 }
 
@@ -96,7 +97,6 @@ body {
   right: 10px;
   bottom: 10px;
   border-radius: 10px;
-  background-color:rgba(255, 0, 0, 0.8);
   width: 80px;
   height: 80px;
   z-index: 100;
