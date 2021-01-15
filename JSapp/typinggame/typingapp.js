@@ -65,7 +65,7 @@ document.addEventListener('keydown',e=>{
       const elapsedTime = Date.now() - startTime;
       const result = document.getElementById('result');
       result.textContent=`正解率${100-count.miss/count.type*100}%　${((elapsedTime/1000))}回／分でした`;
-      result.textContent=`正解率${100-count.miss/count.type*100}%　${Math.round((count.type-count.miss)/(elapsedTime/10000))/10}回／秒でした`;
+      result.textContent=`正解率${Math.round(1000-count.miss/count.type*1000)/10}%　${Math.round((count.type-count.miss)/(elapsedTime/10000))/10}回／秒でした`;
       return;
     }
     setWord();
