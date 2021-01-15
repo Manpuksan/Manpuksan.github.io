@@ -1,20 +1,55 @@
 body{
   background-color: cornsilk;
+  text-align: center;
+}
+.returntitle{
+  width: 250px;
+  height: 80px;
+  font-size: 60px;
+  text-align: center;
+  background-color: red;
+  border-radius: 20px;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+}
+.score{
+  font-size: 20px;
+  height: 20px;
+}
+.clock{
+  font-size: 20px;
+  height: 20px;
 }
 .read{
   font-size: 36px;
   height: 40px;
+  
 }
 .kana{
   font-size: 20px;
   height: 20px;
+  
 }
 .write{
   font-size: 36px;
   height: 36px;
+  
 }
 .result{
   font-size: 48px;
   height: 48px;
-  margin-bottom: 200px;
+  
+  /* margin-bottom: 200px; */
+}
+.strings{
+  position: absolute;
+  height: 0px;
+  font-size: 0px;
+  border: 0px;
+  border-spacing: 0px;
+}
+td{
+  padding-left: 0px;
 }
