@@ -1,0 +1,157 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  background-color: cornsilk;
+}
+.returngame{
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  background-color: red;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 5px auto;
+}
+.returngame>a{
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 40px;
+}
+#focus{
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: none;
+  position: absolute;
+}
+header,header>*,.clockBox>*,.typingBox,.typingBox>*,.scoreBox,.scoreBox>*{
+  --x:180px;
+}
+header{
+  display: flex;
+  justify-content: center;
+  width: calc(var(--x)*2);
+  margin: 5px auto;
+}
+.catBox,.catImg{
+  height: var(--x);
+  width: var(--x);
+}
+.clockBox{
+  height: var(--x);
+  width: var(--x);
+  position: relative;
+}
+.clock{
+  border-radius: 25%;
+  background-color: yellow;
+  height: calc(var(--x)/3);
+  width: calc(var(--x)/3);
+  position: relative;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.onesPlaces{
+  width: 40%;
+  position: absolute;
+  bottom: 0px;
+  left: 55%;
+}
+.tensPlaces{
+  width: 60%;
+  position: absolute;
+  bottom: -10%;
+  left: 5%;
+}
+.onesPlaces0{
+  width: 60%;
+  position: absolute;
+  bottom: -10%;
+  left: 30%;
+}
+.tensPlaces0{
+  width: 40%;
+  position: absolute;
+  bottom: 0%;
+  left: 5%;
+}
+.dial{
+  width:var(--x);
+}
+.clockHand{
+  width: calc(var(--x)/10);
+  position: absolute;
+  bottom: calc(var(--x)*9/20);
+  left: calc(var(--x)*9/20);
+  transform-origin: calc(var(--x)/20) calc(var(--x)*8.5/20);
+  transition: 0.3s;
+}
+main{
+  width: 100%;
+}
+.typingBox{
+  width: calc(var(--x)*2);
+  display: flex;
+  flex-direction: column;
+  margin: 5px auto;
+}
+.typingBox>*{
+  text-align: center;
+  margin: 5px auto;
+}
+.read{
+  width: 100%;
+  font-size: calc(var(--x)/8);
+  height: calc(var(--x)/5);
+}
+.kana{
+  width: 100%;
+  font-size: calc(var(--x)/12);
+  height: calc(var(--x)/6);
+
+}
+.write{
+  width: 100%;
+  font-size: calc(var(--x)/8);
+  height: calc(var(--x)/5);
+
+}
+.result{
+  text-align: center;
+  font-size: calc(var(--x)/12);
+  height: calc(var(--x)*8);
+  margin: 5px auto;
+
+  /* margin-bottom: 200px; */
+}
+.scoreBox{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: calc(var(--x)*2);
+  margin: 5px auto;
+}
+.scoreBox>*{
+  box-sizing: border-box;
+  border: 2px solid rgb(56, 31, 1);
+  font-size: calc(var(--x)/9);
+  width: calc(var(--x)/2);
+  height: calc(var(--x)/8);
+  line-height: calc(var(--x)/8);
+  margin: 0;
+}
+.strings{
+  position: absolute;
+  height: 0px;
+  font-size: 0px;
+  border: 0px;
+  border-spacing: 0px;
+}
+@media (min-width: 600px){
+  header,header>*,.clockBox>*,.typingBox,.typingBox>*,.scoreBox,.scoreBox>*{
+  --x:300px;
+}
+}
