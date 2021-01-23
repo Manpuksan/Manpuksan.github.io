@@ -69,6 +69,7 @@ header>div{
   position: absolute;
   top: 0px;
   left: 0px;
+  transition: none;
 }
 .counter{
   width: var(--x);
@@ -269,16 +270,16 @@ header>div{
 .kanban{
   width: calc(var(--x)/2.5);
   position: absolute;
-  bottom: 10%;
-  left: calc(var(--x)/6);
+  bottom: 5%;
+  right: 30%;
 }
 .cookBox{
   width: calc(var(--x)/1.5);
   height: calc(var(--x)/1.5);
   position: absolute;
   bottom: 5%;
-  left: calc(var(--x)/2.5);
-  transition: 1s;
+  left: calc(var(--x)/1.8);
+  transition: 0.5s;
 }
 .rotate{
   transform: rotateY(360deg);
@@ -326,6 +327,36 @@ header>div{
   position: absolute;
   top:calc(var(--x)/8);
 }
+.hitBox{
+  width: calc(var(--x)*0.6);
+  height: calc(var(--x)*0.3);
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  display: flex;
+  justify-self: center;
+  transform: scale(0.8,0.8);
+  transform-origin: bottom right;
+  transition: 1s;
+}
+.radius{
+  border-top-left-radius: calc(var(--x)/18);
+  border-bottom-left-radius: calc(var(--x)/18);
+}
+.hitBox>*{
+  /* min-width: calc(var(--x)*0.15); */
+  background-size: 100% 100%;
+  flex: 1;
+  font-size: 0px;
+  margin: 0px;
+  padding: 0px;
+  line-height: 0px;
+}
+.hit{
+  background-image: url(../imgApp/hit.png);
+  border-top-right-radius: calc(var(--x)/18);
+  border-bottom-right-radius: calc(var(--x)/18);
+}
 .scoreBox{
   position: absolute;
   top: 0;
@@ -342,6 +373,9 @@ header>div{
   position: absolute;
   top: 25%;
   left: 50%;
+  background-size: 100% 100%;
+  background-image: url(../imgApp/boardCombo.png);
+  text-align: center;
 }
 .scoreBoxC{
   width: calc(var(--x)*0.6);
@@ -349,6 +383,9 @@ header>div{
   position: absolute;
   top: 30%;
   left: 10%;
+  background-image: url(../imgApp/boardScore.png);
+  background-size: 100% 100%;
+  text-align: center;
 }
 .score,.combo,.hyouka,.seikairitu,.wps{
   margin: 0 auto 0 10%;
@@ -371,10 +408,16 @@ header>div{
 .hyoukaBox{
   top: 5px;
   left: 0px;
+  background-image: url(../imgApp/評価.png);
+  background-size: 100% 100%;
+  text-align: center;
 }
 .seikairituBox{
   top: 10%;
   left: calc(var(--x)*0.58);
+  background-image: url(../imgApp/正解率.png);
+  background-size: 100% 100%;
+  text-align: center;
 }
 .salaryBox{
   display: flex;
@@ -417,6 +460,9 @@ header>div{
 .wpsBox{
   top: 0px;
   left: calc(var(--x)*1.16);
+  background-image: url(../imgApp/wps.png);
+  background-size: 100% 100%;
+  text-align: center;
 }
 .bannerBox{
   position: absolute;

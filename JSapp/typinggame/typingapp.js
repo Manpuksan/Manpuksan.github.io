@@ -45,8 +45,19 @@ const customer = [
   document.getElementById('customer3'),
   document.getElementById('customer4'),
   document.getElementById('customer5'),
-]
+];
 const cl = customer.length;
+const HIT = document.getElementById('hitBox');
+const hit = [
+  document.getElementById('hit0'),
+  document.getElementById('hit1'),
+  document.getElementById('hit2'),
+  document.getElementById('hit3'),
+];
+// 文字列を配列に逆からいれる
+const arr =(str)=>{
+  return(`${str}`.split('').reverse());
+}
 // 効果音
 let startSe = new Audio('seApp/カウントダウン電子音.mp3');
 let missSe = new Audio('seApp/キャンセル4.mp3');
@@ -58,12 +69,17 @@ let zoneSe = new Audio('seApp/atari.mp3');
 let resultSe = new Audio('seApp/flying_pan.mp3');
 let newWord = new Audio('seApp/putting_a_water_glass2.mp3');
 let kyuuryou = new Audio('seApp/歓声と拍手1.mp3');
+let mukyuu = new Audio('seApp/クイズ不正解1.mp3')
 let setCanSe = new Audio('seApp/short_punch1.mp3')
 let bgm = new Audio('seApp/game_maoudamashii_5_casino04.mp3');
 const se =(se,t=0)=>{
-  se.pause();
-  se.currentTime=t;
-  se.play();
+  try{
+    se.pause();
+    se.currentTime=t;
+    se.play();
+  }catch{
+    return;
+  }
 }
 // 演出にかかわる関数
 // ゲージの増減
@@ -72,6 +88,7 @@ const gurgeUp = ()=>{
     count.zone=0;
     return;
   }
+  setHit();
   if(count.zone>=count.rankUp){
     zoneSe.addEventListener('ended',()=>{
       document.getElementById('gurgeLabel').classList.remove('rankUp');
@@ -91,21 +108,22 @@ const gurgeUp = ()=>{
 const clockAdvances=()=>{
   let x =count.time*360/count.initialTime;
   clockHand.style.transform=`rotate(${x}deg)`
-  let hp = `${count.time}`[0];
-  let tp = `${count.time}`[1];
-  let op = `${count.time}`[2];
+  let hp = arr(count.time)[2];
+  let tp = arr(count.time)[1];
+  let op = arr(count.time)[0];
+  // let hp = `${count.time}`[0];
+  // let tp = `${count.time}`[1];
+  // let op = `${count.time}`[2];
   if(count.time>=100){
     hundredthPlaces.style.visibility='visible'
     tensPlaces.style.visibility='visible'
   }
   if(count.time<100){
     hundredthPlaces.style.visibility='hidden'
-    tp=`${count.time}`[0];
-    op=`${count.time}`[1];
   }
   if(count.time<10){
     tensPlaces.style.visibility='hidden'
-    onesPlaces.src=`imgApp/number/${tp}a.png`
+    onesPlaces.src=`imgApp/number/${op}a.png`
     return;
   }
   hundredthPlaces.src=`imgApp/number/${hp}.png`;
@@ -150,6 +168,7 @@ const turn = ()=>{
     p++;
   }
 }
+// 幕の開け閉め
 const curtain =()=>{
   let x=document.getElementById('bannerBox').className;
   switch(x){
@@ -159,12 +178,13 @@ const curtain =()=>{
     break;
   }
 }
+// 結果発表
 const ending = ()=>{
   const results =Math.round(1000-count.miss/count.type*1000)/10;
-  const wpm=Math.round((count.type-count.miss)/(elapsedTime/1000))*60;
+  const wpm=(count.type-count.miss)/(elapsedTime/1000)*60;
   hyouka.textContent=`${Math.round(Math.pow(results/100,3)*wpm)}`;
   seikairitu.textContent=`${results}%`;
-  wps.textContent=`${(wpm/6)/10}回／秒`;
+  wps.textContent=`${Math.round(wpm/6)/10}回／秒`;
   document.getElementById('catImg3').src='imgApp/question.png';
 
   setTimeout(()=>{
@@ -179,12 +199,6 @@ const ending = ()=>{
     document.getElementById('catImg3').src='imgApp/goodjob.png';
     setCan();
   },1600)
-}
-
-
-// エラー探し用関数
-const checkCount =()=>{
-  console.log(count);
 }
 
 // タイピングセット作成
@@ -218,7 +232,7 @@ const opening = (e)=>{
         gurgeUp();
         clockAdvances();
         clockSize();
-        if(1<=count.time && count.time<=10){
+        if(1<=count.time && count.time<10){
           bgm.playbackRate=1.5;
           se(lastSe);
         }
@@ -242,13 +256,12 @@ const opening = (e)=>{
     }, 3000);
   }
 }
-// エンディング
-// 正誤判定
+// リセット
 const esc = ()=>{
   document.location.reload();
 }
+// 正誤判定
 const checkType = (e)=>{
-
     if(count.isPlaying===false){
       return;
     }
@@ -271,6 +284,8 @@ const checkType = (e)=>{
         count.maxCombo=count.combo;
       }
       se(missSe);
+      document.getElementById('ase').style.visibility='visible'
+      setTimeout(()=>{document.getElementById('ase').style.visibility='hidden'},500)
       count.combo=0;
       count.miss++;
       count.zone=0;
@@ -297,7 +312,7 @@ const checkType = (e)=>{
 }
 // ゲーム部分
 const reset = ()=>{
-  count={word:0,type:0,miss:0,zone:0,rankUp:10,rank:0,stress:0,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true}
+  count={word:0,type:0,miss:0,zone:0,rankUp:10,rank:0,stress:0,combo:98,maxCombo:0,time:30,initialTime:0,score:0,isPlaying:false,n:true}
   word=[];
   words=[];
   for(i=0;i<amusingWord.length/4;i++){
@@ -311,6 +326,9 @@ const reset = ()=>{
   resultBox.style.visibility='hidden';
   salaryBox.style.visibility='hidden';
   returngame.style.visibility='hidden';
+  hit[0].style.visibility='hidden';
+  hit[1].style.visibility='hidden';
+  document.getElementById('ase').style.visibility='hidden'
   count.initialTime=count.time
   clockAdvances();
   clockSize();
@@ -325,17 +343,22 @@ const reset = ()=>{
   customer[4].src=`imgApp/animals/${d}.png`
 }
 const setCanN = (x)=>{
+  let tp = arr(x)[1];
+  let op = arr(x)[0];
   if(x>9){
-    let tp = `${x}`[0];
-    let op = `${x}`[1];
     document.getElementById('salaryNTens').style.backgroundImage=`url(imgApp/number/${tp}a.png)`;
     document.getElementById('salaryNOnes').style.backgroundImage=`url(imgApp/number/${op}a.png)`;
     return;
   }
-  let op = `${x}`[0];
   document.getElementById('salaryNOnes').style.backgroundImage=`url(imgApp/number/${op}a.png)`;
 }
 const setCan =()=>{
+  if(count.rank===0){
+    document.getElementById('salaryNOnes').style.backgroundImage=`url(imgApp/number/0a.png)`;
+    document.getElementById('catImg3').src='imgApp/tired.png';
+    se(mukyuu);
+    return;
+  }
   if(setC<count.rank){
     const can = document.createElement('img');
     const salaryImgBox = document.getElementById('salaryImgBox');
@@ -351,4 +374,51 @@ const setCan =()=>{
   }
   se(kyuuryou);
 }
+const setHit =()=>{
+  let hp = arr(count.combo)[2]
+  let tp = arr(count.combo)[1]
+  let op = arr(count.combo)[0]
+  if(count.combo>1000){
+    return;
+  }
+  if(count.combo<10){
+    HIT.style.transform='scale(0.8,0.8)'
+    hit[0].style.visibility='hidden';
+    hit[1].style.visibility='hidden';
+    hit[0].classList.remove('radius');
+    hit[1].classList.remove('radius');
+    hit[2].classList.add('radius');
+    for(i=0;i<4;i++){hit[i].style.backgroundColor='azure'}
+    hit[2].style.backgroundImage=`url(imgApp/number/${op}.png)`;
+    return;
+  }
+  if(100>count.combo && count.combo>=10){
+    HIT.style.transform='scale(0.9,0.9)'
+    hit[1].style.visibility='visible'
+    hit[0].classList.remove('radius');
+    hit[1].classList.add('radius');
+    hit[2].classList.remove('radius');
+    for(i=0;i<4;i++){hit[i].style.backgroundColor='lightyellow'}
+    hit[1].style.backgroundImage=`url(imgApp/number/${tp}g.png)`;
+    hit[2].style.backgroundImage=`url(imgApp/number/${op}g.png)`;
+    return;
+  }
+  if(count.combo>=100){
+  HIT.style.transform='none'
+  hit[0].style.visibility='visible'
+  hit[0].classList.add('radius');
+  hit[1].classList.remove('radius');
+  hit[2].classList.remove('radius');
+  for(i=0;i<4;i++){hit[i].style.backgroundColor='yellow'}
+  hit[0].style.backgroundImage=`url(imgApp/number/${hp}a.png)`;
+  hit[1].style.backgroundImage=`url(imgApp/number/${tp}a.png)`;
+  hit[2].style.backgroundImage=`url(imgApp/number/${op}a.png)`;
+  return;
+  }
+}
+
+// 編集用戻す↓
 reset();
+// 編集　消す↓
+// document.getElementById('scoreBox').style.visibility='hidden'
+// document.getElementById('bannerBox').className='bannerBox0';
