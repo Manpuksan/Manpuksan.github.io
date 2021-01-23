@@ -1,4 +1,4 @@
-let count={word:0,type:0,miss:0,zone:0,rankUp:20,rank:10,stress:0,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true}
+let count={word:0,type:0,miss:0,zone:0,rankUp:20,rank:0,stress:0,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true}
 let nWords=['a','i','u','e','o','y',]
 let word;
 let t=0;let p=0;let setC=0;
@@ -312,7 +312,7 @@ const checkType = (e)=>{
 }
 // ゲーム部分
 const reset = ()=>{
-  count={word:0,type:0,miss:0,zone:0,rankUp:10,rank:0,stress:0,combo:98,maxCombo:0,time:30,initialTime:0,score:0,isPlaying:false,n:true}
+  count={word:0,type:0,miss:0,zone:0,rankUp:10,rank:0,stress:0,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true}
   word=[];
   words=[];
   for(i=0;i<amusingWord.length/4;i++){
