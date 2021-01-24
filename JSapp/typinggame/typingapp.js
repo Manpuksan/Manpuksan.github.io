@@ -24,8 +24,8 @@ const wps = document.getElementById('wps');
 const strings = document.getElementById('strings');
 const gurge = document.getElementById('gurge');
 const clockHand = document.getElementById('clockHand');
-const td = document.getElementsByTagName('li');
-const amusingWord = document.getElementsByTagName('LI');
+const td = document.getElementById('strings').children;
+const amusingWord = document.getElementById('strings2').children;
 const scoreBoxC = document.getElementById('scoreBoxC');
 const comboBox = document.getElementById('comboBox');
 const resultBox = document.getElementById('resultBox');
@@ -201,14 +201,26 @@ const ending = ()=>{
 }
 
 // タイピングセット作成
-// const setWord=()=>{
-//   let n=Math.floor(Math.random()*words.length);
-//   console.log(n);
-//   read.textContent=words[n].read;
-//   word=words.splice(n,1)[0].write;
-//   write.textContent=word;
-//   count.word=0;
-// }
+const makeWords=()=>{
+  word=[];
+  words=[];
+  if(document.getElementById('todoufuken').checked){
+    for(i=0;i<td.length/4;i++){
+      words.push({read:td[4*i+1].textContent,write:td[4*i+3].textContent})
+    }
+  }
+  if(document.getElementById('hennnakotoba').checked){
+    for(i=0;i<amusingWord.length/4;i++){
+      words.push({read:amusingWord[4*i+1].textContent,write:amusingWord[4*i+3].textContent})
+    }
+  }
+  subWords=[...words];
+  for(i=0;i<4;i++){
+    if(document.getElementsByClassName('difficulty')[i].checked){
+      count.limit=document.getElementsByClassName('difficulty')[i].value;
+    }
+  }
+}
 const setWord=()=>{
   count.stress=0;
   document.getElementById('balloon').style.backgroundColor=`rgba(255,255,255,0.8)`
@@ -227,7 +239,10 @@ const opening = (e)=>{
     return;
   }
   if(e.key==='f'||e.key==='j'){
+    if(!document.getElementById('todoufuken').checked&& !document.getElementById('hennnakotoba').checked){alert('最低でも一つ文字列を選んでください');return;}
+    makeWords();
     document.getElementById('manual').style.visibility='hidden'
+    document.getElementById('settingBox').style.visibility='hidden'
     startSe.play();
     turn();
     document.removeEventListener('keydown',opening);
@@ -368,12 +383,7 @@ const checkType = (e)=>{
 // ゲーム部分
 const reset = ()=>{
   count={word:0,type:0,miss:0,zone:0,rankUp:10,rank:0,stress:0,limit:7,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true}
-  word=[];
-  words=[];
-  for(i=0;i<amusingWord.length/4;i++){
-    words.push({read:amusingWord[4*i+1].textContent,write:amusingWord[4*i+3].textContent})
-  }
-  subWords=[...words];
+
   document.addEventListener('keydown',opening);
   strings.style.visibility='hidden';
   scoreBoxC.style.visibility='hidden';
