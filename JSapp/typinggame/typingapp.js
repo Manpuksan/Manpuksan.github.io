@@ -1,4 +1,5 @@
-let count={word:0,type:0,miss:0,zone:0,rankUp:20,rank:0,stress:0,limit:7,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true}
+
+let count={word:0,type:0,miss:0,zone:0,rankUp:20,rank:0,stress:0,limit:7,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true,check:[]}
 let nWords=['a','i','u','e','o','y',]
 let word;
 let wordNext;
@@ -21,11 +22,9 @@ const result = document.getElementById('result');
 const hyouka = document.getElementById('hyouka');
 const seikairitu =document.getElementById('seikairitu');
 const wps = document.getElementById('wps');
-const strings = document.getElementById('strings');
+const strings = document.getElementsByName('strings');
 const gurge = document.getElementById('gurge');
 const clockHand = document.getElementById('clockHand');
-const td = document.getElementById('strings').children;
-const amusingWord = document.getElementById('strings2').children;
 const scoreBoxC = document.getElementById('scoreBoxC');
 const comboBox = document.getElementById('comboBox');
 const resultBox = document.getElementById('resultBox');
@@ -56,6 +55,11 @@ const hit = [
   document.getElementById('hit2'),
   document.getElementById('hit3'),
 ];
+const stringsChecked = ()=>{
+  for(i=0;i<strings.length;i++){count.check[i]=strings[i].checked;}
+  if(count.check.indexOf(true)===-1){return true;}
+  return false;
+}
 // 文字列を配列に逆からいれる
 const arr =(str)=>{
   return(`${str}`.split('').reverse());
@@ -100,7 +104,6 @@ const gurgeUp = ()=>{
     zoneSe.play();
     count.zone=0;
     count.rank++;
-    count.rankUp+=5;
   }
   gurge.style.height=`${count.zone*100/count.rankUp}%`
 
@@ -205,14 +208,16 @@ const makeWords=()=>{
   word=[];
   words=[];
   if(document.getElementById('todoufuken').checked){
-    for(i=0;i<td.length/4;i++){
-      words.push({read:td[4*i+1].textContent,write:td[4*i+3].textContent})
-    }
+    words=[...todoufuken];
   }
   if(document.getElementById('hennnakotoba').checked){
-    for(i=0;i<amusingWord.length/4;i++){
-      words.push({read:amusingWord[4*i+1].textContent,write:amusingWord[4*i+3].textContent})
-    }
+    words=[...hennnakotoba];
+  }
+  if(document.getElementById('hayakuti').checked){
+    words=[...hayakuti];
+  }
+  if(document.getElementById('ryuukou').checked){
+    words=[...ryuukou];
   }
   subWords=[...words];
   for(i=0;i<4;i++){
@@ -239,7 +244,7 @@ const opening = (e)=>{
     return;
   }
   if(e.key==='f'||e.key==='j'){
-    if(!document.getElementById('todoufuken').checked&& !document.getElementById('hennnakotoba').checked){alert('最低でも一つ文字列を選んでください');return;}
+    if(stringsChecked()){alert('最低でも一つ文字列を選んでください');return;}
     makeWords();
     document.getElementById('manual').style.visibility='hidden'
     document.getElementById('settingBox').style.visibility='hidden'
@@ -255,7 +260,7 @@ const opening = (e)=>{
       setWord();
       const countDown=()=>{
         count.time--;
-        count.zone--;
+        count.zone-=1+Math.floor(count.rank/3);
         count.stress++;
         gurgeUp();
         clockAdvances();
@@ -307,7 +312,8 @@ const atari = ()=>{
   count.n=true;
   gurgeUp();
   se(writeSe);
-  write.textContent='_'.repeat(count.word)+word.substring(count.word);
+  // write.textContent='_'.repeat(count.word)+word.substring(count.word);
+  write.textContent=''.repeat(count.word)+word.substring(count.word);
   if(count.word===word.length){
     if(words.length===0){
       words=[...subWords];
@@ -336,7 +342,8 @@ const checkType = (e)=>{
         count.zone++;
         gurgeUp();
         se(writeSe);
-        write.textContent='_'.repeat(count.word)+word.substring(count.word);
+        // write.textContent='_'.repeat(count.word)+word.substring(count.word);
+        write.textContent=''.repeat(count.word)+word.substring(count.word);
         count.n=false;
         return;
       }
@@ -352,7 +359,8 @@ const checkType = (e)=>{
         gurgeUp();
         se(writeSe);
         count.word++;
-        word='_'.repeat(count.word)+'y'+word.substring(count.word);
+        word=''.repeat(count.word)+'y'+word.substring(count.word);
+        count.word=0;
         write.textContent=word;
 
         return;}
@@ -362,7 +370,8 @@ const checkType = (e)=>{
         gurgeUp();
         se(writeSe);
         count.word++;
-        word='_'.repeat(count.word)+'h'+word.substring(count.word+1);
+        word=''.repeat(count.word)+'h'+word.substring(count.word+1);
+        count.word=0;
         write.textContent=word;
 
         return;}
@@ -374,7 +383,7 @@ const checkType = (e)=>{
       setTimeout(()=>{document.getElementById('ase').style.visibility='hidden'},500)
       count.combo=0;
       count.miss++;
-      count.zone=0;
+      count.zone-=5;
       gurgeUp();
       return;
     }
@@ -382,10 +391,7 @@ const checkType = (e)=>{
 }
 // ゲーム部分
 const reset = ()=>{
-  count={word:0,type:0,miss:0,zone:0,rankUp:10,rank:0,stress:0,limit:7,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true}
-
   document.addEventListener('keydown',opening);
-  strings.style.visibility='hidden';
   scoreBoxC.style.visibility='hidden';
   comboBox.style.visibility='hidden';
   resultBox.style.visibility='hidden';
@@ -439,7 +445,6 @@ const setHit =()=>{
   let hp = arr(count.combo)[2]
   let tp = arr(count.combo)[1]
   let op = arr(count.combo)[0]
-  if(count.combo===10){se(chargeSe);}
   if(count.combo===50){se(chargeSe);}
   if(count.combo===100){se(chargeSe);}
   if(count.combo>1000){

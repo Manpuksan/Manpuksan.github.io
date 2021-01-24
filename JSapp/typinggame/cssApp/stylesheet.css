@@ -26,6 +26,8 @@ body{
   text-decoration: none;
   font-size: 20px;
   line-height: 40px;
+  font-weight: bold;
+  color: gold;
 }
 header{
   width: calc(var(--x)*2);
@@ -705,7 +707,19 @@ h1{
   flex-direction: column;
   font-size: 20px;
   line-height: 40px;
+
 }
-.settingBox h4{
-  margin-bottom: 0;
+h4{
+  width: 100%;
+  margin:2% auto 0;
+}
+#strings{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#strings div{
+  width: 40%;
+  display: flex;
+  align-items: center;
 }
