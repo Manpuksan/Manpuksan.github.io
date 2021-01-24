@@ -199,6 +199,7 @@ const ending = ()=>{
     salaryBox.style.visibility='visible';
     returngame.style.visibility='visible';
     document.getElementById('catImg3').src='imgApp/goodjob.png';
+    document.addEventListener('keydown',(e)=>{if(e.key===' '){esc()}})
     setCan();
   },1600)
 }
