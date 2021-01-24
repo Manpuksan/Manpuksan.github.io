@@ -10,6 +10,14 @@ body{
   background-color: rgba(214, 200, 146, 0.753);
   justify-content: center;
 }
+.returnTop{
+  width: calc(var(--x)/3);
+  height: calc(var(--x)/3);
+  position: absolute;
+  top: calc(var(--x)*2/3);
+  left: 0px;
+  z-index: 10;
+}
 .returngame{
   position: absolute;
   bottom: 0px;

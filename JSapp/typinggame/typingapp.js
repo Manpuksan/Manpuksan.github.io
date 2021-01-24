@@ -1,6 +1,7 @@
 
 let count={word:0,type:0,miss:0,zone:0,rankUp:20,rank:0,stress:0,limit:7,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true,check:[]}
-let nWords=['a','i','u','e','o','y',]
+let nWords=['a','i','u','e','o','y',];
+let missKey=[]
 let word;
 let wordNext;
 let t=0;let p=0;let setC=0;
@@ -199,7 +200,8 @@ const ending = ()=>{
     salaryBox.style.visibility='visible';
     returngame.style.visibility='visible';
     document.getElementById('catImg3').src='imgApp/goodjob.png';
-    document.addEventListener('keydown',(e)=>{if(e.key===' '){esc()}})
+    document.addEventListener('keydown',(e)=>{if(e.key===' '){esc()}});
+    document.getElementById('returnTop').style.visibility='visible';
     setCan();
   },1600)
 }
@@ -247,6 +249,7 @@ const opening = (e)=>{
   if(e.key==='f'||e.key==='j'){
     if(stringsChecked()){alert('最低でも一つ文字列を選んでください');return;}
     makeWords();
+    document.getElementById('returnTop').style.visibility='hidden'
     document.getElementById('manual').style.visibility='hidden'
     document.getElementById('settingBox').style.visibility='hidden'
     startSe.play();
@@ -313,7 +316,6 @@ const atari = ()=>{
   count.n=true;
   gurgeUp();
   se(writeSe);
-  // write.textContent='_'.repeat(count.word)+word.substring(count.word);
   write.textContent=''.repeat(count.word)+word.substring(count.word);
   if(count.word===word.length){
     if(words.length===0){
@@ -343,7 +345,6 @@ const checkType = (e)=>{
         count.zone++;
         gurgeUp();
         se(writeSe);
-        // write.textContent='_'.repeat(count.word)+word.substring(count.word);
         write.textContent=''.repeat(count.word)+word.substring(count.word);
         count.n=false;
         return;
