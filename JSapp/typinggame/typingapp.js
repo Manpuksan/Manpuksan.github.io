@@ -1,6 +1,7 @@
-let count={word:0,type:0,miss:0,zone:0,rankUp:20,rank:0,stress:0,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true}
+let count={word:0,type:0,miss:0,zone:0,rankUp:20,rank:0,stress:0,limit:7,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true}
 let nWords=['a','i','u','e','o','y',]
 let word;
+let wordNext;
 let t=0;let p=0;let setC=0;
 let startTime;
 let elapsedTime;
@@ -13,6 +14,7 @@ const hundredthPlaces =document.getElementById('hundredthPlaces');
 const tensPlaces =document.getElementById('tensPlaces');
 const onesPlaces =document.getElementById('onesPlaces');
 const read = document.getElementById('read');
+const readNext = document.getElementById('readNext');
 const write = document.getElementById('write');
 const combo = document.getElementById('combo');
 const result = document.getElementById('result');
@@ -111,9 +113,6 @@ const clockAdvances=()=>{
   let hp = arr(count.time)[2];
   let tp = arr(count.time)[1];
   let op = arr(count.time)[0];
-  // let hp = `${count.time}`[0];
-  // let tp = `${count.time}`[1];
-  // let op = `${count.time}`[2];
   if(count.time>=100){
     hundredthPlaces.style.visibility='visible'
     tensPlaces.style.visibility='visible'
@@ -202,12 +201,24 @@ const ending = ()=>{
 }
 
 // タイピングセット作成
+// const setWord=()=>{
+//   let n=Math.floor(Math.random()*words.length);
+//   console.log(n);
+//   read.textContent=words[n].read;
+//   word=words.splice(n,1)[0].write;
+//   write.textContent=word;
+//   count.word=0;
+// }
 const setWord=()=>{
+  count.stress=0;
+  document.getElementById('balloon').style.backgroundColor=`rgba(255,255,255,0.8)`
   let n=Math.floor(Math.random()*words.length);
   console.log(n);
-  read.textContent=words[n].read;
-  word=words.splice(n,1)[0].write;
-  write.textContent=word;
+  read.textContent=readNext.textContent;
+  write.textContent=wordNext;
+  word=wordNext;
+  readNext.textContent=words[n].read;
+  wordNext=words.splice(n,1)[0].write;
   count.word=0;
 }
 // オープニング
@@ -226,12 +237,25 @@ const opening = (e)=>{
       bgm.play();
       startTime=Date.now();
       setWord();
+      setWord();
       const countDown=()=>{
         count.time--;
         count.zone--;
+        count.stress++;
         gurgeUp();
         clockAdvances();
         clockSize();
+        if(3<count.limit-count.stress && count.limit-count.stress<7){
+          document.getElementById('balloon').style.backgroundColor=`rgba(255,255,${255-(count.stress-2)*30},0.8)`
+        }
+        if(count.limit-count.stress<4){
+          document.getElementById('balloon').style.backgroundColor=`rgba(255,${255-(count.stress-4)*30},135,0.8)`
+        }
+        if(count.stress>count.limit){
+          setWord();
+          shopping();
+          se(mukyuu);
+        }
         if(1<=count.time && count.time<10){
           bgm.playbackRate=1.5;
           se(lastSe);
@@ -260,6 +284,26 @@ const opening = (e)=>{
 const esc = ()=>{
   document.location.reload();
 }
+// タイプok処理
+const atari = ()=>{
+  count.word++;
+  count.combo++;
+  count.zone++;
+  count.n=true;
+  gurgeUp();
+  se(writeSe);
+  write.textContent='_'.repeat(count.word)+word.substring(count.word);
+  if(count.word===word.length){
+    if(words.length===0){
+      words=[...subWords];
+    }
+    count.score+=(count.word-count.stress)*100;
+    score.textContent=count.score;
+    se(newWord);
+    shopping();
+    setWord();
+  }
+}
 // 正誤判定
 const checkType = (e)=>{
     if(count.isPlaying===false){
@@ -268,6 +312,7 @@ const checkType = (e)=>{
     if(e.key==="Backspace"){
       esc();
     }
+    if(`${e.key}`.length!==1){return;}
     count.type++;
     combo.textContent=`${count.maxCombo}HITs`
     if(e.key!==word[count.word]){
@@ -280,6 +325,32 @@ const checkType = (e)=>{
         count.n=false;
         return;
       }
+      if(e.key==='x' && word[count.word]==='l'){atari();return;}
+      if(e.key==='c' && word[count.word]==='k' && ['a','u','o'].indexOf(word[count.word+1])!==-1){atari();return;}
+      if(e.key==='c' && word[count.word]==='s' && ['i','e'].indexOf(word[count.word+1])!==-1){atari();return;}
+      if(e.key==='h' && word[count.word]==='f' && word[count.word+1]==='u'){atari();return;}
+      if(e.key==='h' && word[count.word]==='y' && word[count.word+1]==='i'){atari();return;}
+      if(e.key==='z' && word[count.word]==='j' && word[count.word+1]==='i'){atari();return;}
+      if(e.key==='z' && word[count.word]==='j' && nWords.indexOf(word[count.word+1])!==-1){
+        count.combo++;
+        count.zone++;
+        gurgeUp();
+        se(writeSe);
+        count.word++;
+        word='_'.repeat(count.word)+'y'+word.substring(count.word);
+        write.textContent=word;
+
+        return;}
+      if(e.key==='c' && word[count.word]==='t' && word[count.word+1]==='y'){
+        count.combo++;
+        count.zone++;
+        gurgeUp();
+        se(writeSe);
+        count.word++;
+        word='_'.repeat(count.word)+'h'+word.substring(count.word+1);
+        write.textContent=word;
+
+        return;}
       if(count.combo>count.maxCombo){
         count.maxCombo=count.combo;
       }
@@ -292,27 +363,11 @@ const checkType = (e)=>{
       gurgeUp();
       return;
     }
-    count.word++;
-    count.combo++;
-    count.zone++;
-    count.n=true;
-    gurgeUp();
-    se(writeSe);
-    write.textContent='_'.repeat(count.word)+word.substring(count.word);
-    if(count.word===word.length){
-      if(words.length===0){
-        words=[...subWords];
-      }
-      count.score+=count.word*100;
-      score.textContent=count.score;
-      se(newWord);
-      shopping();
-      setWord();
-    }
+   atari();
 }
 // ゲーム部分
 const reset = ()=>{
-  count={word:0,type:0,miss:0,zone:0,rankUp:10,rank:0,stress:0,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true}
+  count={word:0,type:0,miss:0,zone:0,rankUp:10,rank:0,stress:0,limit:7,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true}
   word=[];
   words=[];
   for(i=0;i<amusingWord.length/4;i++){
@@ -333,14 +388,10 @@ const reset = ()=>{
   clockAdvances();
   clockSize();
   gurgeUp();
-  let a = Math.floor(Math.random()*12)
-  let b = Math.floor(Math.random()*12)
-  let c = Math.floor(Math.random()*12)
-  let d = Math.floor(Math.random()*12)
-  customer[1].src=`imgApp/animals/${a}.png`
-  customer[2].src=`imgApp/animals/${b}.png`
-  customer[3].src=`imgApp/animals/${c}.png`
-  customer[4].src=`imgApp/animals/${d}.png`
+  for(x=1;x<5;x++){
+    let y = Math.floor(Math.random()*12);
+    customer[x].src=`imgApp/animals/${y}.png`
+  }
 }
 const setCanN = (x)=>{
   let tp = arr(x)[1];
@@ -378,6 +429,9 @@ const setHit =()=>{
   let hp = arr(count.combo)[2]
   let tp = arr(count.combo)[1]
   let op = arr(count.combo)[0]
+  if(count.combo===10){se(chargeSe);}
+  if(count.combo===50){se(chargeSe);}
+  if(count.combo===100){se(chargeSe);}
   if(count.combo>1000){
     return;
   }
@@ -393,12 +447,17 @@ const setHit =()=>{
     return;
   }
   if(100>count.combo && count.combo>=10){
+    if(count.combo<50){
+      for(i=0;i<4;i++){hit[i].style.backgroundColor='lightyellow'}
+    }
+    if(count.combo>50){
+      for(i=0;i<4;i++){hit[i].style.backgroundColor='hkaki'}
+    }
     HIT.style.transform='scale(0.9,0.9)'
     hit[1].style.visibility='visible'
     hit[0].classList.remove('radius');
     hit[1].classList.add('radius');
     hit[2].classList.remove('radius');
-    for(i=0;i<4;i++){hit[i].style.backgroundColor='lightyellow'}
     hit[1].style.backgroundImage=`url(imgApp/number/${tp}g.png)`;
     hit[2].style.backgroundImage=`url(imgApp/number/${op}g.png)`;
     return;
@@ -409,7 +468,7 @@ const setHit =()=>{
   hit[0].classList.add('radius');
   hit[1].classList.remove('radius');
   hit[2].classList.remove('radius');
-  for(i=0;i<4;i++){hit[i].style.backgroundColor='yellow'}
+  for(i=0;i<4;i++){hit[i].style.backgroundColor='gold'}
   hit[0].style.backgroundImage=`url(imgApp/number/${hp}a.png)`;
   hit[1].style.backgroundImage=`url(imgApp/number/${tp}a.png)`;
   hit[2].style.backgroundImage=`url(imgApp/number/${op}a.png)`;
@@ -419,6 +478,13 @@ const setHit =()=>{
 
 // 編集用戻す↓
 reset();
+window.addEventListener('load',()=>{console.log('ok')})
 // 編集　消す↓
 // document.getElementById('scoreBox').style.visibility='hidden'
 // document.getElementById('bannerBox').className='bannerBox0';
+// ending()
+// for(x=1;x<5;x++){
+//   let y = Math.floor(Math.random()*12);
+//   customer[x].src=`imgApp/animals/${y}.png`
+// }
+// shopping();
