@@ -744,7 +744,7 @@ h1{
 .settingBox{
   background-color: rgba(240, 240, 240, 0.9);
   width: 80%;
-  margin:0 auto;
+  margin:0 auto calc(var(--x)/8);
   border-radius: 20px;
   position: absolute;
   top: 30%;
@@ -756,12 +756,16 @@ h1{
 
 }
 h1{
+  width: 100%;
   cursor: default;
+  font-size: calc(var(--x)/10);
 }
 h4{
   width: 100%;
+  height: calc(var(--x)/6);
   margin:2% auto 0;
   cursor: default;
+  font-size: calc(var(--x)/14);
 }
 #strings{
   display: flex;
@@ -770,18 +774,23 @@ h4{
 }
 #strings>label{
   width: 40%;
+  font-size: calc(var(--x)/20);
   display: flex;
   align-items: center;
   cursor: pointer;
+  height: calc(var(--x)/8);
 }
 label{
   cursor: pointer;
+  font-size:calc(var(--x)/16);
 }
 .strings>*{
   cursor: pointer;
 }
 .difficulty{
   cursor: pointer;
+  font-size:calc(var(--x)/15);
+  margin: 0;
 }
 .playingManual{
   position: absolute;
@@ -791,15 +800,15 @@ label{
   background-color: tomato;
   color: midnightblue;
   cursor: pointer;
-  width: 18%;
+  width: calc(var(--x)/3);
   height: 10%;
   border-radius: 20px;
   transition: 0.3s;
 }
 .playingManual>p{
   position: absolute;
-  font-size: 150%;
-  margin: 0 18px;
+  font-size: calc(var(--x)/15);
+  margin: 5% 20%;
   transition: 0.3s;
 }
 .pMbox{
