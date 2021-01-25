@@ -11,7 +11,6 @@
     <script src="text/hennnakotoba.js"></script>
     <script src="text/todoufuken.js"></script>
     <script src="text/ryuukou.js"></script>
-    <audio src="seApp/game_maoudamashii_5_casino04.mp3" preload="auto"></audio>
   </head>
   <body>
   <main>
@@ -55,6 +54,7 @@
       </div>
       <div id="page0" class="catBox">
         <img src="imgApp/sleep.png" id="catImg0" class="catImg" alt="">
+        <img src="imgApp/zzz.png" alt="" id="tool3" class="tool3">
       </div>
       <div id="returnTop" class="returnTop">
         <a href="https://manpuksan.github.io/">
@@ -140,21 +140,22 @@
           </div>
           <div id="settingBox" class="settingBox">
             <h4>文字列を選んでください(複数選択OKです)</h4>
-            <label for="strings" id="strings">
-              <div><input type="checkbox" name="strings" id="todoufuken">都道府県</div>
-              <div><input type="checkbox" name="strings" id="hennnakotoba" checked>変な言葉</div>
-              <div><input type="checkbox" name="strings" id="hayakuti">早口言葉</div>
-              <div><input type="checkbox" name="strings" id="ryuukou">2020年注目ワード</div>
-            </label>
+            <div id="strings">
+              <label><input type="checkbox" name="strings" id="todoufuken">都道府県</label>
+              <label><input type="checkbox" name="strings" id="hennnakotoba" checked>変な言葉</label>
+              <label><input type="checkbox" name="strings" id="hayakuti">早口言葉</label>
+              <label><input type="checkbox" name="strings" id="ryuukou">2020年注目ワード</label>
+            </div>
             <h4>難易度を選んでください</h4>
             <label for="difficulty">
-              <input type="radio" name="difficulty" class="difficulty" value="120">超ゆっくり
-              <input type="radio" name="difficulty" class="difficulty" value="10">ゆっくり
-              <input type="radio" name="difficulty" class="difficulty" value="7" checked>ふつう
-              <input type="radio" name="difficulty" class="difficulty" value="5">はやい
+              <label><input type="radio" name="difficulty" class="difficulty" value="120">超ゆっくり</label>
+              <label><input type="radio" name="difficulty" class="difficulty" value="10">ゆっくり</label>
+              <label><input type="radio" name="difficulty" class="difficulty" value="7" checked>ふつう</label>
+              <label><input type="radio" name="difficulty" class="difficulty" value="5">はやい</label>
             </label>
           </div>
-
+          <img src="imgApp/manual.png" id="pMbox" class="pMbox hidden">
+          <div id="playingManual" class="playingManual"><p id="pm0">遊び方</p><p id="pm1" class="hidden">もどる</p></div>
           <div id="returngame" class="returngame">
             <a href="typing.html">もう一回</a>
           </div>

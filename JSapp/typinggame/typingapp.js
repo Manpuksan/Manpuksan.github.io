@@ -211,18 +211,26 @@ const makeWords=()=>{
   word=[];
   words=[];
   if(document.getElementById('todoufuken').checked){
-    words=[...todoufuken];
+    for(i=0;i<todoufuken.length;i++){
+      words.push(todoufuken[i]);
+    }
   }
   if(document.getElementById('hennnakotoba').checked){
-    words=[...hennnakotoba];
+    for(i=0;i<hennnakotoba.length;i++){
+      words.push(hennnakotoba[i]);
+    }
   }
   if(document.getElementById('hayakuti').checked){
-    words=[...hayakuti];
+    for(i=0;i<hayakuti.length;i++){
+      words.push(hayakuti[i]);
+    }
   }
   if(document.getElementById('ryuukou').checked){
-    words=[...ryuukou];
+    for(i=0;i<ryuukou.length;i++){
+      words.push(ryuukou[i]);
+    }
   }
-  subWords=[...words];
+  subWords=[ ...words];
   for(i=0;i<4;i++){
     if(document.getElementsByClassName('difficulty')[i].checked){
       count.limit=document.getElementsByClassName('difficulty')[i].value;
@@ -254,6 +262,7 @@ const opening = (e)=>{
     document.getElementById('settingBox').style.visibility='hidden'
     startSe.play();
     turn();
+    document.getElementById('playingManual').style.visibility='hidden'
     document.removeEventListener('keydown',opening);
     setTimeout(() => {
       bgm.volume=0.3;
@@ -336,6 +345,7 @@ const checkType = (e)=>{
     if(e.key==="Backspace"){
       esc();
     }
+    if(e.key===' '){return;}
     if(`${e.key}`.length!==1){return;}
     count.type++;
     combo.textContent=`${count.maxCombo}HITs`
@@ -394,6 +404,11 @@ const checkType = (e)=>{
 // ゲーム部分
 const reset = ()=>{
   document.addEventListener('keydown',opening);
+  document.getElementById('playingManual').addEventListener('click',()=>{
+    document.getElementById('playingManual').children[0].classList.toggle('hidden');
+    document.getElementById('playingManual').children[1].classList.toggle('hidden');
+    document.getElementById('pMbox').classList.toggle('hidden');
+  })
   scoreBoxC.style.visibility='hidden';
   comboBox.style.visibility='hidden';
   resultBox.style.visibility='hidden';

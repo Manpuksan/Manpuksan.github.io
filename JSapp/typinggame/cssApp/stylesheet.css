@@ -60,12 +60,49 @@ header>div{
   position: absolute;
   top: 0;
   left: 0;
+  animation-name: sound;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+@keyframes sound{
+  100%{
+    transform: translate(10% ,10%);
+  }
 }
 .tool2{
   width: calc(var(--x)/2);
   position: absolute;
   bottom: 0;
   right: 0;
+  animation-name: alarm;
+  animation-duration: 0.25s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes alarm{
+  0%{
+    transform: rotate(10deg);
+  }
+  100%{
+    transform: rotate(-10deg);
+  }
+}
+.tool3{
+  width: 30%;
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  transform-origin: right bottom;
+  animation-name: zzz;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes zzz{
+  100%{
+    transform: scale(1.2,1.2);
+  }
 }
 .catBox3{
   width: var(--x);
@@ -717,17 +754,65 @@ h1{
   line-height: 40px;
 
 }
+h1{
+  cursor: default;
+}
 h4{
   width: 100%;
   margin:2% auto 0;
+  cursor: default;
 }
 #strings{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-#strings div{
+#strings>label{
   width: 40%;
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+label{
+  cursor: pointer;
+}
+.strings>*{
+  cursor: pointer;
+}
+.difficulty{
+  cursor: pointer;
+}
+.playingManual{
+  position: absolute;
+  top: 5%;
+  left: 2%;
+  z-index: 12;
+  background-color: tomato;
+  color: midnightblue;
+  cursor: pointer;
+  width: 18%;
+  height: 10%;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.playingManual>p{
+  position: absolute;
+  font-size: 150%;
+  margin: 0 18px;
+  transition: 0.3s;
+}
+.pMbox{
+  position: absolute;
+  top: 0px;
+  left: 0%;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.hidden{
+  opacity: 0;
+  transition: 0.3s;
 }
