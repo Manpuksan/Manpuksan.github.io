@@ -402,6 +402,7 @@ header>div{
   position: absolute;
   top: 40%;
   left: 5%;
+  z-index: 4;
   display: flex;
   justify-self: center;
   transform: scale(0.8,0.8);
@@ -429,7 +430,7 @@ header>div{
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 5;
   width: calc(var(--x)*2);
   height: 100%;
   margin: 0 auto;
