@@ -150,6 +150,17 @@ const clockSize = ()=>{
     onesPlaces.className='onesPlaces1'
   }
 }
+const advance = (elm,img='')=>{
+  let adN =0;
+  const ad =()=>{
+    if(adN<10){elm.src=`imgApp/number/${adN}${img}.png`;adN++;console.log(adN);}else{elm.removeEventListener('load',ad);adN=0;}}
+  elm.addEventListener('load',ad);
+  elm.src=`imgApp/number/${adN}${img}.png`;
+  }
+
+  // hundredthPlaces.src=`imgApp/number/${i}a.png`;
+  // tensPlaces.src=`imgApp/number/${i}g.png`;
+  // onesPlaces.src=`imgApp/number/${i}.png`;
 // お客さんがめぐる
 const shopping =()=>{
   let x = Math.floor(Math.random()*12);
@@ -257,6 +268,7 @@ const opening = (e)=>{
   if(e.key==='f'||e.key==='j'){
     if(stringsChecked()){alert('最低でも一つ文字列を選んでください');return;}
     makeWords();
+    clockAdvances();
     document.getElementById('returnTop').style.visibility='hidden'
     document.getElementById('manual').style.visibility='hidden'
     document.getElementById('settingBox').style.visibility='hidden'
@@ -510,7 +522,7 @@ const setHit =()=>{
 
 // 編集用戻す↓
 reset();
-window.addEventListener('load',()=>{console.log('ok')})
+window.addEventListener('load',()=>{console.log('ok');advance(hundredthPlaces,'a');advance(tensPlaces,'g');advance(onesPlaces);})
 // 編集　消す↓
 // document.getElementById('scoreBox').style.visibility='hidden'
 // document.getElementById('bannerBox').className='bannerBox0';
