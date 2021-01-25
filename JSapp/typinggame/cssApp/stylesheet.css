@@ -357,6 +357,7 @@ header>div{
   width: 90%;
   height: calc(var(--x)/2);
   margin-left: 10%;
+  transition: 1s;
 }
 .balloonNext{
   background-color: rgba(240, 240, 240, 0.9);
