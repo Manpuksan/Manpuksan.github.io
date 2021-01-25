@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale=1.0>
+    <title>タイピングゲーム</title>
+    <link rel="icon" href="imgApp/tychanicon.ico">
+    <meta name="description" content="タイピングゲームです">
+    <link rel='stylesheet' href="cssApp/stylesheet.css">
+    <script src="text/hayakuti.js"></script>
+    <script src="text/hennnakotoba.js"></script>
+    <script src="text/todoufuken.js"></script>
+    <script src="text/ryuukou.js"></script>
+  </head>
+  <body>
+  <main>
+    <header>
+      <div id="toolBox" class="toolBox">
+        <img src="imgApp/sound.png" alt="" id="tool1" class="tool1">
+        <img src="imgApp/alarm.png" alt="" id="tool2" class="tool2">
+      </div>
+      <div id="page6" class="catBox">
+        <img src="imgApp/ase.png" id="ase" class="ase" alt="">
+        <img src="imgApp/working.png" id="catImg3" class="catImg" alt="">
+        <img src="imgApp/counter.png" id="couter" class="counter" alt="">
+      </div>
+      <div id="page5" class="ab">
+        <div id="clockBox" class="clockBox">
+          <img src="imgApp/メーター.png" id="dial" class="dial" alt="">
+          <img src="imgApp/針.png" id="clockHand" class="clockHand" alt="">
+          <div id="clock" class="clock">
+            <img id="hundredthPlaces" class="hundredthPlaces" src="">
+            <img id="tensPlaces" class="tensPlaces" src="">
+            <img id="onesPlaces" class="onesPlaces" src="">
+          </div>
+        </div>
+      </div>
+      <div id="page4" class="catBox">
+        <img src="imgApp/working.png" id="catImg2" class="catImg" alt="">
+      </div>
+      <div id="page3" class="spaceH">
+        <div class="reverse">
+          <img src="imgApp/cafe.png" width="100%" class="cafe" alt="">
+        </div>
+      </div>
+      <div id="page2" class="catBox">
+        <img src="imgApp/wakeup.png" id="catImg1" class="catImg" alt="">
+      </div>
+      <div id="page1" class="spaceH">
+        <div class="reverse">
+          <img src="imgApp/kemuri.png" class="kemuri" alt="">
+          <img src="imgApp/alarmb.png" class="alarmb" alt="">
+        </div>
+      </div>
+      <div id="page0" class="catBox">
+        <img src="imgApp/sleep.png" id="catImg0" class="catImg" alt="">
+      </div>
+      <div id="returnTop" class="returnTop">
+        <a href="https://manpuksan.github.io/">
+          <img src="imgApp/tychanicon.ico" width="100%" alt=""></a>
+      </div>
+    </header>
+    <div id="mainBox" class="mainBox">
+      <div id="gurgeBox" class="gurgeBox">
+        <img id="gurgeLabel" class="gurgeLabel" src="imgApp/can.png">
+        <div class="gBox">
+          <div id="gurge" class="gurge"></div>
+        </div>
+        <img id="gurgeBottom" class="gurgeBottom" src="imgApp/goodjob.png" alt="">
+      </div>
+      <div id="typingBox" class="typingBox">
+        <img src="imgApp/tennai.png" id="tennai" class="tennai" alt="">
+        <img src="imgApp/yuka.png" id="yuka" class="yuka" alt="">
+        <div class='customerBox'>
+          <img src="" alt="" id="customer0" class="customer0">
+          <img src="" alt="" id="customer1" class="customer0">
+          <img src="" alt="" id="customer2" class="customer0">
+          <img src="" alt="" id="customer3" class="customer0">
+          <img src="" alt="" id="customer4" class="customer0">
+          <img src="" alt="" id="customer5" class="customer0">
+          <img src="" alt="" id="customer6" class="customer0">
+        </div>
+        <img src="imgApp/kanban.png" alt="" class="kanban">
+        <div class="cookBox" id="cookBox">
+          <img src="imgApp/working.png" alt="" id="cook" class="cook">
+          <img src="imgApp/foods/0.png" alt="" id="foods" class="foods">
+        </div>
+        <img src="imgApp/counter.png" id="cookCounter" class="cookCounter" alt="">
+        <div id="balloon" class="balloon">
+          <div id="read" class="read"></div>
+          <div id="write" class="write"></div>
+        </div>
+        <div id="balloonNext" class="balloonNext">
+          <div id="readNext" class="readNext"></div>
+        </div>
+        <div id="hitBox" class="hitBox">
+          <div id="hit0" class="hitN"></div>
+          <div id="hit1" class="hitN"></div>
+          <div id="hit2" class="hitN"></div>
+          <div id="hit3" class="hit"></div>
+        </div>
+        <div id="scoreBox" class="scoreBox">
+          <div id="bannerBox" class="bannerBox">
+            <img src="imgApp/banner0.png" width="100%" id="banner0" class="banner0" alt="">
+            <img src="imgApp/banner.png" width="100%" id="banner" class="banner" alt="">
+          </div>
+
+
+          <div id="scoreBoxC" class="scoreBoxC">
+            <p id="score" class="score"></p>
+          </div>
+          <div id="comboBox" class="comboBox">
+            <p id="combo" class="combo"></p>
+          </div>
+          <div id="resultBox" class="resultBox">
+            <div class="hyoukaBox">
+              <p id="hyouka" class="hyouka"></p>
+            </div>
+            <div class="seikairituBox">
+              <p id="seikairitu" class="seikairitu"></p>
+            </div>
+            <div class="wpsBox">
+              <p id="wps" class="wps"></p>
+            </div>
+          </div>
+          <div id="salaryBox" class="salaryBox">
+            <img src="imgApp/給料.png" class="salaryTitle" alt="">
+            <div id="salary" class="salary">
+              <div id="salaryNTens"></div>
+              <div id="salaryNOnes"></div>
+              <div id="kan" class="kan"></div>
+            </div>
+            <div id="salaryImgBox" class="salaryImgBox">
+            </div>
+          </div>
+          <div id="manual">
+            <h1>「F」か「J」でスタート</h1>
+            <h1>「Backspace」でリセット</h1>
+          </div>
+          <div id="settingBox" class="settingBox">
+            <h4>文字列を選んでください(複数選択OKです)</h4>
+            <label for="strings" id="strings">
+              <div><input type="checkbox" name="strings" id="todoufuken">都道府県</div>
+              <div><input type="checkbox" name="strings" id="hennnakotoba" checked>変な言葉</div>
+              <div><input type="checkbox" name="strings" id="hayakuti">早口言葉</div>
+              <div><input type="checkbox" name="strings" id="ryuukou">2020年注目ワード</div>
+            </label>
+            <h4>難易度を選んでください</h4>
+            <label for="difficulty">
+              <input type="radio" name="difficulty" class="difficulty" value="120">超ゆっくり
+              <input type="radio" name="difficulty" class="difficulty" value="10">ゆっくり
+              <input type="radio" name="difficulty" class="difficulty" value="7" checked>ふつう
+              <input type="radio" name="difficulty" class="difficulty" value="5">はやい
+            </label>
+          </div>
+
+          <div id="returngame" class="returngame">
+            <a href="typing.html">もう一回</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<footer>
+  <script src="typingapp.js"></script>
+</footer>
+</html>

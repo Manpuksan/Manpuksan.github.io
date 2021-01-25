@@ -1,0 +1,733 @@
+:root *{
+  --x:180px;
+  --z:1;
+  --t:1s;
+}
+body{
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  background-color: rgba(214, 200, 146, 0.753);
+  justify-content: center;
+}
+.returnTop{
+  width: calc(var(--x)/3);
+  height: calc(var(--x)/3);
+  position: absolute;
+  top: calc(var(--x)*2/3);
+  left: 0px;
+  z-index: 10;
+}
+.returngame{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  background-color: red;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 5px auto;
+}
+.returngame>a{
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: bold;
+  color: gold;
+}
+header{
+  width: calc(var(--x)*2);
+  margin: 0px auto;
+  position: relative;
+}
+header>div{
+  transform-origin: 0 0;
+}
+.toolBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -7;
+  background-color: cornsilk;
+  height: var(--x);
+  width: var(--x);
+  margin: 0%;
+}
+.tool1{
+  width: calc(var(--x)/2);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.tool2{
+  width: calc(var(--x)/2);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.catBox3{
+  width: var(--x);
+  height: var(--x);
+  position: absolute;
+  top: 0px;
+  left: var(--x);
+}
+.ase{
+  width: calc(var(--x)/4);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: none;
+}
+.counter{
+  width: var(--x);
+  height: calc(var(--x)/4);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.catBox{
+  background-color: cornsilk;
+  position: relative;
+  position: absolute;
+  top: 0;
+  left: var(--x);
+  height: var(--x);
+  width: var(--x);
+}
+.catImg{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: var(--x);
+  height: var(--x);
+}
+.spaceH{
+  position: absolute;
+  top: 0px;
+  left: var(--x);
+  width: var(--x);
+  height: var(--x);
+  background-color: cornsilk;
+}
+.reverse{
+  width: var(--x);
+  height: var(--x);
+  position: relative;
+}
+.kemuri{
+  position: absolute;
+  bottom: calc(var(--x)/6);
+  left: calc(var(--x)/6);
+  width: calc(var(--x)/3);
+  transform: rotateY(180deg);
+}
+.alarmb{
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: calc(var(--x)/1.8);
+  height: calc(var(--x)/4.5);
+  transform: rotateY(180deg);
+}
+.cafe{
+  position: absolute;
+  bottom: 0px;
+  transform: rotateY(180deg);
+}
+.ab{
+  position: absolute;
+  top: 0px;
+  left: var(--x);
+  height: var(--x);
+  width: var(--x);
+}
+.clockBox{
+  height: var(--x);
+  width: var(--x);
+  position: relative;
+  transform: rotateY(180deg);
+}
+.clock100{
+  border-radius: 25%;
+  background-color: yellow;
+  height: calc(var(--x)/3);
+  width: calc(var(--x)/2);
+  position: relative;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.clock{
+  border-radius: 25%;
+  background-color: yellow;
+  height: calc(var(--x)/3);
+  width: calc(var(--x)/3);
+  position: relative;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.onesPlaces100{
+  width: calc(var(--x)/2*0.33);
+  position: absolute;
+  bottom: 0px;
+  left: 66%;
+}
+.tensPlaces100{
+  width: calc(var(--x)/2*0.33);
+  position: absolute;
+  bottom: 0%;
+  left: 33%;
+}
+.hundredthPlaces{
+  width: calc(var(--x)/2*0.33);
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+}
+.onesPlaces10{
+  width: calc(var(--x)/6);
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+}
+.tensPlaces10{
+  width: calc(var(--x)/6);
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+}
+.onesPlaces1{
+  width: calc(var(--x)/6);
+  position: absolute;
+  bottom: 0%;
+  left: 25%;
+}
+.dial{
+  width:var(--x);
+}
+.clockHand{
+  width: calc(var(--x)/10);
+  position: absolute;
+  bottom: calc(var(--x)*9/20);
+  left: calc(var(--x)*9/20);
+  transform-origin: calc(var(--x)/20) calc(var(--x)*8.5/20);
+  transition: 0.1s;
+}
+.mainBox{
+  position: relative;
+  top: var(--x);
+  width: calc(var(--x)*2);
+  height: calc(var(--x)*1.2);
+}
+.gurgeBox{
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  height: calc(var(--x)*1.2);
+  width: calc(var(--x)/6);
+  margin:0;
+  border-radius: calc(var(--x)/50);
+  position: relative;
+  z-index: 3;
+}
+.gurgeLabel{
+  width: calc(var(--x)/6);
+}
+.gBox{
+  flex: 1;
+  width: calc(var(--x)/6);
+  height: 100%;
+  background-color: rgb(168, 103, 37);
+  display: flex;
+  align-items: flex-end;
+}
+.gurge{
+  width: calc(var(--x)/8);
+  background-color: tomato;
+  margin: 0 auto ;
+}
+.gurgeBottom{
+  width: calc(var(--x)/6);
+}
+.typingBox{
+  width: calc(var(--x)*2);
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.typingBox>*{
+  text-align: center;
+  margin: 0 auto;
+}
+.yuka{
+  width: calc(var(--x)*2);
+  height: 30%;
+  position: absolute;
+  top: 70%;
+  z-index: -2;
+}
+.tennai{
+  width: calc(var(--x)*2);
+  height: 70%;
+  position: absolute;
+  z-index: -2;
+}
+.kanban{
+  width: calc(var(--x)/2.5);
+  position: absolute;
+  bottom: 5%;
+  right: 30%;
+}
+.cookBox{
+  width: calc(var(--x)/1.5);
+  height: calc(var(--x)/1.5);
+  position: absolute;
+  bottom: 5%;
+  left: calc(var(--x)/1.8);
+  transition: 0.5s;
+  z-index: 1;
+}
+.rotate{
+  transform: rotateY(360deg);
+}
+.cook{
+  width: 100%;
+}
+.foods{
+  width: calc(var(--x)/6);
+  position: absolute;
+  top: calc(var(--x)/3.5);
+  left: 0px;
+}
+.cookCounter{
+  position: absolute;
+  right: 20%;
+  bottom: 5%;
+  width: 70%;
+  height: 15%;
+  z-index: 1;
+}
+.balloon{
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: calc(var(--x)/2);
+  width: 90%;
+  height: calc(var(--x)/2);
+  margin-left: 10%;
+}
+.balloonNext{
+  background-color: rgba(240, 240, 240, 0.9);
+  border-radius: calc(var(--x)/2);
+  width: 45%;
+  height: calc(var(--x)/8);
+  position: absolute;
+  top: 45%;
+  right: 5%;
+  z-index: 2;
+}
+.read{
+  width: 100%;
+  line-height: calc(var(--x)/4);
+  font-size: calc(var(--x)/10);
+  height: calc(var(--x)/4);
+}
+.readNext{
+  width: 100%;
+  color: darkslategray;
+  line-height: calc(var(--x)/8);
+  font-size: calc(var(--x)/15);
+  height: calc(var(--x)/8);
+  margin: 0;
+}
+.write{
+  width: 100%;
+  line-height: calc(var(--x)/4);
+  font-size: calc(var(--x)/10);
+  height: calc(var(--x)/4);
+}
+.result{
+  text-align: center;
+  font-size: calc(var(--x)/12);
+  height: calc(var(--x)/8);
+  margin: 5px auto;
+  position: absolute;
+  top:calc(var(--x)/8);
+}
+.hitBox{
+  width: calc(var(--x)*0.6);
+  height: calc(var(--x)*0.3);
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  display: flex;
+  justify-self: center;
+  transform: scale(0.8,0.8);
+  transform-origin: bottom right;
+  transition: 1s;
+}
+.radius{
+  border-top-left-radius: calc(var(--x)/18);
+  border-bottom-left-radius: calc(var(--x)/18);
+}
+.hitBox>*{
+  background-size: 100% 100%;
+  flex: 1;
+  font-size: 0px;
+  margin: 0px;
+  padding: 0px;
+  line-height: 0px;
+}
+.hit{
+  background-image: url(../imgApp/hit.png);
+  border-top-right-radius: calc(var(--x)/18);
+  border-bottom-right-radius: calc(var(--x)/18);
+}
+.scoreBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: calc(var(--x)*2);
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.comboBox{
+  width: calc(var(--x)*0.6);
+  height: calc(var(--x)*0.4);
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  background-size: 100% 100%;
+  background-image: url(../imgApp/boardCombo.png);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.scoreBoxC{
+  width: calc(var(--x)*0.6);
+  height: calc(var(--x)*0.4);
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  background-image: url(../imgApp/boardScore.png);
+  background-size: 100% 100%;
+  justify-content: center;
+  display: flex;
+  align-items: flex-end;
+}
+.score,.combo,.hyouka,.seikairitu,.wps{
+  margin: 0px;
+  padding: 0px;
+  font-size: calc(var(--x)/10);
+}
+.resultBox{
+  width: calc(var(--x)*1.8);
+  height: calc(var(--x)*0.6);
+  position: absolute;
+  top: 58%;
+  left: 5%;
+}
+.resultBox>div{
+  width: calc(var(--x)*0.6);
+  height: calc(var(--x)*0.4);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  background-size: 100% 100%;
+  align-items: flex-end;
+}
+.hyoukaBox{
+  top: 5px;
+  left: 0px;
+  background-image: url(../imgApp/評価.png);
+}
+.seikairituBox{
+  top: 10%;
+  left: calc(var(--x)*0.58);
+  background-image: url(../imgApp/正解率.png);
+  background-size: 100% 100%;
+  text-align: center;
+}
+.salaryBox{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: calc(var(--x)*7/4);
+  width: 100%;
+  height: calc(var(--x)/3);
+}
+.salaryTitle{
+  width: calc(var(--x)/3.2);
+}
+.salary{
+  width: calc(var(--x)/2);
+  height: calc(var(--x)/3);
+  background-image: url(../imgApp/board.png);
+  background-size: 100% 100%;
+  display: flex;
+}
+.salary>*{
+  width: calc(var(--x)/6);
+  background-size: 100% 100%;
+}
+.kan{
+  background-image: url(../imgApp/kan.png);
+}
+.salaryImgBox{
+  width: calc(var(--x)*7/6);
+  height: calc(var(--x)/3);
+  display: grid;
+  align-content: center;
+  grid-template-columns: repeat(10,10%);
+  grid-template-rows: repeat(2,35%);
+}
+.salaryImgBox>*{
+  width: 120%;
+}
+.wpsBox{
+  top: 0px;
+  left: calc(var(--x)*1.16);
+  background-image: url(../imgApp/wps.png);
+  background-size: 100% 100%;
+  text-align: center;
+}
+.bannerBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: 1s;
+}
+.bannerBox0{
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: 1s;
+}
+.banner{
+  transition: 0.4s;
+}
+.bannerR{
+  transform: rotateX(90deg);
+}
+.banner0{
+  height: 100%;
+  transition: 1s;
+  position: relative;
+  top: 0px;
+}
+.tes2{
+  height: 100%;
+  transition: 1s;
+  position: relative;
+  top: -200px;
+}
+.banner0R{
+  height: 0;
+  flex: 0;
+}
+.strings{
+  position: absolute;
+  height: 0px;
+  font-size: 0px;
+  border: 0px;
+  border-spacing: 0px;
+}
+h1{
+  position: relative;
+  z-index: 1;
+}
+.turn0{
+  animation-name: turn;
+  --t:0;
+  --z:-5;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--t);
+}
+.turn1{
+  animation-name: turn;
+  --t:0;
+  --z:-4;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--t);
+}
+.turn2{
+  animation-name: turn;
+  --t:1s;
+  --z:-3;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--t);
+}
+.turn3{
+  animation-name: turn;
+  --t:1s;
+  --z:-2;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--t);
+}
+.turn4{
+  animation-name: turn;
+  --t:2s;
+  --z:-1;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--t);
+}
+.turn5{
+  --t:2s;
+  --z:0;
+  animation-name: turn;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-delay: var(--t);
+}
+.rankUp{
+  animation-name: rankUp;
+  animation-duration: 0.3s;
+}
+.rev{
+  animation-name: oAc;
+  animation-direction: reverse;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+.rev0{
+  animation-name: rev0;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.4s;
+}
+.ter{
+  animation-name: ter;
+  animation-duration: 1s;
+}
+h1{
+  margin: 0;
+}
+@media (min-width: 600px){
+  :root *{
+  --x:300px;
+  }
+}
+@keyframes rankUp {
+  5%{
+    transform: scale(3,3);
+  }
+  100%{
+    transform: none;
+  }
+}
+@keyframes turn {
+  100%{
+    transform: rotateY(-180deg);
+    z-index: var(--z);
+  }
+}
+.customerBox{
+  width: calc(var(--x)*2);
+  height: calc(var(--x)*1.2);
+  position: absolute;
+
+}
+.customerBox>*{
+  width: calc(var(--x)/2.5);
+  position: absolute;
+  right: calc(var(--x)/2.5 - var(--x)*2/2.5);
+  bottom: 20%;
+  z-index: 1;
+}
+.customer0{
+  width: calc(var(--x)/2.5);
+  position: absolute;
+  right: calc(var(--x)/2.5 - var(--x)*2/2.5);
+  bottom: 20%;
+  z-index: 1;
+}
+.customer1{
+  transition: 1s;
+  width: calc(var(--x)/2.5);
+  position: absolute;
+  right: -10%;
+  bottom: 15%;
+  z-index: 2;
+}
+.customer2{
+  transition: 1s;
+  width: calc(var(--x)/2.5);
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  z-index: 2;
+}
+.customer3{
+  transition: 1s;
+  width: calc(var(--x)/2.5);
+  position: absolute;
+  right: 15%;
+  bottom: 5%;
+  z-index: 2;
+}
+.customer4{
+  transition: 1s;
+  width: calc(var(--x)/2.5);
+  position: absolute;
+  right: 30%;
+  bottom: 3%;
+  z-index: 2;
+}
+.customer5{
+  transition: 1s;
+  width: calc(var(--x)/2.5);
+  position: absolute;
+  right: 100%;
+  bottom: 3%;
+  z-index: 2;
+}
+.settingBox{
+  background-color: rgba(240, 240, 240, 0.9);
+  width: 80%;
+  margin:0 auto;
+  border-radius: 20px;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  line-height: 40px;
+
+}
+h4{
+  width: 100%;
+  margin:2% auto 0;
+}
+#strings{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#strings div{
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
