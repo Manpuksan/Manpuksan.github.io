@@ -1,5 +1,5 @@
 
-let count={word:0,type:0,miss:0,zone:0,rankUp:20,rank:0,stress:0,limit:7,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,n:true,check:[]}
+let count={word:0,type:0,miss:0,zone:0,rankUp:20,rank:0,stress:0,limit:7,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,manual:false,n:true,check:[]}
 let nWords=['a','i','u','e','o','y',];
 let missKey=[]
 let word;
@@ -93,6 +93,8 @@ const se =(se,t=0)=>{
 const gurgeUp = ()=>{
   if(count.zone<0){
     count.zone=0;
+    gurge.style.height=`${count.zone*100/count.rankUp}%`
+    gurge.style.backgroundColor=`rgb(${Math.floor((1-count.zone/count.rankUp)*255)} ,255 ,0)`
     return;
   }
   setHit();
@@ -107,6 +109,7 @@ const gurgeUp = ()=>{
     count.rank++;
   }
   gurge.style.height=`${count.zone*100/count.rankUp}%`
+  gurge.style.backgroundColor=`rgb( 255,255 ,${Math.floor((1-count.zone/count.rankUp)*255)})`
 
 }
 // 時計
@@ -413,6 +416,13 @@ const checkType = (e)=>{
 const reset = ()=>{
   document.addEventListener('keydown',opening);
   document.getElementById('playingManual').addEventListener('click',()=>{
+    if(count.manual===false){
+      document.removeEventListener('keydown',opening);
+      count.manual=true;
+    }else{
+      document.addEventListener('keydown',opening);
+      count.manual=false;
+    }
     document.getElementById('playingManual').children[0].classList.toggle('hidden');
     document.getElementById('playingManual').children[1].classList.toggle('hidden');
     document.getElementById('pMbox').classList.toggle('hidden');

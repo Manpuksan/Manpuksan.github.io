@@ -284,8 +284,9 @@ header>div{
 }
 .gurge{
   width: calc(var(--x)/8);
-  background-color: tomato;
+  background-color: rgb(255, 255, 0);
   margin: 0 auto ;
+  transition: 0.3s;
 }
 .gurgeBottom{
   width: calc(var(--x)/6);
@@ -416,7 +417,7 @@ header>div{
 }
 .hitBox>*{
   background-size: 100% 100%;
-  flex: 1;
+  flex: 1.01;
   font-size: 0px;
   margin: 0px;
   padding: 0px;
@@ -663,11 +664,7 @@ h1{
 h1{
   margin: 0;
 }
-@media (min-width: 600px){
-  :root *{
-  --x:300px;
-  }
-}
+
 @keyframes rankUp {
   5%{
     transform: scale(3,3);
@@ -754,12 +751,13 @@ h1{
   flex-direction: column;
   font-size: 20px;
   line-height: 40px;
-
+  transition: 0.3s;
 }
 h1{
   width: 100%;
   cursor: default;
   font-size: calc(var(--x)/10);
+  transition: 0.3s;
 }
 h4{
   width: 100%;
@@ -783,7 +781,7 @@ h4{
 }
 label{
   cursor: pointer;
-  font-size:calc(var(--x)/16);
+  font-size:calc(var(--x)/15);
 }
 .strings>*{
   cursor: pointer;
@@ -810,7 +808,6 @@ label{
   position: absolute;
   font-size: calc(var(--x)/15);
   margin: 5% 20%;
-  transition: 0.3s;
 }
 .pMbox{
   position: absolute;
@@ -826,4 +823,17 @@ label{
 .hidden{
   opacity: 0;
   transition: 0.3s;
+}
+@media (min-width: 600px){
+  :root *{
+  --x:300px;
+  }
+  #strings>label{
+    width: 40%;
+    font-size: calc(var(--x)/16);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: calc(var(--x)/8);
+  }
 }
