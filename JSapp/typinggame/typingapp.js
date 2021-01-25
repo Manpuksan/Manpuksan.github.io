@@ -157,10 +157,6 @@ const advance = (elm,img='')=>{
   elm.addEventListener('load',ad);
   elm.src=`imgApp/number/${adN}${img}.png`;
   }
-
-  // hundredthPlaces.src=`imgApp/number/${i}a.png`;
-  // tensPlaces.src=`imgApp/number/${i}g.png`;
-  // onesPlaces.src=`imgApp/number/${i}.png`;
 // お客さんがめぐる
 const shopping =()=>{
   let x = Math.floor(Math.random()*12);
@@ -474,8 +470,8 @@ const setHit =()=>{
   let hp = arr(count.combo)[2]
   let tp = arr(count.combo)[1]
   let op = arr(count.combo)[0]
-  if(count.combo===50){se(chargeSe);}
-  if(count.combo===100){se(chargeSe);}
+  if(count.combo===49){se(chargeSe);}
+  if(count.combo===99){se(chargeSe);}
   if(count.combo>1000){
     return;
   }
@@ -491,10 +487,10 @@ const setHit =()=>{
     return;
   }
   if(100>count.combo && count.combo>=10){
-    if(count.combo<50){
+    if(count.combo<49){
       for(i=0;i<4;i++){hit[i].style.backgroundColor='lightyellow'}
     }
-    if(count.combo>50){
+    if(count.combo>49){
       for(i=0;i<4;i++){hit[i].style.backgroundColor='hkaki'}
     }
     HIT.style.transform='scale(0.9,0.9)'
