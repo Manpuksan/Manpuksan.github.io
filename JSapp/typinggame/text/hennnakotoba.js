@@ -10,7 +10,7 @@ const hennnakotoba = [
 {read:'持病の仮病',write:'jibyounokebyou'},
 {read:'カットの後の一言',write:'kattonoatonohitokoto'},
 {read:'私と犬の医療費',write:'watasitoinunoiryouhi'},
-{read:'インストールとアンインストール',write:'insuto-rutoaninsuto-ru'},
+{read:'インストールとアンインストール',write:'insuto-rutoanninsuto-ru'},
 {read:'美人とアイスクリーム',write:'bijintoaisukuri-mu'},
 {read:'彼女いる？',write:'kanojoiru?'},
 {read:'黒猫ヤマト',write:'kuronekoyamato'},
