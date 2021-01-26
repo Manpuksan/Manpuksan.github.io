@@ -1,5 +1,5 @@
 
-let count={word:0,type:0,miss:0,zone:0,rankUp:20,rank:0,stress:0,limit:7,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,manual:false,n:true,check:[]}
+let count={word:0,type:0,miss:0,zone:0,rankUp:20,rank:0,stress:0,limit:7,combo:0,maxCombo:0,time:120,initialTime:0,score:0,isPlaying:false,manual:false,n:true,h:true,check:[]}
 let nWords=['a','i','u','e','o','y',];
 let missKey=[]
 let word;
@@ -338,6 +338,7 @@ const atari = ()=>{
   count.combo++;
   count.zone++;
   count.n=true;
+  count.h=true;
   gurgeUp();
   se(writeSe);
   write.textContent=''.repeat(count.word)+word.substring(count.word);
@@ -379,7 +380,17 @@ const checkType = (e)=>{
       if(e.key==='c' && word[count.word]==='s' && ['i','e'].indexOf(word[count.word+1])!==-1){atari();return;}
       if(e.key==='h' && word[count.word]==='f' && word[count.word+1]==='u'){atari();return;}
       if(e.key==='h' && word[count.word]==='y' && word[count.word+1]==='i'){atari();return;}
+      if(e.key==='h' && word[count.word]==='y' && ['a','u','e','o'].indexOf(word[count.word+1])!==-1 && count.word>0 && word[count.word-1]==='s'){atari();return;}
       if(e.key==='z' && word[count.word]==='j' && word[count.word+1]==='i'){atari();return;}
+      if(e.key==='h' && word[count.word]==='i' && count.word>0 && word[count.word-1]==='s' && count.h===true){
+        count.combo++;
+        count.zone++;
+        gurgeUp();
+        se(writeSe);
+        write.textContent=''.repeat(count.word)+word.substring(count.word);
+        count.h=false;
+        return;
+      }
       if(e.key==='z' && word[count.word]==='j' && nWords.indexOf(word[count.word+1])!==-1){
         count.combo++;
         count.zone++;

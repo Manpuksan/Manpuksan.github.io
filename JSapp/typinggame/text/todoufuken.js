@@ -1,5 +1,5 @@
 const todoufuken = [
-  {read:'北海道',write:'hokkaidou'},
+{read:'北海道',write:'hokkaidou'},
 {read:'青森',write:'aomori'},
 {read:'岩手',write:'iwate'},
 {read:'宮城',write:'miyagi'},
