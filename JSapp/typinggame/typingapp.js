@@ -166,6 +166,7 @@ const shopping =()=>{
   let y = Math.floor(Math.random()*6);
   document.getElementById('cookBox').classList.toggle('rotate')
   document.getElementById('foods').src=`imgApp/foods/${y}.png`
+  document.getElementById('foodL').src=`imgApp/foods/${y}.png`
   document.getElementsByClassName('customer0')[0].src=`imgApp/animals/${x}.png`
   for(i=0;i<cl;i++){
     customer[i].className=`customer${(i+t%cl)%cl}`;
@@ -210,6 +211,7 @@ const ending = ()=>{
     salaryBox.style.visibility='visible';
     returngame.style.visibility='visible';
     document.getElementById('catImg3').src='imgApp/goodjob.png';
+    document.getElementById('foodL').src='imgApp/can.png'
     document.addEventListener('keydown',(e)=>{if(e.key===' '){esc()}});
     document.getElementById('returnTop').style.visibility='visible';
     setCan();
@@ -247,6 +249,7 @@ const makeWords=()=>{
     }
   }
 }
+// 文字列の設置
 const setWord=()=>{
   count.stress=0;
   document.getElementById('balloon').style.backgroundColor=`rgba(255,255,255,0.8)`
@@ -307,6 +310,7 @@ const opening = (e)=>{
         if(count.time<=0){
           count.isPlaying=false;
           document.getElementById('catImg3').src='imgApp/tired.png';
+          document.getElementById('foodL').src=''
           curtain();
           clearInterval(clock)
           bgm.pause();
@@ -458,6 +462,7 @@ const setCan =()=>{
   if(count.rank===0){
     document.getElementById('salaryNOnes').style.backgroundImage=`url(imgApp/number/0a.png)`;
     document.getElementById('catImg3').src='imgApp/tired.png';
+    document.getElementById('foodL').src=''
     se(mukyuu);
     return;
   }

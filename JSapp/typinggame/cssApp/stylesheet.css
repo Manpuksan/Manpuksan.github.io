@@ -7,7 +7,7 @@ body{
   margin: 0px;
   padding: 0px;
   display: flex;
-  background-color: rgba(214, 200, 146, 0.753);
+  background-image: url(../imgApp/nekohaikeigr.png);
   justify-content: center;
 }
 .returnTop{
@@ -124,6 +124,12 @@ header>div{
   position: absolute;
   bottom: 0px;
   right: 0px;
+}
+.foodL{
+  width: calc(var(--x)/4);
+  position: absolute;
+  top: calc(var(--x)*3/7);
+  left: 0px;
 }
 .catBox{
   background-color: cornsilk;
