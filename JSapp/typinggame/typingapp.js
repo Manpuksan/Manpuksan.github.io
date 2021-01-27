@@ -233,8 +233,8 @@ const makeWords=()=>{
     }
   }
   if(document.getElementById('hayakuti').checked){
-    for(i=0;i<hayakuti.length;i++){
-      words.push(hayakuti[i]);
+    for(i=0;i<senryuu.length;i++){
+      words.push(senryuu[i]);
     }
   }
   if(document.getElementById('ryuukou').checked){
