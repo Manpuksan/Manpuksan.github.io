@@ -245,7 +245,7 @@ const ryuukou = [
 {read:'ホットプレート',write:'hottopure-to'},
 {read:'折りたたみ テーブル',write:'oritatamite-buru'},
 {read:'アルコール',write:'aruko-ru'},
-{read:'テレビ',write:'terebidai'},
+{read:'テレビ',write:'terebi'},
 {read:'まな板',write:'manaita'},
 {read:'ベビー',write:'bebi-'},
 {read:'餃子',write:'gyouza'},
