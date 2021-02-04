@@ -210,8 +210,6 @@ const ending = ()=>{
   setTimeout(()=>{
     salaryBox.style.visibility='visible';
     returngame.style.visibility='visible';
-    document.getElementById('catImg3').src='imgApp/goodjob.png';
-    document.getElementById('foodL').src='imgApp/can.png'
     document.addEventListener('keydown',(e)=>{if(e.key===' '){esc()}});
     document.getElementById('returnTop').style.visibility='visible';
     setCan();
@@ -490,6 +488,8 @@ const setCan =()=>{
     setC++
     return;
   }
+  document.getElementById('catImg3').src='imgApp/goodjob.png';
+  document.getElementById('foodL').src='imgApp/can.png'
   se(kyuuryou);
 }
 const setHit =()=>{

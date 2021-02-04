@@ -10,6 +10,14 @@ body{
   background-image: url(../imgApp/nekohaikeigr.png);
   justify-content: center;
 }
+main{
+  margin: calc(var(--x)/20) auto 0px;
+  height: calc(var(--x)*2.2);
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  border: 8px solid rgb(168, 103, 37);
+}
 .returnTop{
   width: calc(var(--x)/3);
   height: calc(var(--x)/3);
