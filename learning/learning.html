@@ -18,35 +18,47 @@
     </header>
   <h2 class="overview"><a href="https://dotinstall.com/">ドットインストール</a>や<a href="https://prog-8.com/">progate</a>で勉強中に、教材通りだと詰まったところの対処をまとめています</h2>
   <div class="commentary">
-    <h2>
-      <a href="https://dotinstall.com/lessons/basic_localdev_win_v2">
-        [ドットインストール]ローカル開発環境の構築[windows編]
-      </a>
-    </h2>
-    <p>
-      現在CentOS6がサポート終了しているので、仮想マシンの起動はできるのですが、<br>
-      必須のアプリケーションをインストールすることができません<br>
-      アマゾンのAWSを利用する手もありますが、クレジットカードが必須など抵抗がある方もいらっしゃるかと思います<br>
-      また初心者の私としてはドットインストールなどで解説を受けながら進めたいわけです<br>
-      ということでやってみたのが<br>
-      <strong>
-        仮想マシンのOSを CentOS6.8 → CentOS7以降 に変更する
-      </strong><br>
-      実に単純な解決方法ですね<br>
-      CentOS7以降だとその後のアプリのインストール方法が若干変わるので、その都度説明します<br><br>
-      #4 までは教材通りで大丈夫です<br>
-      #5 の MyCentOSフォルダに移動するところから別ルートに入ります<br>
-      ドットインストールをやっていない方は次の下準備をやっていただければ問題なく進めるかと思います<br><br>
-      下準備<b id="jb"></b><br>
-      <a href="https://www.oracle.com/jp/virtualization/technologies/vm/downloads/virtualbox-downloads.html">
-        VirtualBox
-      </a> 、
-      <a href="https://www.vagrantup.com/">Vagrant</a> 、
-      <a href=""></a> PowerShellをインストール(PowerShellはMicrosoftstoreでダウンロードできます)<br>
-      仮想マシンを立ち上げる用のフォルダを作る<br>
-      PowerShellでそのフォルダへ移動しておく<br>
-    </p>
-    <ul>
+    <div class="commentarySub0">
+      <h2>
+        <a href="https://dotinstall.com/lessons/basic_localdev_win_v2">
+          [ドットインストール]ローカル開発環境の構築[windows編]
+        </a>
+      </h2>
+      <p>
+        現在CentOS6がサポート終了しているので、仮想マシンの起動はできるのですが、<br>
+        必須のアプリケーションをインストールすることができません<br>
+        アマゾンのAWSを利用する手もありますが、クレジットカードが必須など抵抗がある方もいらっしゃるかと思います<br>
+        また初心者の私としてはドットインストールなどで解説を受けながら進めたいわけです<br>
+        ということでやってみたのが<br>
+        <strong>
+          仮想マシンのOSを CentOS6.8 → CentOS7以降 に変更する
+        </strong><br>
+        実に単純な解決方法ですね<br>
+        CentOS7以降だとその後のアプリのインストール方法が若干変わるので、その都度説明します<br><br>
+        #4 までは教材通りで大丈夫です<br>
+        #5 の MyCentOSフォルダに移動するところから別ルートに入ります<br>
+        ドットインストールをやっていない方は次の下準備をやっていただければ問題なく進めるかと思います<br>
+        <ul>
+          <li>
+            下準備
+          </li>
+          <li>
+            <a href="https://www.oracle.com/jp/virtualization/technologies/vm/downloads/virtualbox-downloads.html">
+              VirtualBox
+            </a> 、
+            <a href="https://www.vagrantup.com/">Vagrant</a> 、
+            <a href=""></a> PowerShellをインストール(PowerShellはMicrosoftstoreでダウンロードできます)
+          </li>
+          <li>
+            仮想マシンを立ち上げる用のフォルダを作る
+          </li>
+          <li>
+            PowerShellでそのフォルダへ移動しておく
+          </li>
+        </ul>
+      </p>
+    </div>
+    <ul class="mokuji">
       目次
       <li>
         <a href="#section1">
@@ -62,233 +74,299 @@
         ３.必須アプリケーションをインストールする（準備中）
       </li>
     </ul>
-    <h2 id="section1">
-      １.CentOS7以降の仮想マシンを作る
-    </h2>
-    <p>
-      教材ではここで<br><br>
-      vagrant init bento/centos-6.8<br><br>
-      というコマンドを実行するわけですが、この通りに実行すると CentOS6.8がインストールされてしまいます<br>
-      そこで<br>
-      <a href="https://app.vagrantup.com/boxes/search">このページ</a>
-      でCentOS７以降の設定ファイルを拝借して、それで仮想マシンを立ち上げます<br><br>
+    <div id="section1"></div>
+    <div class="commentarySub">
+      <h2>
+        １.CentOS7以降の仮想マシンを作る
+      </h2>
+      <p>
+        教材ではここで
+      </p>
+        <h4>
+          vagrant init bento/centos-6.8
+        </h4>
+      <p>
+        というコマンドを実行するわけですが、この通りに実行すると CentOS6.8がインストールされてしまいます<br>
+        そこで<br>
+        <a href="https://app.vagrantup.com/boxes/search">このページ</a>
+        でCentOS７以降の設定ファイルを拝借して、それで仮想マシンを立ち上げます<br><br>
 
-      とりあえず virtualbox、CentOs などでソートしてこれだ、と思った7以降の CentOS のBOXをクリック<br>
-      今回は一番目立っている↓この centos/7 2004.01 を例に説明します<br>
-      他のBOXでも手順は同じです<br>
-      <img src="../img/centos.png" width=100%>
-      Newをクリックして<br>
-      vagrant init centos/7<br>
-      という部分を、開いておいた PowerShell にコピペして実行します<br>
-      <img src="../img/vagrantnew.png" width=100%>
-      <img src="../img/vagrantinit.png" width="100%" alt="">
-      <br>
-      これで MyCentOSフォルダ（下準備で作ったフォルダ）に CentOS7 を立ち上げるための vagrantfile が作られます<br>
-      この vagrantfile を何らかのエディタで開いて編集します<br>
-      その中に<br><br>
-      # config.vm.network "private_network", ip: "192.168.33.10"<br><br>
-      という箇所があるので<br>
-      # を消して有効化して保存します<br>
-      ip ～ の部分は仮想マシンの住所になる番号です<br>
-      複数の仮想マシンを立ち上げる場合は ip がかぶらないように少し変更しておくとよいかと思います（例えば "192.168.33.11"）<br>
-      あとは PowerShell で<br><br>
-      vagrant up<br><br>
-      を実行です<br>
-      途中で何か聞かれるかもですが OK とか Y とかで進めます<br>
-      これで起動完了です<br><br>
-
-      vagrant status<br><br>
-      を実行して <br>
-      running と表示されていれば成功です<br>
-      ちなみに<br><br>
-      vagrant halt<br><br>
-      を実行するとシャットダウンできます
-    </p>
-    <h2 id="section2">
-      ２.仮想マシンにログインする
-    </h2>
-    <p>
-      教材では次に PuTTY というアプリをインストールし、これを使ってログインするのですが、<br>
-      現バージョンでは残念ながら設定をいじらないと PuTTY ではログインできません<br><br>
-
-      ということで別の方法でログインします<br>
-      色々あるのですが、とりあえず４つ紹介します<br><br>
-      <a href="#sub1">
-        その１　直接ログインする
-      </a>
-      <br>
-      <a href="#sub2">
-        その２　PowerShellからログインする
-      </a>
-      <br>
-      <a href="#sub3">
-        その３　VScodeからログインする
-      </a>
-      <br>
-      <a href="#sub4">
-        おまけ　PuTTYでログインする
-      </a>
-    </p>
+        とりあえず virtualbox、CentOs などでソートしてこれだ、と思った7以降の CentOS のBOXをクリック<br>
+        今回は一番目立っている↓この centos/7 2004.01 を例に説明します<br>
+        他のBOXでも手順は同じです<br>
+        <img src="../img/centos.png" width=100%>
+        Newをクリックして<br>
+      </p>
+      <h4>
+        vagrant init centos/7
+      </h4>
+      <p>
+        という部分を、開いておいた PowerShell にコピペして実行します<br>
+        <img src="../img/vagrantnew.png" width=100%>
+        <img src="../img/vagrantinit.png" width="100%" alt="">
+        <br>
+        これで MyCentOSフォルダ（下準備で作ったフォルダ）に CentOS7 を立ち上げるための vagrantfile が作られます<br>
+        この vagrantfile を何らかのエディタで開いて編集します<br>
+        その中に<br>
+      </p>
+      <h4>
+        # config.vm.network "private_network", ip: "192.168.33.10"
+      </h4>
+      <p>
+        という箇所があるので<br>
+        # を消して有効化して保存します<br>
+        ip ～ の部分は仮想マシンの住所になる番号です<br>
+        複数の仮想マシンを立ち上げる場合は ip がかぶらないように少し変更しておくとよいかと思います（例えば "192.168.33.11"）<br>
+        あとは PowerShell で
+      </p>
+      <h4>
+        vagrant up
+      </h4>
+      <p>
+        を実行です<br>
+        途中で何か聞かれるかもですが OK とか Y とかで進めます<br>
+        これで起動完了です
+      </p>
+      <h4>
+        vagrant status
+      </h4>
+      <p>
+        を実行して <br>
+        running と表示されていれば成功です<br>
+        ちなみに
+      </p>
+      <h4>
+        vagrant halt
+      </h4>
+      <p>
+        を実行するとシャットダウンできます
+      </p>
+    </div>
+    <div id="section2"></div>
+    <div class="commentarySub">
+      <h2>
+        ２.仮想マシンにログインする
+      </h2>
+      <p>
+        教材では次に PuTTY というアプリをインストールし、これを使ってログインするのですが、<br>
+        現バージョンでは残念ながら設定をいじらないと PuTTY ではログインできません<br>
+        ということで別の方法でログインします<br>
+        色々あるのですが、とりあえず４つ紹介します<br>
+        <ul>
+          <li>
+            <a href="#sub1">
+              その１　直接ログインする
+            </a>
+          </li>
+          <li>
+            <a href="#sub2">
+              その２　PowerShellからログインする
+            </a>
+          </li>
+          <li>
+            <a href="#sub3">
+              その３　VScodeからログインする
+            </a>
+          </li>
+          <li>
+            <a href="#sub4">
+              おまけ　PuTTYでログインする
+            </a>
+          </li>
+        </ul>
+      </p>
+    </div>
     <div id="sub1"></div>
-    <h3>
-      その１　直接ログインする
-    </h3>
-    <p>
-      VirtualBoxを開くと仮想マシン一覧を見ることができます<br>
-      その中からいじりたいマシンを選んで「表示」をクリックするとちょっと小さい窓が出て<br>
-      <img src="../img/virtualbox.png" width=100%>
-      直接仮想マシンを操作することができます<br>
-      ユーザー、パスワードはどちらも vagrant です<br>
-      入力してEnterでログインできます<br>
-      フォントがとげとげしくて、コピペが使えないのが難点です<br>
-      Tabキーでの入力補完はできるので、環境を整えるだけなら十分ですね<br>
-    </p>
+    <div class="commentarySub">
+      <h3>
+        その１　直接ログインする
+      </h3>
+      <p>
+        VirtualBoxを開くと仮想マシン一覧を見ることができます<br>
+        その中からいじりたいマシンを選んで「表示」をクリックするとちょっと小さい窓が出て<br>
+        <img src="../img/virtualbox.png" width=100%>
+        直接仮想マシンを操作することができます<br>
+        ユーザー、パスワードはどちらも vagrant です<br>
+        入力してEnterでログインできます<br>
+        フォントがとげとげしくて、コピペが使えないのが難点です<br>
+        Tabキーでの入力補完はできるので、環境を整えるだけなら十分ですね<br>
+      </p>
+    </div>
     <div id="sub2"></div>
-    <h3>
-      その２　PowerShellからログインする
-    </h3>
-    <p>
-      一番簡単です<br>
-      vagrant up をした場所で<br><br>
+    <div class="commentarySub">
+      <h3>
+        その２　PowerShellからログインする
+      </h3>
+      <p>
+        一番簡単です<br>
+        vagrant up をした場所で
+      </p>
+      <h4>
+        vagrant ssh
+      </h4>
+      <p>
+        を実行する<br>
+        以上<br>
+        ちょろすぎます<br><br>
 
-      vagrant ssh<br><br>
+        Vagrant で作った仮想マシンならこれでいけますが、それ以外のシチュエーションでは使えないのでちょっと補足です<br>
+        補足と言いながら少々長いです<br>
+        ログインできればそれでよし、の場合は読み飛ばしてください<br>
 
-      を実行する<br>
-      以上<br>
-      ちょろすぎます<br><br>
+        まず ssh というのはネットワークで他のパソコンをいじることができる仕組みです<br>
+        よそ様のパソコンを好き放題出来てしまうわけなので、つなげる段階で厳しく審査されます<br>
+        具体的にはカギ穴ファイルとそれと対になるカギファイルを作っておいて（※正式な名前ではなく、私のイメージです）<br>
+        接続先にカギ穴ファイルを、接続元にカギファイルを設置します<br>
+        ログインするときは、カギ穴ファイルに対応したカギファイルを見せないとログインできないという仕掛けです<br>
+        （昔のバージョンではパスワードでいけたようですね）<br>
+        どうやって見せるかというと<br>
+      </p>
+      <h4>
+        ssh
+        <span style="color: green;">
+          -i 自分のパソコンのカギのある場所
+        </span>
+        <span style="color: blue;">
+          ユーザー名@接続先の住所
+        </span>
+        <span style="color: red;">
+          -p 接続先のポート
+        </span>
+      </h4>
+      <p>
+        と実行します<br>
+        -i はカギを見せます<br>
+        -p はこの入り口から入ります　という意味です<br>
+        実行する場所は vagrant ssh の時と違いどこでもOKです<br>
+        私の場合だと
+      </p>
+      <h4>
+        ssh
+        <span style="color: green;">
+          -i D:/LocalServer/CentOs/.vagrant/machines/default/virtualbox/private_key
+        </span>
+        <span style="color: blue;">
+          vagrant@192.168.33.10
+        </span>
+        <span style="color: red;">
+          -p 22
+        </span>
+      </h4>
+      <p>
+        となります<br>
+        説明すると<br>
+         <span style="color: green;">
+          -i D:/LocalServer/CentOs/.vagrant/machines/default/virtualbox/private_key
+        </span> は<br>
+        Dドライブの、LocalServerの中で<br>
+        CentOsという仮想マシンを立ち上げていると、このパスになります<br>
+        そこから先のパスは特にいじってなければ共通です<br><br>
+        <span style="color: blue;">
+          vagrant@192.168.33.10 は
+        </span>
+        <br>
+        vagrant はユーザー名ですね<br>
+        @ 以降は vagrantfile の編集時に決めたipを入力します<br>
+        何もしていなければ 192.168.33.10 です<br><br>
 
-      Vagrant で作った仮想マシンならこれでいけますが、それ以外のシチュエーションでは使えないのでちょっと補足です<br>
-      補足と言いながら少々長いです<br>
-      ログインできればそれでよし、の場合は読み飛ばしてください<br>
-
-      まず ssh というのはネットワークで他のパソコンをいじることができる仕組みです<br>
-      よそ様のパソコンを好き放題出来てしまうわけなので、つなげる段階で厳しく審査されます<br>
-      具体的には鍵穴ファイルとそれと対になる鍵ファイルを作っておいて（※正式な名前ではなく、私のイメージです）<br>
-      接続先に鍵穴ファイルを、接続元に鍵ファイルを設置します<br>
-      ログインするときは、鍵穴ファイルに対応した鍵ファイルを見せないとログインできないという仕掛けです<br>
-      （昔のバージョンではパスワードでいけたようですね）<br>
-      どうやって見せるかというと<br><br>
-      ssh
-      <span style="color: green;">
-        -i 自分のパソコンのカギのある場所
-      </span>
-      <span style="color: blue;">
-        ユーザー名@接続先の住所
-      </span>
-      <span style="color: red;">
-        -p 接続先のポート
-      </span>
-        <br><br>
-      と実行します<br>
-      -i は鍵を見せます<br>
-      -p はこの入り口から入ります　という意味です<br>
-      実行する場所は vagrant ssh の時と違いどこでもOKです<br>
-      私の場合だと<br><br>
-      ssh
-      <span style="color: green;">
-        -i D:/LocalServer/CentOs/.vagrant/machines/default/virtualbox/private_key
-      </span>
-      <span style="color: blue;">
-        vagrant@192.168.33.10
-      </span>
-      <span style="color: red;">
-        -p 22
-      </span>
-      <br><br>
-      となります<br>
-      説明すると<br>
-       <span style="color: green;">
-        -i D:/LocalServer/CentOs/.vagrant/machines/default/virtualbox/private_key
-      </span> は<br>
-      Dドライブの、LocalServerの中で<br>
-      CentOsという仮想マシンを立ち上げていると、このパスになります<br>
-      そこから先のパスは特にいじってなければ共通です<br><br>
-      <span style="color: blue;">
-        vagrant@192.168.33.10 は
-      </span>
-      <br>
-      vagrant はユーザー名ですね<br>
-      @ 以降は vagrantfile の編集時に決めたipを入力します<br>
-      何もしていなければ 192.168.33.10 です<br><br>
-
-      最後の
-      <span style="color: red;">
-        -p 22
-      </span>
-      は22番のポートから入りますよという意味です<br>
-      実は通常は書く必要がありません<br>
-      ssh とした時点で、22番から入りますってことになっているみたいですね<br>
-      では何のためのオプションなのかというと<br>
-      後で少し触れますが、この仮想マシン<br>
-      実はもう一つの住所と入り口があります<br>
-      そっちから入るときには指定する必要があるということなんですね<br>
-      あとはセキュリティ強化のために入り口を普段と違うところに開けるというケースもありそうですね<br>
-    </p>
+        最後の
+        <span style="color: red;">
+          -p 22
+        </span>
+        は22番のポートから入りますよという意味です<br>
+        実は通常は書く必要がありません<br>
+        ssh とした時点で、22番から入りますってことになっているみたいですね<br>
+        では何のためのオプションなのかというと<br>
+        後で少し触れますが、この仮想マシン<br>
+        実はもう一つの住所と入り口があります<br>
+        そっちから入るときには指定する必要があるということなんですね<br>
+        あとはセキュリティ強化のために入り口を普段と違うところに開けるというケースもありそうですね<br>
+      </p>
+    </div>
     <div id="sub3"></div>
-    <h3>
-      その３　VScodeのRemote-SSHでログインする
-    </h3>
-    <p>
-      個人的に一番おすすめです<br>
-      一応この機能はまだPreviewなので不思議なことが起こるかもしれません<br><br>
-      まずはVScodeの拡張機能の Remote-SSH をインストールします<br>
-      次に設定ファイルを作成します<br>
-      左下のボタンをクリックして Remote-SSH:Open Configuration File を選びます<br>
-      <img src="../img/sshconfig.png" width=100%>
-      設定ファイル候補が出ているので好きなファイルを開きます<br>
-      選ぶとファイルが開くので設定を書き込みます<br>
-      書き込む内容は<br><br>
-      Host 好きな名前<br>
-        HostName 192.168.33.10 <br>
-        User vagrant <br><br>
-
-      こんな感じです<br>
-      Host はこの接続の名前です<br>
-      後からわかりやすい名前を付けましょう<br><br>
-      HostName には接続先の住所を書き込みます<br>
-      とくに変更していなければ 192.168.33.10 です<br>
-      User は Vagrant で立ち上げたのなら vagrant でOKですね<br><br>
-      保存したら、設定ファイルを作るときに使った左下のボタンをもう一度クリックして<br>
-      今度は Remote-SSH:Connect ～ のどちらでもいいので選択すると接続が始まります<br>
-      違いは上は今のウィンドウで、下は新しいウインドウで接続します<br>
-      <img src="../img/sshconnect.png" width="100%" alt="">
-      パスワードを入力すればログイン完了です<br>
-      さらに接続先のフォルダを表示させることもできます<br>
-      （もう一度パスワードをきかれます）<br>
-      ちなみに設定ファイルに<br><br>
-        IdentityFile 自分のパソコンのカギのある場所<br><br>
-      と追加するとパスワードの入力なしで接続できるようになります<br>
-      カギについては その２　PowerShellからログインする の補足部分を御覧ください<br><br>
-      VScodeで接続するとファイルを開くのが簡単になるし、コピペ、ドラッグ＆ドロップで編集もできるので色々便利です<br>
-    </p>
+    <div class="commentarySub">
+      <h3>
+        その３　VScode の Remote-SSH でログインする
+      </h3>
+      <p>
+        個人的に一番おすすめです<br>
+        一応この機能はまだ Preview なので不思議なことが起こるかもしれません<br><br>
+        まずは VScode の拡張機能の Remote-SSH をインストールします<br>
+        次に設定ファイルを作成します<br>
+        左下のボタンをクリックして Remote-SSH:Open Configuration File を選びます<br>
+        <img src="../img/sshconfig.png" width=100%>
+        設定ファイル候補が出ているので好きなファイルを開きます<br>
+        選ぶとファイルが開くので設定を書き込みます<br>
+        書き込む内容は
+      </p>
+      <h4>
+        Host 好きな名前<br>
+          HostName 192.168.33.10 <br>
+          User vagrant
+      </h4>
+      <p>
+        こんな感じです<br>
+        Host はこの接続の名前です<br>
+        後からわかりやすい名前を付けましょう<br><br>
+        HostName には接続先の住所を書き込みます<br>
+        とくに変更していなければ 192.168.33.10 です<br>
+        User は Vagrant で立ち上げたのなら vagrant でOKですね<br><br>
+        保存したら、設定ファイルを作るときに使った左下のボタンをもう一度クリックして<br>
+        今度は Remote-SSH:Connect ～ のどちらでもいいので選択すると接続が始まります<br>
+        違いは上は今のウィンドウで、下は新しいウインドウで接続します<br>
+        <img src="../img/sshconnect.png" width="100%" alt="">
+        パスワードを入力すればログイン完了です<br>
+        さらに接続先のフォルダを表示させることもできます<br>
+        （もう一度パスワードをきかれます）<br>
+        ちなみに設定ファイルに
+      </p>
+      <h4>
+        IdentityFile 自分のパソコンのカギのある場所
+      </h4>
+      <p>
+        と追加するとパスワードの入力なしで接続できるようになります<br>
+        カギについては その２　PowerShell からログインする の補足部分を御覧ください<br><br>
+        VScode で接続するとファイルを開くのが簡単になるし、コピペ、ドラッグ＆ドロップで編集もできるので色々便利です<br>
+      </p>
+    </div>
     <div id="sub4"></div>
-    <h3>
-      おまけ　PuTTYでログインする
-    </h3>
-    <p>
-      PuTTYの上手な使い方を知らないので、いまいちメリットは感じられないのですが<br>
-      接続先の設定を変えることで、鍵を使わなくてもログインできるようにできます<br><br>
-      まずはどの方法でもいいので仮想マシンにログインします<br>
-      設定ファイルというのは通常は好き勝手にいじるとよくないので、管理者権限がないと編集できません<br>
-      てことで<br><br>
-      sudo vi /etc/ssh/sshd_config
-      を実行します<br>
-      sudo と文頭に入力することで、続くコマンドを管理者権限をもって実行することができます<br>
-      今回のコマンドでは、<br>
-      本来は編集できないはずの sshd_config というファイルを編集ソフトの vim で編集しちゃおう、ということですね<br>
+    <div class="commentarySub">
+      <h3>
+        おまけ　PuTTYでログインする
+      </h3>
+      <p>
+        PuTTY の上手な使い方を知らないので、いまいちメリットは感じられないのですが<br>
+        接続先の設定を変えることで、カギを使わなくてもログインできるようにできます<br><br>
+        まずはどの方法でもいいので仮想マシンにログインします<br>
+        設定ファイルというのは通常は好き勝手にいじるとよくないので、管理者権限がないと編集できません<br>
+        てことで
+      </p>
+      <h4>
+        sudo vi /etc/ssh/sshd_config
+      </h4>
+      <p>
+        を実行します<br>
+        sudo と文頭に入力することで、続くコマンドを管理者権限をもって実行することができます<br>
+        今回のコマンドでは、<br>
+        本来は編集できないはずの sshd_config というファイルを編集ソフトの vim で編集しちゃおう、ということですね<br>
 
-      コマンドを入力するとずらっと設定が表示されるので<br>
-      i を押してINSERTモードにします<br><br>
-      PasswordAuthentication という個所を探して<br><br>
-      PasswordAuthentication yes<br>
-      # PasswordAuthentication no<br><br>
-      となるように # をつけ外しします<br>
-      これはパスワードでのログインを認めますか？　いうことで<br>
-      このように変更することで鍵ではなく、パスワードによるログインが可能になり、<br>
-      PuTTYでログインできるようになります<br>
-      逆にセキュリティを強化したいときにはパスワードでのログインを禁止したり、<br>
-      別の項目をいじって、パスワードなしでログインできるようにできたりと実に怖いファイルですね<br>
-    </p>
+        コマンドを入力するとずらっと設定が表示されるので<br>
+        i を押してINSERTモードにします<br>
+        PasswordAuthentication という個所を探して
+      </p>
+      <h4>
+        PasswordAuthentication yes<br>
+        # PasswordAuthentication no
+      </h4>
+      <p>
+        となるように # をつけ外しします<br>
+        これはパスワードでのログインを認めますか？　いうことで<br>
+        このように変更することでカギではなく、パスワードによるログインが可能になり、<br>
+        PuTTY でログインできるようになります<br>
+        逆にセキュリティを強化したいときにはパスワードでのログインを禁止したり、<br>
+        別の項目をいじって、パスワードなしでログインできるようにできたりと実に怖いファイルですね
+      </p>
+    </div>
   </div>
   <div class="returntoppage">
         <a href="#">1番上へ</a></div>

@@ -327,18 +327,28 @@ td:first-child,th:first-child{
  border-radius: 10px;
  background-color: rgba(78, 59, 48, 0.5);
 }
+.commentarySub {
+  background-color: rgb(251, 238, 201);
+border-radius: 10px;
+margin: 0px;
+margin-bottom: 10px;
+margin-top: 110px;
+}
+.commentarySub0 {
+  background-color: rgb(251, 238, 201);
+border-radius: 10px;
+margin: 0px;
+margin-bottom: 10px;
+margin-top: 10px;
+}
 .commentary p{
   font-size: 18px;
-  background-color: rgb(251, 238, 201);
   color: midnightblue;
-  margin: 0px;
-  margin-bottom: 10px;
   padding: 5px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   line-height: 2.5em;
+  margin: 0px 10px;
 }
-.commentary ul{
+.commentary .mokuji{
   font-size: 18px;
   background-color: rgb(251, 238, 201);
   border: 5px solid rgb(240, 162, 46);
@@ -347,6 +357,10 @@ td:first-child,th:first-child{
   /* margin-bottom: 10px; */
   padding: 5px;
   box-sizing: border-box;
+}
+.commentary ul{
+  margin: 0px;
+  padding-left: 20px;
 }
 .commentary li{
   list-style-type: none;
@@ -362,12 +376,18 @@ td:first-child,th:first-child{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.commentary h3{
-  margin-bottom: 0px;
+.commentary h3 {
+  margin: 0px;
   padding: 5px;
-  background-color: rgb(251, 238, 201);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  font-size: 1.5em;
+}
+.commentary h4{
+  font-weight: normal;
+  line-height: 2em;
+  background-color: rgb(240, 180, 80);
+  color: midnightblue;
+  padding-left: 5px;
+  margin: 0px 10px;
 }
 @media (min-width: 600px) {
   .error h2,.making h2,.items h2,.kiroku h2,.overview h2{
