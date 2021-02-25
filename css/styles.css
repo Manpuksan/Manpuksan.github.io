@@ -348,6 +348,9 @@ td:first-child,th:first-child{
   padding: 5px;
   box-sizing: border-box;
 }
+.commentary li{
+  list-style-type: none;
+}
 .commentary strong{
   font-size: 1.5em;
 }
